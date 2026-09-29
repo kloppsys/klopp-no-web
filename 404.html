@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="nb">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="robots" content="noindex" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'" />
+        <script src="js/theme-init.js"></script>
+        <title>Siden finnes ikke — Klopp AS</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <link href="css/site.css" rel="stylesheet" />
+        <style>
+            .error-page {
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: var(--space-6);
+                background: var(--navy);
+                color: #ffffff;
+            }
+            .error-page h1 {
+                font-weight: 500;
+                font-size: clamp(3rem, 8vw, 5rem);
+                color: #ffffff;
+            }
+            .error-page p { color: rgba(255, 255, 255, 0.8); max-width: 480px; margin: var(--space-4) auto var(--space-6); }
+            .error-page .error-links { display: flex; gap: var(--space-4); flex-wrap: wrap; justify-content: center; }
+        </style>
+    </head>
+    <body>
+        <main class="error-page">
+            <span class="eyebrow-dot"><span class="dot"></span>404</span>
+            <h1>Siden finnes ikke</h1>
+            <p>Siden du leter etter finnes ikke, eller har blitt flyttet.</p>
+            <span class="error-links">
+                <a class="btn btn-light" href="/">Til forsiden</a>
+                <a class="btn btn-light" href="/kontakt.html">Kontakt oss</a>
+            </span>
+        </main>
+    </body>
+</html>

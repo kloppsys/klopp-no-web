@@ -19,15 +19,9 @@
         <meta name="twitter:description" content="Ta kontakt med Klopp AS om Regweb, Medlem123, Likepersonslogg eller et nytt utviklingsprosjekt." />
         <meta name="twitter:image" content="assets/img/klopp-front.jpg" />
         <meta name="color-scheme" content="light dark" />
-        <script>
-            (function () {
-                var saved = localStorage.getItem("klopp-theme");
-                document.documentElement.setAttribute(
-                    "data-theme",
-                    saved === "light" || saved === "dark" ? saved : "light"
-                );
-            })();
-        </script>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://web3forms.com https://js.hcaptcha.com https://newassets.hcaptcha.com; style-src 'self' 'unsafe-inline' https://newassets.hcaptcha.com; img-src 'self' data: https://newassets.hcaptcha.com; font-src 'self' data:; connect-src 'self' https://api.web3forms.com https://hcaptcha.com https://*.hcaptcha.com; frame-src https://newassets.hcaptcha.com https://hcaptcha.com; base-uri 'self'; form-action 'self' https://api.web3forms.com; object-src 'none'" />
+        <script src="js/theme-init.js"></script>
         <title>Kontakt oss — Klopp AS</title>
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <link href="css/site.css" rel="stylesheet" />
