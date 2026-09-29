@@ -1,14 +1,25 @@
 # Klopp AS
 
-> Klopp AS er et norsk IT-selskap i Tønsberg (etablert 2011) som utvikler og drifter digitale medlems- og likepersonsløsninger for foreninger og bedrifter i Norge.
+> Klopp AS (org.nr. 996 385 272 MVA) er et norsk IT-selskap i Tønsberg (etablert 2011) som utvikler og drifter digitale medlems- og likepersonsløsninger for foreninger og bedrifter i Norge.
 
-Klopp AS bygger og drifter tre kjerneprodukter, i tillegg til å ta på seg skreddersydde utviklingsprosjekter (web, apper, AI-agenter).
+Farmannsveien 48, 3125 Tønsberg. Tlf. 33 31 28 00. E-post: post@klopp.no.
+
+Klopp AS bygger og drifter tre kjerneprodukter og ett tilleggsverktøy, i tillegg til å ta på seg skreddersydde utviklingsprosjekter (web, apper, AI-agenter).
 
 ## Produkter
 
 - [Regweb](https://regweb.no/): Komplett medlemssystem som foreningen selv drifter — medlemsregister, fakturering, nettinnmelding, distriktsavdelinger og "Din side" for medlemmene.
-- [Medlem123](https://medlem123.no/): Samme medlemssystem som Regweb, men fullservice — Klopp AS håndterer selve medlemshenvendelsene (kontingent, betalingsstatus) på vegne av foreningen.
+- [Medlem123](https://medlem123.no/): Samme medlemssystem som Regweb, men fullservice — Klopp AS håndterer selve medlemshenvendelsene (kontingent, betalingsstatus) på vegne av foreningen. Foreningen håndterer fortsatt alt som gjelder organisasjonen for øvrig.
 - [Likepersonslogg](https://likepersonslogg.com/): Verktøy for å logge og rapportere frivillig likepersonsaktivitet, utviklet med Norilco, Brystkreftforeningen og Norsk Revmatikerforbund — brukes blant annet til rapportering til Bufdir.
+- [XReg](https://xreg.no/): Frittstående verktøykasse som kobler seg til foreningens eksisterende medlemssystem via API — blant annet brukt som Regwebs egen "Din side"-portal.
+
+## Hva er forskjellen på Regweb og Medlem123?
+
+Samme underliggende medlemssystem. Forskjellen er hvem som drifter det: med Regweb administrerer foreningen medlemsregisteret selv; med Medlem123 gjør Klopp AS det på foreningens vegne (kun medlemsrelaterte henvendelser — foreningen beholder ansvaret for alt annet).
+
+## Behandlingsansvar
+
+Klopp AS bygger og drifter systemene, men er databehandler — ikke behandlingsansvarlig — for medlems- og aktivitetsdata i Regweb, Medlem123 og Likepersonslogg. Det er foreningen som bruker tjenesten som er behandlingsansvarlig for sine egne medlemsdata, jf. GDPR artikkel 28. Se [personvernerklæringen](https://klopp.no/personvern.html) for detaljer.
 
 ## Om selskapet
 
