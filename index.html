@@ -266,6 +266,49 @@
                 justify-content: center;
             }
             @media (max-width: 767px) { .footer-grid-compact { grid-template-columns: 1fr; justify-content: normal; } }
+            .consent-banner {
+                position: fixed;
+                left: 0; right: 0; bottom: 0;
+                z-index: 999;
+                background: #1a1a1a;
+                color: #fff;
+                padding: var(--space-4) var(--space-5);
+                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+            }
+            .consent-banner[hidden] { display: none; }
+            .consent-banner-inner {
+                max-width: 1100px;
+                margin: 0 auto;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: var(--space-4);
+                justify-content: space-between;
+            }
+            .consent-banner-text { flex: 1 1 320px; font-size: 14px; line-height: 1.5; }
+            .consent-banner-text a { color: #8ecae6; }
+            .consent-banner-actions { flex: 0 0 auto; display: flex; gap: var(--space-3); }
+            .consent-btn-refuse {
+                background: transparent;
+                color: #fff;
+                border: 1px solid #fff;
+                border-radius: var(--radius-sm);
+                padding: var(--space-2) var(--space-4);
+                cursor: pointer;
+                font: inherit;
+                font-size: 14px;
+            }
+            .consent-btn-accept {
+                background: var(--accent-blue);
+                color: #fff;
+                border: none;
+                border-radius: var(--radius-sm);
+                padding: var(--space-2) var(--space-4);
+                cursor: pointer;
+                font: inherit;
+                font-size: 14px;
+                font-weight: 600;
+            }
         </style>
     </head>
     <body>
@@ -491,6 +534,17 @@
             </div>
         </footer>
 
+        <div class="consent-banner" id="klopp-consent-banner" hidden>
+            <div class="consent-banner-inner">
+                <span class="consent-banner-text">Vi bruker informasjonskapsler (cookies), inkludert Google Analytics for statistikk. Nettvesentlige cookies er alltid på, statistikkcookies kun etter samtykke. <a href="personvern.html">Les mer</a>.</span>
+                <span class="consent-banner-actions">
+                    <button type="button" id="klopp-consent-refuse" class="consent-btn-refuse">Avslå</button>
+                    <button type="button" id="klopp-consent-accept" class="consent-btn-accept">Godta</button>
+                </span>
+            </div>
+        </div>
+
         <script src="js/site.js"></script>
+        <script src="js/analytics.js"></script>
     </body>
 </html>
