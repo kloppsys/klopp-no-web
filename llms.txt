@@ -1,0 +1,17 @@
+# Klopp AS
+
+> Klopp AS er et norsk IT-selskap i Tønsberg (etablert 2011) som utvikler og drifter digitale medlems- og likepersonsløsninger for foreninger og bedrifter i Norge.
+
+Klopp AS bygger og drifter tre kjerneprodukter, i tillegg til å ta på seg skreddersydde utviklingsprosjekter (web, apper, AI-agenter).
+
+## Produkter
+
+- [Regweb](https://regweb.no/): Komplett medlemssystem som foreningen selv drifter — medlemsregister, fakturering, nettinnmelding, distriktsavdelinger og "Din side" for medlemmene.
+- [Medlem123](https://medlem123.no/): Samme medlemssystem som Regweb, men fullservice — Klopp AS håndterer selve medlemshenvendelsene (kontingent, betalingsstatus) på vegne av foreningen.
+- [Likepersonslogg](https://likepersonslogg.com/): Verktøy for å logge og rapportere frivillig likepersonsaktivitet, utviklet med Norilco, Brystkreftforeningen og Norsk Revmatikerforbund — brukes blant annet til rapportering til Bufdir.
+
+## Om selskapet
+
+- [Om oss](https://klopp.no/#tillit): Kunder inkluderer Aschehoug, Best Western, Telenor, Storebrand, Jernbaneverket, Owens Corning Pipe & Tank og Flowtite, i tillegg til frivillige organisasjoner.
+- [Kontakt](https://klopp.no/kontakt.html): Telefon, e-post og kontaktskjema.
+- [Personvernerklæring](https://klopp.no/personvern.html): Hvordan Klopp AS behandler personopplysninger.
