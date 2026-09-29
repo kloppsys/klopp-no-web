@@ -1,6 +1,18 @@
 (function () {
   "use strict";
 
+  // Korriger anker-navigasjon fra andre sider (f.eks. kontakt.html -> index.html#tillit).
+  // scroll-behavior: smooth på <html> kan kollidere med layout-endringer mens
+  // hero-bildet laster, og nettleserens innledende hopp til #anker treffer da
+  // aldri målet. Tving et øyeblikkelig (ikke smooth) hopp etter at ALT (inkl.
+  // bilder) er ferdig lastet, som eliminerer race-tilstanden.
+  if (location.hash) {
+    window.addEventListener("load", function () {
+      var target = document.querySelector(location.hash);
+      if (target) target.scrollIntoView({ behavior: "auto", block: "start" });
+    });
+  }
+
   var THEME_KEY = "klopp-theme";
   var ICON_MOON = '<svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor"><path d="M9.5 1.5a6.5 6.5 0 1 0 5 10.9A7 7 0 0 1 9.5 1.5Z"/></svg>';
   var ICON_SUN = '<svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor"><circle cx="8" cy="8" r="3.2"/><path d="M8 1.5a.75.75 0 0 1 .75.75v1.2a.75.75 0 0 1-1.5 0v-1.2A.75.75 0 0 1 8 1.5Zm0 10.9a.75.75 0 0 1 .75.75v1.2a.75.75 0 0 1-1.5 0v-1.2a.75.75 0 0 1 .75-.75ZM14.5 8a.75.75 0 0 1-.75.75h-1.2a.75.75 0 0 1 0-1.5h1.2A.75.75 0 0 1 14.5 8ZM3.45 8a.75.75 0 0 1-.75.75H1.5a.75.75 0 0 1 0-1.5h1.2A.75.75 0 0 1 3.45 8Zm8.97-4.42a.75.75 0 0 1 0 1.06l-.85.85a.75.75 0 1 1-1.06-1.06l.85-.85a.75.75 0 0 1 1.06 0ZM4.64 11.38a.75.75 0 0 1 0 1.06l-.85.85a.75.75 0 1 1-1.06-1.06l.85-.85a.75.75 0 0 1 1.06 0Zm7.78 1.91a.75.75 0 0 1-1.06 0l-.85-.85a.75.75 0 1 1 1.06-1.06l.85.85a.75.75 0 0 1 0 1.06ZM4.64 4.62a.75.75 0 0 1-1.06 0l-.85-.85a.75.75 0 1 1 1.06-1.06l.85.85a.75.75 0 0 1 0 1.06Z"/></svg>';
