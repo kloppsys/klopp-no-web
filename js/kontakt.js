@@ -41,6 +41,11 @@
             return;
         }
 
+        if (form.querySelector(".h-captcha") && !formData.get("h-captcha-response")) {
+            showStatus("error", "Fullfør captcha-sjekken før du sender skjemaet.");
+            return;
+        }
+
         var tjeneste = formData.get("tjeneste");
         formData.set("subject", tjeneste && tjeneste !== "Generelt" ? "Ny henvendelse: " + tjeneste + " — klopp.no" : "Ny henvendelse fra klopp.no");
 
