@@ -1,0 +1,1144 @@
+/* Font — Microsoft's own system-font stack from microsoft.com/nb-no, sampled live via getComputedStyle.
+   No self-hosted files needed: Windows users get real Segoe UI Variable for free, others fall back gracefully. */
+:root {
+  color-scheme: light dark;
+
+  --font-display: "Segoe UI Variable Text", "Segoe UI", segoeui, "Helvetica Neue", helvetica, arial, sans-serif;
+  --font-text: "Segoe UI Variable Text", "Segoe UI", segoeui, "Helvetica Neue", helvetica, arial, sans-serif;
+
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+  --space-9: 96px; --space-10: 128px;
+
+  /* radius-lg/full repurposed to Microsoft's own sampled values: 24px cards, 16px inner images, 8px buttons */
+  --radius-sm: 6px; --radius-md: 16px; --radius-lg: 24px; --radius-full: 8px;
+
+  --nav-height: 64px;
+  --container-max: 1160px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 120ms;
+  --duration-base: 300ms;
+  --duration-slow: 450ms;
+
+  /* "navy"/"cream" names kept for minimal-diff cascading — values now Microsoft's, not NBIM's */
+  --navy: #0e1726;
+  --navy-elevated: #14202f;
+  --cream: #ffffff;
+  --cream-alt: #dceef8;
+
+  --color-bg: var(--cream);
+  --color-bg-elevated: var(--cream-alt);
+  --color-text: var(--navy);
+  --color-text-secondary: rgba(14, 23, 38, 0.65);
+  --color-border: rgba(14, 23, 38, 0.12);
+  --shadow-color: rgba(0, 0, 0, 0.14);
+
+  /* Microsoft Blue #0078D4, sampled from the "Kjøp Microsoft 365" CTA on microsoft.com/nb-no */
+  --accent-blue: #0078d4;
+  --accent-blue-bright: #50a4e8;
+  --accent-text: var(--accent-blue);
+  --accent-red: #d6293e;
+
+  --navy-dark: #005a9e;
+  /* WCAG AA-safe accent for text on --color-bg-elevated (cream-alt): #0078d4 on #dceef8 is
+     only 3.80:1, below the 4.5:1 text minimum. #005a9e gives 5.96:1. */
+  --accent-text-strong: var(--navy-dark);
+
+  /* Fluent-style double-layer elevation shadow, sampled from <store-card-feature> */
+  --card-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.14);
+}
+
+/* microsoft.com/nb-no itself has no dark mode (color-scheme: normal) — these dark values are
+   our own reasonable Fluent-neutral extrapolation, not sampled, to keep the site's existing
+   light/dark toggle working. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg: #1b1a19;
+    --color-bg-elevated: #252423;
+    --color-text: #f3f2f1;
+    --color-text-secondary: rgba(255, 255, 255, 0.7);
+    --color-border: rgba(255, 255, 255, 0.16);
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --accent-text: var(--accent-blue-bright);
+    --accent-text-strong: var(--accent-blue-bright);
+    --card-shadow: 0 0 2px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+:root[data-theme="dark"] {
+  --color-bg: #1b1a19;
+  --color-bg-elevated: #252423;
+  --color-text: #f3f2f1;
+  --color-text-secondary: rgba(255, 255, 255, 0.7);
+  --color-border: rgba(255, 255, 255, 0.16);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --accent-text: var(--accent-blue-bright);
+  --accent-text-strong: var(--accent-blue-bright);
+  --card-shadow: 0 0 2px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+.icon { vertical-align: -0.125em; flex: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-text);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+a { color: var(--accent-text); }
+
+:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.btn:active, .service-card-link:active, .theme-toggle:active, .chip-link:active { transform: scale(0.97); }
+@media (prefers-reduced-motion: reduce) {
+  .btn:active, .service-card-link:active, .theme-toggle:active, .chip-link:active { transform: none; }
+}
+
+/* Chevron link — NBIM's recurring text-link-with-arrow pattern */
+.chevron-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+.chevron-link:hover { color: var(--accent-text); }
+.chevron-link .icon { flex: none; }
+
+.eyebrow-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+.eyebrow-dot .dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent-blue-bright);
+  flex: none;
+}
+
+/* Navbar — minimal, light, matches NBIM's restrained utility bar */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  min-height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+.navbar .container { display: flex; flex-wrap: wrap; row-gap: var(--space-2); align-items: center; justify-content: space-between; width: 100%; gap: var(--space-3); }
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.navbar-brand .brand-wordmark {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.navbar-brand .brand-name { font-size: 19px; }
+.navbar-brand .brand-underline {
+  display: block;
+  width: 100%;
+  height: 3px;
+  margin-top: 3px;
+  border-radius: 2px;
+  background: var(--accent-red);
+}
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  flex-shrink: 0;
+}
+.navbar-link {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.navbar-link:hover { color: var(--accent-text); }
+.navbar-link[aria-current="page"] {
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 640px) {
+  .navbar-actions { gap: var(--space-3); }
+}
+@media (max-width: 560px) {
+  .navbar-link-kampanjer { display: none; }
+}
+@media (max-width: 420px) {
+  .navbar-brand .brand-no { display: none; }
+}
+.navbar-brand .brand-no {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 4px;
+}
+.navbar-brand .brand-no-icon {
+  width: 33px; height: 24px;
+  border-radius: 4px;
+  overflow: hidden;
+  flex: none;
+  box-shadow: 0 0 0 1px rgba(14, 23, 38, 0.12);
+}
+.navbar-brand .brand-no-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.navbar-brand .brand-no-text { font-size: 14px; font-weight: 700; }
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  background: transparent;
+  color: var(--color-text);
+  /* Own border-color (not --color-border): needs >=3:1 against the bg as a UI component
+     boundary (WCAG 1.4.11) — --color-border's usual 0.12/0.16 opacity only gives ~1.3-1.7:1. */
+  border: 1px solid rgba(14, 23, 38, 0.5);
+  border-radius: 50%;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out);
+}
+:root[data-theme="dark"] .theme-toggle { border-color: rgba(255, 255, 255, 0.4); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle { border-color: rgba(255, 255, 255, 0.4); }
+}
+.theme-toggle:hover { background: var(--color-bg-elevated); }
+
+/* Hero — Microsoft's own "feature card" pattern (e.g. the Edge showcase on microsoft.com/nb-no):
+   a light page background with one big rounded two-column card, text left, photo right. No more
+   full-bleed dark photo + white overlay text — Microsoft's consumer site stays light throughout. */
+.masthead {
+  position: relative;
+  background: var(--color-bg);
+  padding: calc(var(--nav-height) + var(--space-7)) 0 var(--space-8);
+}
+.masthead-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  min-height: 460px;
+}
+.masthead-content {
+  padding: var(--space-8) var(--space-7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.masthead-media { position: relative; min-height: 320px; }
+.masthead-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.masthead-badges {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-2);
+}
+.masthead-badges .price-badge { margin-right: 0; box-shadow: var(--card-shadow); }
+.masthead-badges .discount-badge { padding: 4px var(--space-3); box-shadow: var(--card-shadow); }
+.masthead-badge-link { text-decoration: none; }
+@media (max-width: 900px) {
+  .masthead-card { grid-template-columns: 1fr; min-height: 0; }
+  /* Stacked layout is much wider than tall relative to the (near-square) source photo — a short
+     min-height here crops out his face entirely, leaving only hair. 320px keeps enough vertical
+     room that the face stays in frame at every width down to 375px. */
+  .masthead-media { min-height: 320px; order: -1; }
+  .masthead-content { padding: var(--space-6) var(--space-5); }
+}
+
+.masthead .eyebrow-dot { color: var(--accent-text-strong); }
+.masthead .eyebrow-dot .dot { background: var(--accent-blue); }
+.masthead-heading {
+  font-size: clamp(2.25rem, 3.5vw + 1rem, 3rem);
+  font-weight: 500;
+  color: var(--color-text);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-top: var(--space-4);
+}
+.masthead-subheading {
+  font-family: var(--font-text);
+  font-size: clamp(1.0625rem, 1vw + 0.9rem, 1.1875rem);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  margin: var(--space-4) 0 0;
+  line-height: 1.6;
+}
+
+/* Primary CTA — Microsoft Blue #0078D4, 8px radius, sampled from the "Kjøp Microsoft 365" button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-full);
+  background: var(--accent-blue);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
+}
+.btn:hover { background: var(--navy-dark); }
+.btn-light {
+  background: #ffffff;
+  color: var(--navy);
+}
+.btn-light:hover { background: var(--cream-alt); }
+
+.masthead-cta { display: flex; flex-wrap: wrap; gap: var(--space-4); margin-top: var(--space-6); }
+
+.page-section { padding: var(--space-8) 0; }
+@media (max-width: 767px) { .page-section { padding: var(--space-7) 0; } }
+.page-section-alt { background: var(--color-bg-elevated); }
+/* Two page-section-alt blocks in a row share the same background with no visual break,
+   so the full double padding reads as a dead gap rather than a section change. */
+.page-section-alt + .page-section-alt { padding-top: var(--space-4); }
+
+/* Two-column heading/body intro pattern */
+.intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  gap: var(--space-8);
+  align-items: start;
+}
+@media (max-width: 767px) { .intro-grid { grid-template-columns: 1fr; gap: var(--space-5); } }
+.intro-heading {
+  font-size: clamp(1.75rem, 2.5vw + 1rem, 2.5rem);
+}
+.intro-body p {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--color-text);
+  margin: 0 0 var(--space-4);
+}
+.intro-body p:last-of-type { margin-bottom: var(--space-5); }
+
+/* Teaser card grid — Fluent-style floating white cards, mirrors microsoft.com's <store-card-feature> tiles */
+.teaser-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+@media (max-width: 767px) { .teaser-grid { grid-template-columns: 1fr; } }
+.faq-list {
+  margin-top: var(--space-7);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.faq-list details { border-bottom: 1px solid var(--color-border); }
+.faq-list details:last-child { border-bottom: none; }
+.faq-list summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--color-text);
+  list-style: none;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after {
+  content: "";
+  flex: none;
+  width: 9px; height: 9px;
+  border-right: 2px solid var(--accent-blue);
+  border-bottom: 2px solid var(--accent-blue);
+  transform: rotate(45deg);
+  transition: transform 0.15s ease;
+}
+.faq-list details[open] summary::after { transform: rotate(-135deg); }
+.faq-list p {
+  margin: 0;
+  padding: 0 var(--space-6) var(--space-5);
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+}
+
+.campaign-banner {
+  scroll-margin-top: calc(var(--nav-height) + var(--space-5));
+  margin: var(--space-7) 0 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  background: var(--color-bg-elevated);
+}
+.campaign-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.teaser-card {
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+  text-decoration: none;
+  transition: transform var(--duration-base) var(--ease-out), box-shadow var(--duration-base) var(--ease-out);
+}
+.teaser-grid .teaser-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 12px 24px rgba(0, 0, 0, 0.16);
+}
+@media (prefers-reduced-motion: reduce) {
+  .teaser-card { transition: none; }
+  .teaser-card:hover { transform: none; }
+}
+.teaser-card-image {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+.teaser-card-image img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+.teaser-card:hover .teaser-card-image img { transform: scale(1.04); }
+.teaser-card-body { padding: var(--space-6); }
+
+/* Real product logo badges (exported from Canva), replacing the old generic line-icon boxes */
+.teaser-card-logo {
+  height: 32px;
+  width: auto;
+  display: block;
+  margin-bottom: var(--space-5);
+}
+
+.teaser-card-title { font-size: 22px; }
+.teaser-card-desc {
+  color: var(--color-text-secondary);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-top: var(--space-3);
+}
+.teaser-card .chevron-link { margin-top: var(--space-4); font-size: 15px; }
+
+/* Cards now provide their own separation/spacing, so the old <hr> divider between entries is hidden */
+hr.divider { display: none; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: var(--space-4);
+  z-index: 1000;
+  padding: var(--space-2) var(--space-4);
+  background: var(--accent-blue);
+  color: #ffffff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: top 150ms var(--ease-out);
+}
+.skip-link:focus { top: var(--space-2); }
+
+#tjenester { scroll-margin-top: calc(var(--nav-height) + var(--space-5)); }
+
+/* Full service detail entries — Fluent-style floating white cards, replaces the old plain-flow + <hr> layout */
+.service-entry {
+  scroll-margin-top: calc(var(--nav-height) + var(--space-5));
+  background: var(--color-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+  padding: var(--space-7) var(--space-6);
+  margin-bottom: var(--space-6);
+}
+@media (max-width: 767px) { .service-entry { padding: var(--space-5) var(--space-4); } }
+
+.service-card-eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+.service-entry-head {
+  margin-top: var(--space-2);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+.service-entry-title { font-size: 30px; }
+.service-entry-title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+.service-entry-title-logo {
+  height: 32px;
+  width: auto;
+  display: block;
+  border-radius: var(--radius-sm);
+}
+.service-entry-intro {
+  margin-top: var(--space-4);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--color-text);
+  max-width: 640px;
+}
+.service-entry-intro strong { font-weight: 600; }
+.service-entry-tagline {
+  display: block;
+  margin-top: var(--space-2);
+  font-size: 17px;
+  color: var(--color-text-secondary);
+}
+.discount-badge {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  margin-top: 4px;
+  padding: 7px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-red);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.service-entry-figure {
+  margin-top: var(--space-6);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  aspect-ratio: 16 / 9;
+}
+.service-entry-figure img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+.service-entry-figure:hover img { transform: scale(1.02); }
+
+.service-card-desc {
+  color: var(--color-text);
+  font-size: 17px;
+  line-height: 1.65;
+  margin-top: var(--space-5);
+}
+
+/* Trust strip — showcases named collaboration partners, mirrors microsoft.com/nb-no/customers'
+   customer-name badges (there shown as logos on case-study cards; here as named chips, since we
+   have no verified logo assets for these organizations to reuse). */
+.trust-strip { margin-top: var(--space-5); }
+.trust-strip-early {
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-6);
+  padding: var(--space-5);
+  background: rgba(0, 120, 212, 0.08);
+  border-left: 3px solid var(--accent-blue);
+  border-radius: var(--radius-md);
+}
+.trust-strip-early .trust-strip-sentence { margin-bottom: var(--space-4); }
+.trust-strip-sentence {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin: 0 0 var(--space-3);
+}
+.trust-strip-label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-3);
+}
+.trust-strip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+.trust-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-elevated);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.service-card-facts {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-5) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.service-card-facts li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: 15px;
+  color: var(--color-text);
+}
+.service-card-facts .icon { color: var(--accent-text); flex: none; margin-top: 0.2em; }
+
+.selling-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+@media (max-width: 640px) { .selling-points { grid-template-columns: 1fr; } }
+.selling-point {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+.selling-point.full { grid-column: 1 / -1; }
+.selling-point-num {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  font-weight: 700;
+}
+.selling-point h4 { font-size: 15px; margin: 0 0 2px; }
+.point-eyebrow {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  margin-bottom: 2px;
+}
+.selling-point p { font-size: 13px; color: var(--color-text-secondary); margin: 0; }
+.point-badge {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  border: 1.5px solid var(--color-text);
+  color: var(--color-text);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 0 7px;
+  border-radius: var(--radius-full);
+  margin: 0 1px;
+}
+
+.selling-point.bonus {
+  background: #fdeaec;
+}
+.selling-point.bonus .selling-point-num {
+  background: var(--accent-red);
+}
+.selling-point.bonus h4,
+.selling-point.bonus p,
+.selling-point.bonus .point-eyebrow {
+  color: #1a1a1a;
+}
+.selling-point.bonus .point-badge {
+  border-color: #1a1a1a;
+  color: #1a1a1a;
+}
+
+.subfeature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+.subfeature img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: top;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+.subfeature h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: var(--space-3) 0 var(--space-1);
+}
+.subfeature p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+@media (max-width: 767px) { .subfeature-grid { grid-template-columns: 1fr; } }
+
+.roles-block { margin-top: var(--space-6); }
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+.roles-grid .subfeature h5 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: var(--space-3) 0 var(--space-1);
+}
+.roles-grid .subfeature p { font-size: 13px; }
+@media (max-width: 767px) { .roles-grid { grid-template-columns: 1fr; } }
+.roles-block h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 var(--space-3);
+}
+.roles-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+}
+.roles-list > div + div { padding-top: var(--space-3); border-top: 1px solid var(--color-border); }
+.roles-list dt {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+.roles-list dt .roles-alias { font-weight: 400; color: var(--color-text-secondary); }
+.roles-list dd {
+  margin: var(--space-1) 0 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+}
+
+.service-card-price {
+  margin: var(--space-6) 0 0;
+  padding: var(--space-5) var(--space-6);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+.service-card-price p { margin: 0 0 var(--space-2); }
+.service-card-price p:last-child { margin-bottom: 0; }
+.price-headline strong {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+.price-badge {
+  display: inline-block;
+  margin-right: var(--space-2);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--accent-blue);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.price-was {
+  color: var(--color-text-secondary);
+  font-size: 15px;
+  text-decoration: line-through;
+  margin-right: var(--space-1);
+}
+.price-note { display: block; margin-top: 1px; font-size: 13px; }
+.price-fineprint { font-size: 12px; color: var(--color-text-secondary); margin-top: var(--space-3); }
+.price-example { margin-top: var(--space-4); }
+.price-example-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-3);
+}
+.price-example-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+@media (max-width: 560px) { .price-example-grid { grid-template-columns: 1fr; } }
+.price-example-case {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+.price-example-case h5 {
+  margin: 0 0 var(--space-2);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+.price-example-total {
+  margin: 0 0 var(--space-1);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums;
+}
+.price-example-sum {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+.price-table {
+  margin: var(--space-3) 0;
+  padding: var(--space-1) 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.price-table > div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+}
+.price-table > div + div { border-top: 1px solid var(--color-border); }
+.price-table dt { margin: 0; font-size: 13px; color: var(--color-text-secondary); }
+.price-note-inline { font-style: italic; }
+.price-table dd { margin: 0; font-size: 13px; font-weight: 600; color: var(--color-text); text-align: right; }
+
+.service-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-full);
+  background: var(--accent-blue);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background var(--duration-fast) var(--ease-out);
+}
+.service-card-link:hover { background: var(--navy-dark); }
+.service-card-link .icon { color: #ffffff; }
+:root[data-theme="dark"] .service-card-link { background: #ffffff; color: var(--navy); }
+:root[data-theme="dark"] .service-card-link .icon { color: var(--navy); }
+:root[data-theme="dark"] .service-card-link:hover { background: var(--cream-alt); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .service-card-link { background: #ffffff; color: var(--navy); }
+  :root:not([data-theme="light"]) .service-card-link .icon { color: var(--navy); }
+  :root:not([data-theme="light"]) .service-card-link:hover { background: var(--cream-alt); }
+}
+
+/* Photo + card-overlay section — mirrors NBIM's "Ansvarlig forvaltning" pattern */
+.photo-section { padding: var(--space-8) 0; background: var(--color-bg); }
+.photo-section-eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  margin: 0 0 var(--space-4);
+}
+.photo-section-intro {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--color-text);
+  max-width: 640px;
+  margin: 0 0 var(--space-5);
+}
+.photo-section-intro strong { font-weight: 600; }
+.photo-section-cta {
+  margin-top: var(--space-6);
+}
+.photo-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 2.3 / 1;
+  box-shadow: var(--card-shadow);
+}
+.photo-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.photo-card {
+  position: relative;
+  z-index: 1;
+  margin: var(--space-6);
+  padding: var(--space-7) var(--space-6);
+  background: var(--cream);
+  border-radius: var(--radius-md);
+  max-width: 420px;
+}
+.photo-card h2 { font-size: clamp(1.5rem, 2vw + 1rem, 2rem); color: var(--navy); }
+.photo-card p { color: rgba(0, 21, 56, 0.75); font-size: 16px; line-height: 1.65; margin: var(--space-4) 0 0; }
+.photo-card-facts {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-5) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.photo-card-facts li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: 15px;
+  color: var(--navy);
+}
+.photo-card-facts .icon { color: var(--accent-blue); flex: none; margin-top: 0.2em; }
+.photo-card .chevron-link { color: var(--navy); }
+.photo-card .chevron-link:hover { color: var(--accent-blue); }
+@media (max-width: 767px) {
+  .photo-card { margin: var(--space-4); max-width: none; }
+}
+
+/* Callout / about band, reused as a light card inside a section */
+.callout {
+  padding: var(--space-6);
+  background: var(--color-bg);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--radius-lg);
+}
+.callout p { margin: 0; font-size: 17px; line-height: 1.65; }
+.callout p strong { font-weight: 700; }
+
+/* Light blue-tint contact band — Microsoft's own pages stay light/white, never full-bleed dark */
+.contact-band {
+  background: var(--color-bg-elevated);
+  color: var(--color-text);
+  padding: var(--space-8) 0;
+  text-align: center;
+}
+.contact-band-heading {
+  font-size: clamp(1.75rem, 2.5vw + 1rem, 2.5rem);
+  color: var(--color-text);
+  max-width: 640px;
+  margin: 0 auto;
+}
+.contact-band-body {
+  color: var(--color-text-secondary);
+  font-size: 17px;
+  max-width: 560px;
+  margin: var(--space-4) auto 0;
+  line-height: 1.6;
+}
+.contact-band .btn { margin-top: var(--space-6); }
+.contact-band-direct {
+  margin: var(--space-4) 0 0;
+  font-size: 15px;
+  color: var(--color-text-secondary);
+}
+.contact-band-direct a { color: var(--accent-text-strong); text-decoration: underline; text-underline-offset: 3px; }
+.contact-band-sep { margin: 0 var(--space-1); color: var(--color-border); }
+
+/* Footer — Microsoft's own footer colors, sampled from microsoft.com/nb-no (#F2F2F2 bg, #616161 text,
+   11px legal bar). The medlem123.no-matched mauve version from r010 lives only on that branch. */
+.site-footer { background: #f2f2f2; color: #1d1d1f; text-align: center; padding: var(--space-8) 0; }
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: 0 auto var(--space-6);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #1d1d1f;
+}
+.footer-brand-wordmark { display: inline-flex; flex-direction: column; align-items: flex-start; }
+.footer-brand-name { font-size: 26px; }
+.footer-brand-underline {
+  display: block;
+  width: 100%;
+  height: 4px;
+  margin-top: 4px;
+  border-radius: 2px;
+  background: var(--accent-red);
+}
+.footer-brand-no { display: inline-flex; align-items: center; gap: 8px; }
+.footer-brand-no-icon {
+  width: 44px; height: 32px;
+  border-radius: 5px;
+  overflow: hidden;
+  flex: none;
+  box-shadow: 0 0 0 1px rgba(14, 23, 38, 0.12);
+}
+.footer-brand-no-icon svg { display: block; width: 100%; height: 100%; }
+.footer-brand-no-text { font-size: 19px; }
+.site-footer h3 {
+  font-family: var(--font-text);
+  font-size: 12px;
+  font-weight: 600;
+  color: #616161;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-3);
+}
+.site-footer p { margin: 0; font-size: 14px; color: #616161; line-height: 1.6; }
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  /* --accent-blue (#0078d4) on this bg is 4.05:1 — fails WCAG AA (4.5:1) for 14px text.
+     #0063b1 is Fluent UI's own "Blue Dark" token, 5.49:1 on #f2f2f2. */
+  color: #0063b1;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.site-footer a:hover { color: var(--navy-dark); }
+.footer-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-6); }
+@media (max-width: 900px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 767px) { .footer-grid { grid-template-columns: 1fr; } }
+
+/* Partner/member logos — Medlem av (NITO) og Partnere (Vipps, Mastercard), same content as regweb.no's footer */
+.partner-logo { max-height: 28px; width: auto; margin: 0 auto; }
+.partner-logo-row { display: flex; align-items: center; justify-content: center; gap: var(--space-4); }
+.copyright {
+  background: #f2f2f2;
+  color: #616161;
+  text-align: center;
+  padding: var(--space-4) var(--space-5);
+  font-size: 11px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+.copyright .container { padding-left: 0; padding-right: 0; }
+.copyright-link { display: inline-block; margin-top: var(--space-2); color: #0063b1; }
+.copyright-link:hover { color: var(--navy-dark); }
+
+/* Scroll reveal — progressive enhancement, JS-gated */
+.js-reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity var(--duration-slow) var(--ease-out), transform var(--duration-slow) var(--ease-out);
+}
+.js-reveal.is-visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal { opacity: 1; transform: none; transition: none; }
+}
+.theme-toggle-icon {
+  display: inline-flex;
+  transition: opacity var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
+}
+.theme-toggle-icon.is-swapping { opacity: 0; transform: rotate(-40deg) scale(0.8); }
