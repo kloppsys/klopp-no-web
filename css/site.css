@@ -231,6 +231,16 @@ a { color: var(--accent-text); }
   text-underline-offset: 4px;
 }
 
+/* Nav link that should stand out from the plain-text items — same brand red as the logo
+   underline/discount badges, not the cyan CTA color, so it doesn't compete with the buttons. */
+.navbar-link-highlight {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: var(--accent-red);
+  color: #ffffff;
+}
+.navbar-link-highlight:hover { background: #b81f31; color: #ffffff; }
+
 @media (max-width: 640px) {
   .navbar-actions { gap: var(--space-3); }
 }
