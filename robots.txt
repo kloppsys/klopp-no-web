@@ -42,4 +42,4 @@ User-agent: cohere-ai
 Allow: /
 
 Sitemap: https://klopp.no/sitemap.xml
-https://klopp.no/llms.txt
+# llms.txt: https://klopp.no/llms.txt
