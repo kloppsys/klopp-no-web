@@ -67,7 +67,10 @@
 
   var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!prefersReducedMotion && "IntersectionObserver" in window) {
-    var revealTargets = document.querySelectorAll(".callout, .service-entry, .teaser-card, .contact-band, .photo-frame");
+    // .contact-band deliberately excluded: its fixed dark-navy background briefly blends toward
+    // the white page behind it while .js-reveal fades opacity in, washing the section down to a
+    // pale gray mid-transition and making the cyan CTA button nearly invisible for a moment.
+    var revealTargets = document.querySelectorAll(".callout, .service-entry, .teaser-card, .photo-frame");
     var observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {

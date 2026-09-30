@@ -25,7 +25,9 @@
   --navy: #0e1726;
   --navy-elevated: #14202f;
   --cream: #ffffff;
-  --cream-alt: #dceef8;
+  /* One flat neutral surface for every alternating section, instead of a baby-blue tint that
+     made the page feel like it changed "outfit" on every scroll. */
+  --cream-alt: #f4f7fa;
 
   --color-bg: var(--cream);
   --color-bg-elevated: var(--cream-alt);
@@ -34,16 +36,21 @@
   --color-border: rgba(14, 23, 38, 0.12);
   --shadow-color: rgba(0, 0, 0, 0.14);
 
-  /* Microsoft Blue #0078D4, sampled from the "Kjøp Microsoft 365" CTA on microsoft.com/nb-no */
-  --accent-blue: #0078d4;
-  --accent-blue-bright: #50a4e8;
-  --accent-text: var(--accent-blue);
+  /* KLOPP logo cyan, sampled from Klopp_logo_ink_R_w600.png (#3fc3d5). Used raw for button fills
+     (paired with dark navy text, 8.53:1) and directly on dark surfaces (8.26:1) — but raw cyan
+     fails WCAG AA as TEXT on a light background (2.1:1), so --accent-text below is a darkened
+     variant of the same hue instead, never the raw value. */
+  --accent-blue: #3fc3d5;
+  --accent-blue-bright: #3fc3d5;
+  --accent-blue-hover: #35a5b5;
+  --accent-teal-text: #25757f;
+  --accent-text: var(--accent-teal-text);
   --accent-red: #d6293e;
 
-  --navy-dark: #005a9e;
-  /* WCAG AA-safe accent for text on --color-bg-elevated (cream-alt): #0078d4 on #dceef8 is
-     only 3.80:1, below the 4.5:1 text minimum. #005a9e gives 5.96:1. */
-  --accent-text-strong: var(--navy-dark);
+  /* Darker teal for link HOVER text (site-footer/copyright) — kept as a separate, darker step
+     from --accent-teal-text rather than reusing --accent-blue-hover (a button-surface color). */
+  --navy-dark: #1c575f;
+  --accent-text-strong: var(--accent-teal-text);
 
   /* Fluent-style double-layer elevation shadow, sampled from <store-card-feature> */
   --card-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.14);
@@ -349,7 +356,7 @@ a { color: var(--accent-text); }
   padding: var(--space-3) var(--space-5);
   border-radius: var(--radius-full);
   background: var(--accent-blue);
-  color: #ffffff;
+  color: var(--navy);
   text-decoration: none;
   font-weight: 600;
   font-size: 15px;
@@ -357,7 +364,7 @@ a { color: var(--accent-text); }
   cursor: pointer;
   transition: background var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
 }
-.btn:hover { background: var(--navy-dark); }
+.btn:hover { background: var(--accent-blue-hover); }
 .btn-light {
   background: #ffffff;
   color: var(--navy);
@@ -602,7 +609,7 @@ hr.divider { display: none; }
   z-index: 1000;
   padding: var(--space-2) var(--space-4);
   background: var(--accent-blue);
-  color: #ffffff;
+  color: var(--navy);
   border-radius: 6px;
   text-decoration: none;
   font-size: 14px;
@@ -710,7 +717,7 @@ hr.divider { display: none; }
   margin-top: var(--space-5);
   margin-bottom: var(--space-6);
   padding: var(--space-5);
-  background: rgba(0, 120, 212, 0.08);
+  background: rgba(63, 195, 213, 0.1);
   border-left: 3px solid var(--accent-blue);
   border-radius: var(--radius-md);
 }
@@ -784,7 +791,7 @@ hr.divider { display: none; }
   height: 32px;
   border-radius: 50%;
   background: var(--accent-blue);
-  color: #fff;
+  color: var(--navy);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -926,7 +933,7 @@ hr.divider { display: none; }
   padding: 2px var(--space-2);
   border-radius: var(--radius-sm);
   background: var(--accent-blue);
-  color: #ffffff;
+  color: var(--navy);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -1007,13 +1014,13 @@ hr.divider { display: none; }
   padding: var(--space-3) var(--space-5);
   border-radius: var(--radius-full);
   background: var(--accent-blue);
-  color: #ffffff;
+  color: var(--navy);
   text-decoration: none;
   font-weight: 600;
   font-size: 15px;
   transition: background var(--duration-fast) var(--ease-out);
 }
-.service-card-link:hover { background: var(--navy-dark); }
+.service-card-link:hover { background: var(--accent-blue-hover); }
 .service-card-link .icon { color: #ffffff; }
 :root[data-theme="dark"] .service-card-link { background: #ffffff; color: var(--navy); }
 :root[data-theme="dark"] .service-card-link .icon { color: var(--navy); }
@@ -1091,9 +1098,9 @@ hr.divider { display: none; }
   font-size: 15px;
   color: var(--navy);
 }
-.photo-card-facts .icon { color: var(--accent-blue); flex: none; margin-top: 0.2em; }
+.photo-card-facts .icon { color: var(--accent-text); flex: none; margin-top: 0.2em; }
 .photo-card .chevron-link { color: var(--navy); }
-.photo-card .chevron-link:hover { color: var(--accent-blue); }
+.photo-card .chevron-link:hover { color: var(--accent-text); }
 @media (max-width: 767px) {
   .photo-card { margin: var(--space-4); max-width: none; }
 }
@@ -1109,20 +1116,23 @@ hr.divider { display: none; }
 .callout p strong { font-weight: 700; }
 
 /* Light blue-tint contact band — Microsoft's own pages stay light/white, never full-bleed dark */
+/* Fixed dark navy, deliberately NOT theme-variable — same background as the footer right below it,
+   so the two form one uninterrupted stripe in both light and dark mode (no light/dark seam at the
+   very bottom of the page when the theme toggle is used). */
 .contact-band {
-  background: var(--color-bg-elevated);
-  color: var(--color-text);
+  background: var(--navy);
+  color: rgba(255, 255, 255, 0.85);
   padding: var(--space-8) 0;
   text-align: center;
 }
 .contact-band-heading {
   font-size: clamp(1.75rem, 2.5vw + 1rem, 2.5rem);
-  color: var(--color-text);
+  color: #ffffff;
   max-width: 640px;
   margin: 0 auto;
 }
 .contact-band-body {
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.75);
   font-size: 17px;
   max-width: 560px;
   margin: var(--space-4) auto 0;
@@ -1132,14 +1142,15 @@ hr.divider { display: none; }
 .contact-band-direct {
   margin: var(--space-4) 0 0;
   font-size: 15px;
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.75);
 }
-.contact-band-direct a { color: var(--accent-text-strong); text-decoration: underline; text-underline-offset: 3px; }
-.contact-band-sep { margin: 0 var(--space-1); color: var(--color-border); }
+.contact-band-direct a { color: var(--accent-blue-bright); text-decoration: underline; text-underline-offset: 3px; }
+.contact-band-sep { margin: 0 var(--space-1); color: rgba(255, 255, 255, 0.3); }
 
 /* Footer — Microsoft's own footer colors, sampled from microsoft.com/nb-no (#F2F2F2 bg, #616161 text,
    11px legal bar). The medlem123.no-matched mauve version from r010 lives only on that branch. */
-.site-footer { background: #f2f2f2; color: #1d1d1f; text-align: center; padding: var(--space-8) 0; }
+/* Same fixed --navy as .contact-band right above it — see that rule's comment. */
+.site-footer { background: var(--navy); color: rgba(255, 255, 255, 0.85); text-align: center; padding: var(--space-8) 0; }
 .footer-brand {
   display: inline-flex;
   align-items: center;
@@ -1148,7 +1159,7 @@ hr.divider { display: none; }
   font-family: var(--font-display);
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: #1d1d1f;
+  color: #ffffff;
 }
 .footer-brand-wordmark { display: inline-flex; flex-direction: column; align-items: flex-start; }
 .footer-brand-name { font-size: 26px; }
@@ -1174,23 +1185,22 @@ hr.divider { display: none; }
   font-family: var(--font-text);
   font-size: 12px;
   font-weight: 600;
-  color: #616161;
+  color: rgba(255, 255, 255, 0.55);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-bottom: var(--space-3);
 }
-.site-footer p { margin: 0; font-size: 14px; color: #616161; line-height: 1.6; }
+.site-footer p { margin: 0; font-size: 14px; color: rgba(255, 255, 255, 0.85); line-height: 1.6; }
 .site-footer a {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  /* --accent-blue (#0078d4) on this bg is 4.05:1 — fails WCAG AA (4.5:1) for 14px text.
-     #0063b1 is Fluent UI's own "Blue Dark" token, 5.49:1 on #f2f2f2. */
-  color: #0063b1;
+  /* Raw brand cyan reads fine here — this section is fixed dark navy, 8.26:1. */
+  color: var(--accent-blue-bright);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-.site-footer a:hover { color: var(--navy-dark); }
+.site-footer a:hover { color: #ffffff; }
 .footer-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-6); }
 @media (max-width: 900px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 767px) { .footer-grid { grid-template-columns: 1fr; } }
@@ -1199,16 +1209,16 @@ hr.divider { display: none; }
 .partner-logo { max-height: 28px; width: auto; margin: 0 auto; }
 .partner-logo-row { display: flex; align-items: center; justify-content: center; gap: var(--space-4); }
 .copyright {
-  background: #f2f2f2;
-  color: #616161;
+  background: var(--navy-elevated);
+  color: rgba(255, 255, 255, 0.55);
   text-align: center;
   padding: var(--space-4) var(--space-5);
   font-size: 11px;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 .copyright .container { padding-left: 0; padding-right: 0; }
-.copyright-link { display: inline-block; margin-top: var(--space-2); color: #0063b1; }
-.copyright-link:hover { color: var(--navy-dark); }
+.copyright-link { display: inline-block; margin-top: var(--space-2); color: var(--accent-blue-bright); }
+.copyright-link:hover { color: #ffffff; }
 
 /* Scroll reveal — progressive enhancement, JS-gated */
 .js-reveal {

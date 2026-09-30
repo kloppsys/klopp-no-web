@@ -211,33 +211,31 @@
                 display: grid;
                 grid-template-columns: repeat(3, minmax(0, 1fr));
                 gap: var(--space-5);
-                margin-top: var(--space-6);
-                margin-bottom: var(--space-4);
+                margin-top: var(--space-7);
             }
             @media (max-width: 900px) { .capability-grid { grid-template-columns: 1fr; } }
             .capability-card {
-                background: var(--lilac-bg);
-                border: 1px solid var(--lilac-border);
-                border-radius: var(--radius-lg);
-                box-shadow: var(--card-shadow);
-                padding: var(--space-6);
-                transition: transform var(--duration-base) var(--ease-out), box-shadow var(--duration-base) var(--ease-out);
+                display: flex;
+                gap: var(--space-3);
+                align-items: flex-start;
+                background: var(--color-bg-elevated);
+                border-radius: var(--radius-md);
+                padding: var(--space-4);
             }
-            .capability-card:hover { transform: translateY(-3px); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16); }
             .capability-icon {
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                width: 44px;
-                height: 44px;
+                flex: none;
+                width: 40px;
+                height: 40px;
                 border-radius: var(--radius-full);
-                background: var(--lilac-icon-bg);
-                color: var(--lilac-icon-color);
-                margin-bottom: var(--space-4);
+                background: rgba(63, 195, 213, 0.16);
+                color: var(--accent-text);
             }
-            .capability-icon svg { width: 20px; height: 20px; }
-            .capability-card h3 { font-size: 18px; margin: 0 0 var(--space-2); letter-spacing: -0.01em; overflow-wrap: break-word; hyphens: auto; }
-            .capability-card p { color: var(--color-text-secondary); line-height: 1.6; margin: 0; font-size: 15px; }
+            .capability-icon svg { width: 18px; height: 18px; }
+            .capability-card h3 { font-size: 17px; margin: 0 0 4px; letter-spacing: -0.01em; overflow-wrap: break-word; }
+            .capability-card p { color: var(--color-text-secondary); line-height: 1.55; margin: 0; font-size: 14px; }
             .client-list {
                 display: flex;
                 flex-wrap: wrap;
@@ -304,8 +302,8 @@
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                background: var(--lilac-bg);
-                border: 1px solid var(--lilac-border);
+                background: var(--color-bg-elevated);
+                border: 1px solid var(--color-border);
                 border-radius: var(--radius-md);
                 padding: var(--space-4);
                 text-decoration: none;
@@ -415,27 +413,33 @@
         <section class="page-section">
             <div class="container">
                 <div class="intro-grid">
-                    <h2 class="intro-heading">Mer enn medlemssystemer</h2>
+                    <h2 class="intro-heading">Hva vi bygger</h2>
                     <div class="intro-body">
                         <p class="lead-statement">Klopp AS er først og fremst et norsk IT-selskap som utvikler digitale løsninger for bedrifter og organisasjoner, fra idé og arkitektur til drift og videreutvikling.</p>
-                        <div class="capability-grid">
-                            <div class="capability-card">
-                                <span class="capability-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1.3"/><rect x="9" y="1" width="6" height="6" rx="1.3"/><rect x="1" y="9" width="6" height="6" rx="1.3"/><rect x="9" y="9" width="6" height="6" rx="1.3"/></svg></span>
-                                <h3>Webapplikasjoner og apper</h3>
-                                <p>Skreddersydde digitale produkter, bygget fra bunnen av — ikke ferdiglagde maler.</p>
-                            </div>
-                            <div class="capability-card">
-                                <span class="capability-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1c.4 2.6 1.2 4.2 2.6 5.1C11.7 6.7 13 7 14.5 7.3 13 7.6 11.7 7.9 10.6 8.6 9.2 9.5 8.4 11.1 8 13.7 7.6 11.1 6.8 9.5 5.4 8.6 4.3 7.9 3 7.6 1.5 7.3 3 7 4.3 6.7 5.4 6.1 6.8 5.2 7.6 3.6 8 1Z"/></svg></span>
-                                <h3>AI-agenter og automatisering</h3>
-                                <p>AI-agenter som automatiserer arbeidsflyt og fjerner manuelt, repeterende arbeid.</p>
-                            </div>
-                            <div class="capability-card">
-                                <span class="capability-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.3 14.7 5 8 8.7 1.3 5 8 1.3Z"/><path d="M1.3 7.6 8 11.3 14.7 7.6 14.7 9.3 8 13 1.3 9.3 1.3 7.6Z"/></svg></span>
-                                <h3>Integrasjoner og datalag</h3>
-                                <p>Integrasjoner mot eksisterende systemer, og solide datalag som binder alt sammen.</p>
-                            </div>
-                        </div>
                         <p>Vi leverer til både private virksomheter og offentlig sektor, innen blant annet datasystemer, logistikk, prosjektstyring, kurssystemer og gavekortløsninger.</p>
+                    </div>
+                </div>
+                <div class="capability-grid">
+                    <div class="capability-card">
+                        <span class="capability-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1.3"/><rect x="9" y="1" width="6" height="6" rx="1.3"/><rect x="1" y="9" width="6" height="6" rx="1.3"/><rect x="9" y="9" width="6" height="6" rx="1.3"/></svg></span>
+                        <div>
+                            <h3>Webapplikasjoner og apper</h3>
+                            <p>Skreddersydde digitale produkter, bygget fra bunnen av — ikke ferdiglagde maler.</p>
+                        </div>
+                    </div>
+                    <div class="capability-card">
+                        <span class="capability-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1c.4 2.6 1.2 4.2 2.6 5.1C11.7 6.7 13 7 14.5 7.3 13 7.6 11.7 7.9 10.6 8.6 9.2 9.5 8.4 11.1 8 13.7 7.6 11.1 6.8 9.5 5.4 8.6 4.3 7.9 3 7.6 1.5 7.3 3 7 4.3 6.7 5.4 6.1 6.8 5.2 7.6 3.6 8 1Z"/></svg></span>
+                        <div>
+                            <h3>AI-agenter og automatisering</h3>
+                            <p>AI-agenter som automatiserer arbeidsflyt og fjerner manuelt, repeterende arbeid.</p>
+                        </div>
+                    </div>
+                    <div class="capability-card">
+                        <span class="capability-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.3 14.7 5 8 8.7 1.3 5 8 1.3Z"/><path d="M1.3 7.6 8 11.3 14.7 7.6 14.7 9.3 8 13 1.3 9.3 1.3 7.6Z"/></svg></span>
+                        <div>
+                            <h3>Integrasjoner og datalag</h3>
+                            <p>Integrasjoner mot eksisterende systemer, og solide datalag som binder alt sammen.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -574,7 +578,7 @@
 
         <section class="contact-band" id="kontakt">
             <div class="container">
-                <h2 class="contact-band-heading">Vil du vite mer om Klopp AS?</h2>
+                <h2 class="contact-band-heading">Skal vi ta en prat?</h2>
                 <p class="contact-band-body">Ta kontakt for en uforpliktende prat om produktene våre, eller et nytt utviklingsprosjekt.</p>
                 <a class="btn" href="kontakt.html">Kontakt oss <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.5 2.75A.75.75 0 0 1 7.25 2H13a.75.75 0 0 1 .75.75v5.75a.75.75 0 0 1-1.5 0V4.56L4.28 12.53a.75.75 0 0 1-1.06-1.06L11.19 3.5H7.25a.75.75 0 0 1-.75-.75Z"/><path d="M2.75 4.5A.75.75 0 0 1 3.5 3.75h3a.75.75 0 0 1 0 1.5h-2.25v7h7V10a.75.75 0 0 1 1.5 0v3a.75.75 0 0 1-.75.75h-8.5a.75.75 0 0 1-.75-.75v-8.5Z"/></svg></a>
                 <p class="contact-band-direct">Eller ring <a href="tel:+4733312800">33 31 28 00</a> <span class="contact-band-sep">·</span> <a href="mailto:post@klopp.no">post@klopp.no</a></p>
