@@ -135,7 +135,7 @@
                 min-height: 0;
             }
             .masthead-media {
-                position: static;
+                position: relative;
                 min-height: 0;
                 order: -1;
             }
@@ -145,6 +145,21 @@
                 width: 100%;
                 height: auto;
                 object-fit: initial;
+            }
+            /* The photo itself is a bright white-walled office — fine in light mode, but jarring
+               dropped straight into a dark page. A flat dark tint (not a gradient, since the whole
+               frame needs it evenly) keeps it readable as "the same page" once dark mode is on. */
+            .masthead-media::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: transparent;
+                pointer-events: none;
+                transition: background var(--duration-base) var(--ease-out);
+            }
+            :root[data-theme="dark"] .masthead-media::after { background: rgba(0, 0, 0, 0.45); }
+            @media (prefers-color-scheme: dark) {
+                :root:not([data-theme="light"]) .masthead-media::after { background: rgba(0, 0, 0, 0.45); }
             }
             .masthead-content { order: 0; }
             .about-stats {
@@ -396,7 +411,7 @@
                     <div class="masthead-media">
                         <picture>
                             <source srcset="assets/img/klopp-front.webp" type="image/webp" />
-                            <img src="assets/img/klopp-front.jpg" alt="Klopp AS sitt kontor, med Regweb, Likepersonslogg og Medlem123 på veggen" width="1920" height="1080" fetchpriority="high" />
+                            <img src="assets/img/klopp-front.jpg" alt="Klopp AS sitt kontor, med plakat: Utvikling av webapplikasjoner, apper og AI-agenter — Regweb, Likepersonslogg og Medlem123 levert av Klopp AS" width="1920" height="1080" fetchpriority="high" />
                         </picture>
                     </div>
                 </div>
@@ -536,7 +551,7 @@
             </div>
         </section>
 
-        <section class="page-section page-section-alt">
+        <section class="page-section page-section-alt page-section-tight">
             <div class="container">
                 <div class="intro-grid">
                     <h2 class="intro-heading">Fakta om selskapet</h2>
@@ -557,7 +572,7 @@
             </div>
         </section>
 
-        <section class="page-section">
+        <section class="page-section page-section-tight">
             <div class="container">
                 <div class="intro-grid">
                     <h2 class="intro-heading">Partnere</h2>

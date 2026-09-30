@@ -379,6 +379,10 @@ a { color: var(--accent-text); }
 /* Two page-section-alt blocks in a row share the same background with no visual break,
    so the full double padding reads as a dead gap rather than a section change. */
 .page-section-alt + .page-section-alt { padding-top: var(--space-4); }
+/* For sections with only a heading + a few lines/logos (Fakta om selskapet, Partnere) — the full
+   64px top/bottom padding reads as dead air when there's this little content to justify it. */
+.page-section-tight { padding: var(--space-6) 0; }
+@media (max-width: 767px) { .page-section-tight { padding: var(--space-5) 0; } }
 
 /* Two-column heading/body intro pattern */
 .intro-grid {
@@ -1221,8 +1225,11 @@ hr.divider { display: none; }
 .copyright-link:hover { color: #ffffff; }
 
 /* Scroll reveal — progressive enhancement, JS-gated */
+/* Starts at 0.6, not 0 — a fast/flicked scroll can land an element mid-viewport before the
+   IntersectionObserver callback + transition finish, and a fully transparent starting state made
+   that moment read as "broken" (content briefly gone) rather than "still animating in". */
 .js-reveal {
-  opacity: 0;
+  opacity: 0.6;
   transform: translateY(12px);
   transition: opacity var(--duration-slow) var(--ease-out), transform var(--duration-slow) var(--ease-out);
 }
