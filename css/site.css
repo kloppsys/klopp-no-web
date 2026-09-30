@@ -498,17 +498,11 @@ a { color: var(--accent-text); }
   --card-bg: var(--orange-bg);
   --card-border: var(--orange-border);
   --card-accent: var(--orange-accent);
-  --card-button: var(--orange-button);
-  --card-button-hover: var(--orange-button-hover);
-  --card-button-text: var(--orange-button-text);
 }
 .teaser-card--purple {
   --card-bg: var(--lilac-bg);
   --card-border: var(--lilac-border);
   --card-accent: var(--lilac-icon-color);
-  --card-button-text: #ffffff;
-  --card-button: #5c4461;
-  --card-button-hover: #4a3750;
 }
 
 .teaser-card-badge {
@@ -579,10 +573,10 @@ a { color: var(--accent-text); }
   cursor: pointer;
   transition: background var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
 }
-.teaser-card-btn-primary { background: var(--card-button); color: var(--card-button-text); }
-.teaser-card-btn-primary:hover { background: var(--card-button-hover); }
+.teaser-card-btn-primary { background: var(--accent-blue); color: #ffffff; }
+.teaser-card-btn-primary:hover { background: var(--navy-dark); }
 .teaser-card-btn-secondary { background: transparent; border-color: var(--color-border); color: var(--color-text); }
-.teaser-card-btn-secondary:hover { border-color: var(--card-accent); color: var(--card-accent); }
+.teaser-card-btn-secondary:hover { border-color: var(--accent-blue); color: var(--accent-text); }
 
 /* Cards now provide their own separation/spacing, so the old <hr> divider between entries is hidden */
 hr.divider { display: none; }
