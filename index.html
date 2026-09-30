@@ -179,6 +179,13 @@
                 --lilac-border: rgba(187, 112, 169, 0.35);
                 --lilac-icon-bg: rgba(187, 112, 169, 0.18);
                 --lilac-icon-color: #5c4461;
+
+                /* Product-family orange (sampled from Regweb/Likepersonslogg logos, #ef8d30 / #f57a20) */
+                --orange-bg: #fdf3ea;
+                --orange-border: rgba(239, 141, 48, 0.35);
+                --orange-accent: #a76221;
+                --orange-button: #a76221;
+                --orange-button-hover: #8f541c;
             }
             @media (prefers-color-scheme: dark) {
                 :root:not([data-theme="light"]) {
@@ -186,6 +193,9 @@
                     --lilac-border: rgba(217, 168, 205, 0.3);
                     --lilac-icon-bg: rgba(217, 168, 205, 0.2);
                     --lilac-icon-color: #d9a8cd;
+                    --orange-bg: #3a2c1e;
+                    --orange-border: rgba(240, 184, 119, 0.3);
+                    --orange-accent: #f0b877;
                 }
             }
             :root[data-theme="dark"] {
@@ -193,6 +203,9 @@
                 --lilac-border: rgba(217, 168, 205, 0.3);
                 --lilac-icon-bg: rgba(217, 168, 205, 0.2);
                 --lilac-icon-color: #d9a8cd;
+                --orange-bg: #3a2c1e;
+                --orange-border: rgba(240, 184, 119, 0.3);
+                --orange-accent: #f0b877;
             }
             .capability-grid {
                 display: grid;
@@ -247,13 +260,6 @@
                 flex-wrap: wrap;
                 gap: var(--space-3);
                 margin-top: var(--space-5);
-            }
-            .teaser-card-links {
-                display: flex;
-                align-items: center;
-                flex-wrap: wrap;
-                gap: var(--space-2);
-                margin-top: var(--space-4);
             }
             .rating-chip {
                 display: inline-flex;
@@ -469,43 +475,55 @@
                     <h2 class="intro-heading">Produktene våre</h2>
                 </div>
                 <div class="teaser-grid">
-                    <div class="teaser-card">
+                    <div class="teaser-card teaser-card--orange">
                         <div class="teaser-card-image"><picture><source srcset="assets/img/products/regweb-visual.webp" type="image/webp" /><img src="assets/img/products/regweb-visual.jpg" alt="Skjermbilde av Regweb medlemssystem" loading="lazy" /></picture></div>
                         <div class="teaser-card-body">
-                            <img class="teaser-card-logo" src="assets/img/logos/regweb-logo.png" alt="Regweb" loading="lazy" />
+                            <span class="teaser-card-badge">Dere driver selv</span>
                             <h3 class="teaser-card-title">Regweb</h3>
-                            <p class="teaser-card-desc">Et komplett medlemssystem - enkelt og fleksibelt! Medlemsregister, betaling, nettinnmelding og kommunikasjon, samlet på ett sted.</p>
-                            <div class="teaser-card-links">
-                                <a class="chevron-link" href="https://regweb.no/" target="_blank" rel="noopener">Besøk regweb.no <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
-                                <span class="teaser-card-links-sep" aria-hidden="true">·</span>
-                                <a class="chevron-link" href="https://online.pubhtml5.com/ztui/nxlv/" target="_blank" rel="noopener">Se brosjyre <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
+                            <p class="teaser-card-desc">Medlemsregister, betaling og kommunikasjon i ett system.</p>
+                            <ul class="teaser-card-bullets">
+                                <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Vipps- og kortinnmelding</li>
+                                <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Norske servere og norsk support</li>
+                                <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> API for integrasjoner, bl.a. XReg</li>
+                            </ul>
+                            <div class="teaser-card-buttons">
+                                <a class="teaser-card-btn teaser-card-btn-primary" href="https://regweb.no/" target="_blank" rel="noopener">Besøk regweb.no</a>
+                                <a class="teaser-card-btn teaser-card-btn-secondary" href="https://online.pubhtml5.com/ztui/nxlv/" target="_blank" rel="noopener">Se brosjyre</a>
                             </div>
                         </div>
                     </div>
-                    <div class="teaser-card">
+                    <div class="teaser-card teaser-card--orange">
                         <div class="teaser-card-image"><picture><source srcset="assets/img/products/likepersonslogg-visual.webp" type="image/webp" /><img src="assets/img/products/likepersonslogg-visual.jpg" alt="Skjermbilde av Likepersonslogg" loading="lazy" /></picture></div>
                         <div class="teaser-card-body">
-                            <img class="teaser-card-logo" src="assets/img/logos/likepersonslogg-logo.png" alt="Likepersonslogg" loading="lazy" />
+                            <span class="teaser-card-badge">Bufdir-rapport</span>
                             <h3 class="teaser-card-title">Likepersonslogg</h3>
-                            <p class="teaser-card-desc">Digitalt verktøy for registrering og rapportering av likepersonsarbeid, med Bufdir-rapport.</p>
+                            <p class="teaser-card-desc">Registrer og rapporter likepersonsarbeid digitalt.</p>
+                            <ul class="teaser-card-bullets">
+                                <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Mobil, nettbrett og PC</li>
+                                <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Ubegrenset antall oppdrag</li>
+                                <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Rollestyring for hele organisasjonen</li>
+                            </ul>
                             <p class="teaser-card-note">Utviklet i samarbeid med Norilco, Brystkreftforeningen og Norsk Revmatikerforbund.</p>
-                            <div class="teaser-card-links">
-                                <a class="chevron-link" href="https://likepersonslogg.com/" target="_blank" rel="noopener">Besøk likepersonslogg.com <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
-                                <span class="teaser-card-links-sep" aria-hidden="true">·</span>
-                                <a class="chevron-link" href="https://online.pubhtml5.com/ztui/oupx/" target="_blank" rel="noopener">Se brosjyre <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
+                            <div class="teaser-card-buttons">
+                                <a class="teaser-card-btn teaser-card-btn-primary" href="https://likepersonslogg.com/" target="_blank" rel="noopener">Besøk likepersonslogg.com</a>
+                                <a class="teaser-card-btn teaser-card-btn-secondary" href="https://online.pubhtml5.com/ztui/oupx/" target="_blank" rel="noopener">Se brosjyre</a>
                             </div>
                         </div>
                     </div>
-                    <div class="teaser-card">
+                    <div class="teaser-card teaser-card--purple">
                         <div class="teaser-card-image"><picture><source srcset="assets/img/products/medlem123-visual.webp" type="image/webp" /><img src="assets/img/products/medlem123-visual.jpg" alt="Fullservice medlemsadministrasjon fra Klopp AS" style="object-position: center top;" loading="lazy" /></picture></div>
                         <div class="teaser-card-body">
-                            <img class="teaser-card-logo" src="assets/img/logos/medlem123-logo.png" alt="Medlem123" loading="lazy" />
+                            <span class="teaser-card-badge">Vi drifter for dere</span>
                             <h3 class="teaser-card-title">Medlem123</h3>
-                            <p class="teaser-card-desc">Vi drifter medlemsregisteret og kontingentinnkrevingen for dere — dere beholder oversikten over resten av organisasjonen.</p>
-                            <div class="teaser-card-links">
-                                <a class="chevron-link" href="https://medlem123.no/" target="_blank" rel="noopener">Besøk medlem123.no <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
-                                <span class="teaser-card-links-sep" aria-hidden="true">·</span>
-                                <a class="chevron-link" href="https://online.pubhtml5.com/ztui/eiov/" target="_blank" rel="noopener">Se brosjyre <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
+                            <p class="teaser-card-desc">Vi kjører register og kontingent — dere beholder oversikten.</p>
+                            <ul class="teaser-card-bullets">
+                                <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Kontingent og purring</li>
+                                <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Nettinnmelding med Vipps eller kort</li>
+                                <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Samme plattform som Regweb</li>
+                            </ul>
+                            <div class="teaser-card-buttons">
+                                <a class="teaser-card-btn teaser-card-btn-primary" href="https://medlem123.no/" target="_blank" rel="noopener">Besøk medlem123.no</a>
+                                <a class="teaser-card-btn teaser-card-btn-secondary" href="https://online.pubhtml5.com/ztui/eiov/" target="_blank" rel="noopener">Se brosjyre</a>
                             </div>
                         </div>
                     </div>

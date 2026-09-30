@@ -484,40 +484,103 @@ a { color: var(--accent-text); }
   transition: transform var(--duration-slow) var(--ease-out);
 }
 .teaser-card:hover .teaser-card-image img { transform: scale(1.04); }
-.teaser-card-body { padding: var(--space-3) var(--space-6) var(--space-6); }
-
-/* Real product logo badges (exported from Canva), replacing the old generic line-icon boxes */
-.teaser-card-logo {
-  height: 40px;
-  width: auto;
-  display: block;
-  margin: 0 auto var(--space-5);
+.teaser-card-body {
+  padding: var(--space-5) var(--space-6) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
-.teaser-card-title { font-size: 22px; text-align: center; }
+/* Product-family color scoping — each card sets --card-accent/--card-button/--card-bg/--card-border
+   from either the orange or lilac token pair, so the badge/bullets/buttons below only need to
+   reference the generic --card-* names once, never a color literal. */
+.teaser-card--orange {
+  --card-bg: var(--orange-bg);
+  --card-border: var(--orange-border);
+  --card-accent: var(--orange-accent);
+  --card-button: var(--orange-button);
+  --card-button-hover: var(--orange-button-hover);
+}
+.teaser-card--purple {
+  --card-bg: var(--lilac-bg);
+  --card-border: var(--lilac-border);
+  --card-accent: var(--lilac-icon-color);
+  --card-button: #5c4461;
+  --card-button-hover: #4a3750;
+}
+
+.teaser-card-badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 4px var(--space-3);
+  border-radius: 999px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--card-accent);
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: var(--space-3);
+}
+
+.teaser-card-title { font-size: 23px; margin-bottom: var(--space-2); }
 .teaser-card-desc {
-  display: table;
-  margin: var(--space-3) auto 0;
-  padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-md);
-  background: var(--lilac-bg);
-  border: 1px solid var(--lilac-border);
-  color: var(--lilac-icon-color);
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.5;
-  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 0;
 }
-.teaser-card .chevron-link { margin-top: 0; font-size: 15px; }
-.teaser-card-links-sep { color: var(--color-border); }
+
+.teaser-card-bullets {
+  list-style: none;
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.teaser-card-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: 14px;
+  color: var(--color-text);
+}
+.teaser-card-bullets .icon { color: var(--card-accent); flex: none; margin-top: 3px; }
+
 .teaser-card-note {
   display: block;
-  margin-top: var(--space-3);
+  margin: var(--space-3) 0 0;
   font-size: 13px;
   line-height: 1.5;
   color: var(--color-text-secondary);
-  text-align: center;
 }
+
+.teaser-card-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: auto;
+  padding-top: var(--space-5);
+}
+.teaser-card-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+.teaser-card-btn-primary { background: var(--card-button); color: #ffffff; }
+.teaser-card-btn-primary:hover { background: var(--card-button-hover); }
+.teaser-card-btn-secondary { background: transparent; border-color: var(--color-border); color: var(--color-text); }
+.teaser-card-btn-secondary:hover { border-color: var(--card-accent); color: var(--card-accent); }
 
 /* Cards now provide their own separation/spacing, so the old <hr> divider between entries is hidden */
 hr.divider { display: none; }
