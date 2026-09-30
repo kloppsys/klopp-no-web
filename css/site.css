@@ -1148,7 +1148,7 @@ hr.divider { display: none; }
   font-size: 15px;
   color: rgba(255, 255, 255, 0.75);
 }
-.contact-band-direct a { color: var(--accent-blue-bright); text-decoration: underline; text-underline-offset: 3px; }
+.contact-band-direct a { color: rgba(255, 255, 255, 0.92); text-decoration: underline; text-underline-offset: 3px; }
 .contact-band-sep { margin: 0 var(--space-1); color: rgba(255, 255, 255, 0.3); }
 
 /* Footer — Microsoft's own footer colors, sampled from microsoft.com/nb-no (#F2F2F2 bg, #616161 text,
@@ -1199,8 +1199,9 @@ hr.divider { display: none; }
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  /* Raw brand cyan reads fine here — this section is fixed dark navy, 8.26:1. */
-  color: var(--accent-blue-bright);
+  /* Near-white, not raw brand cyan — cyan-on-navy underlined links read poorly even though the
+     WCAG ratio is technically fine (~8.5:1); Richard flagged this by eye, not by contrast checker. */
+  color: rgba(255, 255, 255, 0.92);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -1221,7 +1222,7 @@ hr.divider { display: none; }
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 .copyright .container { padding-left: 0; padding-right: 0; }
-.copyright-link { display: inline-block; margin-top: var(--space-2); color: var(--accent-blue-bright); }
+.copyright-link { display: inline-block; margin-top: var(--space-2); color: rgba(255, 255, 255, 0.92); }
 .copyright-link:hover { color: #ffffff; }
 
 /* Scroll reveal — progressive enhancement, JS-gated */
