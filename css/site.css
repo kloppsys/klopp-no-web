@@ -575,6 +575,7 @@ a { color: var(--accent-text); }
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
+  width: 100%;
   padding: var(--space-3) var(--space-5);
   border-radius: var(--radius-full);
   font-weight: 600;
@@ -584,10 +585,9 @@ a { color: var(--accent-text); }
   cursor: pointer;
   transition: background var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
 }
-/* Softer, less saturated blue than the sitewide --accent-blue (#0078d4) — scoped to just this
-   button so the rest of the site's blue (hero CTA, links) is untouched. 5.2:1 / 6.87:1 vs white. */
-.teaser-card-btn-primary { background: #3d6fa8; color: #ffffff; }
-.teaser-card-btn-primary:hover { background: #345c8c; }
+/* Same cyan as .btn (hero/kontakt) — product-card primary CTA no longer uses its own isolated blue. */
+.teaser-card-btn-primary { background: var(--accent-blue); color: var(--navy); }
+.teaser-card-btn-primary:hover { background: var(--accent-blue-hover); }
 .teaser-card-btn-secondary { background: transparent; border-color: var(--color-border); color: var(--color-text); }
 .teaser-card-btn-secondary:hover { border-color: var(--accent-blue); color: var(--accent-text); }
 
