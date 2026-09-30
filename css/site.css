@@ -378,7 +378,7 @@ a { color: var(--accent-text); }
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
   gap: var(--space-8);
-  align-items: start;
+  align-items: baseline;
 }
 @media (max-width: 767px) { .intro-grid { grid-template-columns: 1fr; gap: var(--space-5); } }
 .intro-heading {
@@ -484,22 +484,29 @@ a { color: var(--accent-text); }
   transition: transform var(--duration-slow) var(--ease-out);
 }
 .teaser-card:hover .teaser-card-image img { transform: scale(1.04); }
-.teaser-card-body { padding: var(--space-6); }
+.teaser-card-body { padding: var(--space-3) var(--space-6) var(--space-6); }
 
 /* Real product logo badges (exported from Canva), replacing the old generic line-icon boxes */
 .teaser-card-logo {
-  height: 32px;
+  height: 40px;
   width: auto;
   display: block;
-  margin-bottom: var(--space-5);
+  margin: 0 auto var(--space-5);
 }
 
-.teaser-card-title { font-size: 22px; }
+.teaser-card-title { font-size: 22px; text-align: center; }
 .teaser-card-desc {
-  color: var(--color-text-secondary);
-  font-size: 15px;
-  line-height: 1.6;
-  margin-top: var(--space-3);
+  display: table;
+  margin: var(--space-3) auto 0;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--lilac-bg);
+  border: 1px solid var(--lilac-border);
+  color: var(--lilac-icon-color);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
 }
 .teaser-card .chevron-link { margin-top: var(--space-4); font-size: 15px; }
 
@@ -974,6 +981,12 @@ hr.divider { display: none; }
   overflow: hidden;
   aspect-ratio: 2.3 / 1;
   box-shadow: var(--card-shadow);
+}
+.photo-caption {
+  margin: var(--space-6) 0 0;
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--color-text);
 }
 .photo-frame img {
   position: absolute;
