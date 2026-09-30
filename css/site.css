@@ -244,8 +244,22 @@ a { color: var(--accent-text); }
 @media (max-width: 640px) {
   .navbar-actions { gap: var(--space-3); }
 }
+/* Phones: logo + theme toggle share the first row, the four links get their own row below.
+   display: contents lifts the links/toggle into the container's flex flow so they can be ordered;
+   the ::after spacer (flex-basis 100%) forces the line break between the two rows. */
 @media (max-width: 560px) {
-  .navbar-link-kampanjer { display: none; }
+  :root { --nav-height: 104px; }
+  .navbar { padding: var(--space-2) 0; }
+  .navbar .container { row-gap: var(--space-2); column-gap: var(--space-2); }
+  .navbar-actions { display: contents; }
+  .navbar .container::after { content: ""; flex-basis: 100%; order: 2; height: 0; }
+  .theme-toggle { order: 1; margin-left: auto; }
+  .navbar-link { order: 3; font-size: 14px; }
+  .navbar-link-highlight { padding: 5px 12px; }
+}
+@media (max-width: 360px) {
+  .navbar-link { font-size: 13px; }
+  .navbar-link-highlight { padding: 4px 10px; }
 }
 @media (max-width: 420px) {
   .navbar-brand .brand-no { display: none; }
@@ -401,7 +415,7 @@ a { color: var(--accent-text); }
   gap: var(--space-8);
   align-items: baseline;
 }
-@media (max-width: 767px) { .intro-grid { grid-template-columns: 1fr; gap: var(--space-5); } }
+@media (max-width: 767px) { .intro-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-5); } }
 .intro-heading {
   font-size: clamp(1.75rem, 2.5vw + 1rem, 2.5rem);
 }
@@ -1253,3 +1267,11 @@ hr.divider { display: none; }
   transition: opacity var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
 }
 .theme-toggle-icon.is-swapping { opacity: 0; transform: rotate(-40deg) scale(0.8); }
+
+/* hCaptcha renders a fixed 303px iframe — scale it down so it fits the smallest phones. */
+@media (max-width: 360px) {
+  .h-captcha { transform: scale(0.86); transform-origin: left top; height: 68px; }
+}
+
+/* Footer phone/e-mail links sit on their own lines — give them a >=24px tap target (WCAG 2.5.8). */
+.footer-grid a { min-height: 24px; }

@@ -306,6 +306,10 @@
                 border-bottom: 1px solid var(--color-border);
             }
             .fact-table th { width: 40%; color: var(--color-text-secondary); font-weight: 600; }
+            @media (max-width: 480px) {
+                .fact-table th, .fact-table td { padding: var(--space-2) var(--space-2); overflow-wrap: anywhere; }
+                .fact-table { font-size: 14px; }
+            }
             .partner-logo-fact { max-height: 36px; width: auto; display: block; }
             .partner-cards {
                 display: flex;
@@ -368,7 +372,7 @@
             }
             .consent-btn-accept {
                 background: var(--accent-blue);
-                color: #fff;
+                color: var(--navy);
                 border: none;
                 border-radius: var(--radius-sm);
                 padding: var(--space-2) var(--space-4);
@@ -383,7 +387,7 @@
         <a class="skip-link" href="#main">Hopp til innhold</a>
         <nav class="navbar">
             <div class="container">
-                <a class="navbar-brand" href="/"><picture><source srcset="assets/img/Klopp_logo_ink_R_w600.webp" type="image/webp" /><img src="assets/img/Klopp_logo_ink_R_w600.png" alt="Klopp AS" class="navbar-brand-logo" /></picture></a>
+                <a class="navbar-brand" href="/"><picture><source srcset="assets/img/Klopp_logo_ink_R_w600.webp" type="image/webp" /><img src="assets/img/Klopp_logo_ink_R_w600.png" alt="Klopp AS" class="navbar-brand-logo" width="600" height="138" /></picture></a>
                 <div class="navbar-actions">
                     <a class="navbar-link" href="#tillit">Om oss</a>
                     <a class="navbar-link" href="#produkter">Produkter</a>
@@ -411,8 +415,8 @@
                     </div>
                     <div class="masthead-media">
                         <picture>
-                            <source srcset="assets/img/klopp-front.webp" type="image/webp" />
-                            <img src="assets/img/klopp-front.jpg" alt="Klopp AS sitt kontor, med en illustrasjon på veggen som viser veien fra «Din idé» til «Ferdig utviklet system»" width="1920" height="1080" fetchpriority="high" />
+                            <source srcset="assets/img/klopp-front-800.webp 800w, assets/img/klopp-front-1200.webp 1200w, assets/img/klopp-front.webp 1920w" sizes="(max-width: 1160px) 100vw, 1112px" type="image/webp" />
+                            <img src="assets/img/klopp-front.jpg" srcset="assets/img/klopp-front-800.jpg 800w, assets/img/klopp-front-1200.jpg 1200w, assets/img/klopp-front.jpg 1920w" sizes="(max-width: 1160px) 100vw, 1112px" alt="Klopp AS sitt kontor, med en illustrasjon på veggen som viser veien fra «Din idé» til «Ferdig utviklet system»" width="1920" height="1080" fetchpriority="high" />
                         </picture>
                     </div>
                 </div>
@@ -421,7 +425,7 @@
                     <div class="about-stat"><span class="about-stat-value">2011</span><span class="about-stat-label">Etableringsår</span></div>
                     <div class="about-stat"><span class="about-stat-value">Kr. 0</span><span class="about-stat-label">Gjeld (2025)</span></div>
                     <div class="about-stat"><span class="about-stat-value">926/1000</span><span class="about-stat-label">Experian-rating, Gull</span></div>
-                    <div class="about-stat"><span class="about-stat-value">AAA</span><span class="about-stat-label">Bisnode-rating</span></div>
+                    <div class="about-stat"><span class="about-stat-value">AAA</span><span class="about-stat-label">Dun &amp; Bradstreet-rating</span></div>
                 </div>
             </div>
         </header>
@@ -472,7 +476,7 @@
                             <li>Best Western</li>
                             <li>Telenor</li>
                             <li>Storebrand</li>
-                            <li>Jernbaneverket</li>
+                            <li>Jernbaneverket (nå Bane NOR)</li>
                             <li>Owens Corning Pipe &amp; Tank</li>
                             <li>Flowtite</li>
                         </ul>
@@ -481,7 +485,7 @@
                 </div>
                 <div class="photo-frame" style="margin-top: var(--space-7);">
                     <picture>
-                        <source srcset="assets/img/photo-section-bg.webp" type="image/webp" />
+                        <source srcset="assets/img/photo-section-bg-800.webp 800w, assets/img/photo-section-bg-1200.webp 1200w, assets/img/photo-section-bg.webp 2000w" sizes="(max-width: 1160px) 100vw, 1112px" type="image/webp" />
                         <img src="assets/img/photo-section-bg.jpg" alt="Kontorpult hos Klopp AS med kaffekopp og permer for Regweb og Likepersonslogg" width="2000" height="776" loading="lazy" />
                     </picture>
                 </div>
@@ -496,13 +500,13 @@
                 </div>
                 <div class="teaser-grid">
                     <div class="teaser-card teaser-card--orange">
-                        <div class="teaser-card-image"><picture><source srcset="assets/img/products/regweb-visual.webp" type="image/webp" /><img src="assets/img/products/regweb-visual.jpg" alt="Skjermbilde av Regweb medlemssystem" loading="lazy" /></picture></div>
+                        <div class="teaser-card-image"><picture><source srcset="assets/img/products/regweb-visual-480.webp 480w, assets/img/products/regweb-visual.webp 800w" sizes="(max-width: 767px) 100vw, 380px" type="image/webp" /><img src="assets/img/products/regweb-visual.jpg" alt="Skjermbilde av Regweb medlemssystem" width="800" height="450" loading="lazy" /></picture></div>
                         <div class="teaser-card-body">
                             <span class="teaser-card-badge">Dere driver selv</span>
                             <h3 class="teaser-card-title">Regweb</h3>
                             <p class="teaser-card-desc">Medlemsregister, betaling og kommunikasjon i ett system.</p>
                             <ul class="teaser-card-bullets">
-                                <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> 100 % automatisk innmelding</li>
+                                <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Nettinnmelding med automatisk registrering</li>
                                 <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Norske servere og norsk support</li>
                                 <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> API for integrasjoner, bl.a. XReg</li>
                             </ul>
@@ -513,7 +517,7 @@
                         </div>
                     </div>
                     <div class="teaser-card teaser-card--orange">
-                        <div class="teaser-card-image"><picture><source srcset="assets/img/products/likepersonslogg-visual.webp" type="image/webp" /><img src="assets/img/products/likepersonslogg-visual.jpg" alt="Skjermbilde av Likepersonslogg" loading="lazy" /></picture></div>
+                        <div class="teaser-card-image"><picture><source srcset="assets/img/products/likepersonslogg-visual-480.webp 480w, assets/img/products/likepersonslogg-visual.webp 800w" sizes="(max-width: 767px) 100vw, 380px" type="image/webp" /><img src="assets/img/products/likepersonslogg-visual.jpg" alt="Skjermbilde av Likepersonslogg" width="800" height="450" loading="lazy" /></picture></div>
                         <div class="teaser-card-body">
                             <span class="teaser-card-badge">Bufdir-rapport</span>
                             <h3 class="teaser-card-title">Likepersonslogg</h3>
@@ -531,7 +535,7 @@
                         </div>
                     </div>
                     <div class="teaser-card teaser-card--purple">
-                        <div class="teaser-card-image"><picture><source srcset="assets/img/products/medlem123-visual.webp" type="image/webp" /><img src="assets/img/products/medlem123-visual.jpg" alt="Fullservice medlemsadministrasjon fra Klopp AS" style="object-position: center top;" loading="lazy" /></picture></div>
+                        <div class="teaser-card-image"><picture><source srcset="assets/img/products/medlem123-visual-480.webp 480w, assets/img/products/medlem123-visual.webp 800w" sizes="(max-width: 767px) 100vw, 380px" type="image/webp" /><img src="assets/img/products/medlem123-visual.jpg" alt="Fullservice medlemsadministrasjon fra Klopp AS" style="object-position: center top;" width="800" height="564" loading="lazy" /></picture></div>
                         <div class="teaser-card-body">
                             <span class="teaser-card-badge">Vi drifter for dere</span>
                             <h3 class="teaser-card-title">Medlem123</h3>
@@ -565,7 +569,7 @@
                                 <tr><th>Bransje</th><td>Dataprogrammering (NACE 62.100)</td></tr>
                                 <tr><th>Telefon</th><td><a href="tel:+4733312800">33 31 28 00</a></td></tr>
                                 <tr><th>E-post</th><td><a href="mailto:post@klopp.no">post@klopp.no</a></td></tr>
-                                <tr><th>Medlem av</th><td><a href="https://www.nito.no/" target="_blank" rel="noopener"><img src="assets/img/partners/nito_logo.png" alt="NITO" class="partner-logo-fact" /></a></td></tr>
+                                <tr><th>Medlem av</th><td><a href="https://www.nito.no/" target="_blank" rel="noopener"><img src="assets/img/partners/nito_logo.png" alt="NITO" class="partner-logo-fact" width="81" height="30" /></a></td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -583,11 +587,11 @@
                             <a class="partner-card" href="https://vipps.no/" target="_blank" rel="noopener">
                                 <picture>
                                     <source type="image/webp" srcset="assets/img/partners/vipps_logo.webp">
-                                    <img src="assets/img/partners/vipps_logo.png" alt="Vipps" />
+                                    <img src="assets/img/partners/vipps_logo.png" alt="Vipps" width="512" height="207" />
                                 </picture>
                             </a>
                             <a class="partner-card" href="https://www.mastercard.no/" target="_blank" rel="noopener">
-                                <img src="assets/img/partners/mastercard_logo_wordmark_dark.svg" alt="Mastercard" />
+                                <img src="assets/img/partners/mastercard_logo_wordmark_dark.svg" alt="Mastercard" width="999" height="776" />
                             </a>
                         </div>
                     </div>
@@ -607,7 +611,7 @@
 
         <footer class="site-footer">
             <div class="container">
-                <div class="footer-brand"><img src="assets/img/Klopp_logo_ink_R_w200.png" alt="Klopp AS" class="footer-brand-logo" /></div>
+                <div class="footer-brand"><img src="assets/img/Klopp_logo_ink_R_w200.png" alt="Klopp AS" class="footer-brand-logo" width="200" height="46" /></div>
                 <div class="footer-grid footer-grid-compact">
                     <div>
                         <h3>Telefon/e-post</h3>

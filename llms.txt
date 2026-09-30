@@ -23,6 +23,6 @@ Klopp AS bygger og drifter systemene, men er databehandler — ikke behandlingsa
 
 ## Om selskapet
 
-- [Om oss](https://klopp.no/#tillit): Kunder inkluderer Aschehoug, Best Western, Telenor, Storebrand, Jernbaneverket, Owens Corning Pipe & Tank og Flowtite, i tillegg til frivillige organisasjoner.
+- [Om oss](https://klopp.no/#tillit): Kunder inkluderer Aschehoug, Best Western, Telenor, Storebrand, Jernbaneverket (nå Bane NOR), Owens Corning Pipe & Tank og Flowtite, i tillegg til frivillige organisasjoner.
 - [Kontakt](https://klopp.no/kontakt.html): Telefon, e-post og kontaktskjema.
 - [Personvernerklæring](https://klopp.no/personvern.html): Hvordan Klopp AS behandler personopplysninger.
