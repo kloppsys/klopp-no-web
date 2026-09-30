@@ -184,8 +184,11 @@
                 --orange-bg: #fdf3ea;
                 --orange-border: rgba(239, 141, 48, 0.35);
                 --orange-accent: #a76221;
-                --orange-button: #a76221;
-                --orange-button-hover: #8f541c;
+                /* Button fill uses the real, vivid brand orange with dark text (7.45:1) rather than
+                   a darkened orange with white text (4.76:1) — same brand color, more vibrant. */
+                --orange-button: #ef8d30;
+                --orange-button-hover: #e07f1c;
+                --orange-button-text: #1a1310;
             }
             @media (prefers-color-scheme: dark) {
                 :root:not([data-theme="light"]) {
@@ -487,8 +490,8 @@
                                 <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> API for integrasjoner, bl.a. XReg</li>
                             </ul>
                             <div class="teaser-card-buttons">
-                                <a class="teaser-card-btn teaser-card-btn-primary" href="https://regweb.no/" target="_blank" rel="noopener">Besøk regweb.no</a>
-                                <a class="teaser-card-btn teaser-card-btn-secondary" href="https://online.pubhtml5.com/ztui/nxlv/" target="_blank" rel="noopener">Se brosjyre</a>
+                                <a class="teaser-card-btn teaser-card-btn-primary" href="https://regweb.no/" target="_blank" rel="noopener">Besøk regweb.no <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
+                                <a class="teaser-card-btn teaser-card-btn-secondary" href="https://online.pubhtml5.com/ztui/nxlv/" target="_blank" rel="noopener">Se brosjyre <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
                             </div>
                         </div>
                     </div>
@@ -505,8 +508,8 @@
                             </ul>
                             <p class="teaser-card-note">Utviklet i samarbeid med Norilco, Brystkreftforeningen og Norsk Revmatikerforbund.</p>
                             <div class="teaser-card-buttons">
-                                <a class="teaser-card-btn teaser-card-btn-primary" href="https://likepersonslogg.com/" target="_blank" rel="noopener">Besøk likepersonslogg.com</a>
-                                <a class="teaser-card-btn teaser-card-btn-secondary" href="https://online.pubhtml5.com/ztui/oupx/" target="_blank" rel="noopener">Se brosjyre</a>
+                                <a class="teaser-card-btn teaser-card-btn-primary" href="https://likepersonslogg.com/" target="_blank" rel="noopener">Besøk likepersonslogg.com <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
+                                <a class="teaser-card-btn teaser-card-btn-secondary" href="https://online.pubhtml5.com/ztui/oupx/" target="_blank" rel="noopener">Se brosjyre <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
                             </div>
                         </div>
                     </div>
@@ -522,8 +525,8 @@
                                 <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Samme plattform som Regweb</li>
                             </ul>
                             <div class="teaser-card-buttons">
-                                <a class="teaser-card-btn teaser-card-btn-primary" href="https://medlem123.no/" target="_blank" rel="noopener">Besøk medlem123.no</a>
-                                <a class="teaser-card-btn teaser-card-btn-secondary" href="https://online.pubhtml5.com/ztui/eiov/" target="_blank" rel="noopener">Se brosjyre</a>
+                                <a class="teaser-card-btn teaser-card-btn-primary" href="https://medlem123.no/" target="_blank" rel="noopener">Besøk medlem123.no <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
+                                <a class="teaser-card-btn teaser-card-btn-secondary" href="https://online.pubhtml5.com/ztui/eiov/" target="_blank" rel="noopener">Se brosjyre <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
                             </div>
                         </div>
                     </div>

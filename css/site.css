@@ -500,11 +500,13 @@ a { color: var(--accent-text); }
   --card-accent: var(--orange-accent);
   --card-button: var(--orange-button);
   --card-button-hover: var(--orange-button-hover);
+  --card-button-text: var(--orange-button-text);
 }
 .teaser-card--purple {
   --card-bg: var(--lilac-bg);
   --card-border: var(--lilac-border);
   --card-accent: var(--lilac-icon-color);
+  --card-button-text: #ffffff;
   --card-button: #5c4461;
   --card-button-hover: #4a3750;
 }
@@ -577,7 +579,7 @@ a { color: var(--accent-text); }
   cursor: pointer;
   transition: background var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
 }
-.teaser-card-btn-primary { background: var(--card-button); color: #ffffff; }
+.teaser-card-btn-primary { background: var(--card-button); color: var(--card-button-text); }
 .teaser-card-btn-primary:hover { background: var(--card-button-hover); }
 .teaser-card-btn-secondary { background: transparent; border-color: var(--color-border); color: var(--color-text); }
 .teaser-card-btn-secondary:hover { border-color: var(--card-accent); color: var(--card-accent); }
