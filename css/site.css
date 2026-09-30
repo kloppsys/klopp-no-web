@@ -508,7 +508,16 @@ a { color: var(--accent-text); }
   line-height: 1.5;
   text-align: center;
 }
-.teaser-card .chevron-link { margin-top: var(--space-4); font-size: 15px; }
+.teaser-card .chevron-link { margin-top: 0; font-size: 15px; }
+.teaser-card-links-sep { color: var(--color-border); }
+.teaser-card-note {
+  display: block;
+  margin-top: var(--space-3);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
 
 /* Cards now provide their own separation/spacing, so the old <hr> divider between entries is hidden */
 hr.divider { display: none; }
