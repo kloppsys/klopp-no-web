@@ -369,6 +369,7 @@ a { color: var(--accent-text); }
   font-weight: 400;
   color: var(--color-text-secondary);
   margin: var(--space-4) 0 0;
+  max-width: 62ch;
   line-height: 1.6;
 }
 
@@ -746,7 +747,7 @@ hr.divider { display: none; }
   margin-bottom: var(--space-6);
   padding: var(--space-5);
   background: rgba(63, 195, 213, 0.1);
-  border-left: 3px solid var(--accent-blue);
+  border: 1px solid var(--accent-blue);
   border-radius: var(--radius-md);
 }
 .trust-strip-early .trust-strip-sentence { margin-bottom: var(--space-4); }
@@ -1089,6 +1090,7 @@ hr.divider { display: none; }
 }
 .photo-caption {
   margin: var(--space-6) 0 0;
+  max-width: 72ch;
   font-size: 18px;
   line-height: 1.65;
   color: var(--color-text);
