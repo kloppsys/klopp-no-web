@@ -12,6 +12,7 @@ Klopp AS bygger og drifter tre kjerneprodukter og ett tilleggsverktøy, i tilleg
 - [Medlem123](https://medlem123.no/): Samme medlemssystem som Regweb, men fullservice — Klopp AS håndterer selve medlemshenvendelsene (kontingent, betalingsstatus) på vegne av foreningen. Foreningen håndterer fortsatt alt som gjelder organisasjonen for øvrig.
 - [Likepersonslogg](https://likepersonslogg.com/): Verktøy for å logge og rapportere frivillig likepersonsaktivitet, utviklet med Norilco, Brystkreftforeningen og Norsk Revmatikerforbund — brukes blant annet til rapportering til Bufdir.
 - [XReg](https://xreg.no/): Frittstående verktøykasse som kobler seg til foreningens eksisterende medlemssystem via API — blant annet brukt som Regwebs egen "Din side"-portal.
+- [Medlemssystem.no](https://medlemssystem.no/): Samlet oversikt og kampanjer for Regweb, Medlem123 og Likepersonslogg.
 
 ## Hva er forskjellen på Regweb og Medlem123?
 
@@ -24,5 +25,6 @@ Klopp AS bygger og drifter systemene, men er databehandler — ikke behandlingsa
 ## Om selskapet
 
 - [Om oss](https://klopp.no/#tillit): Kunder inkluderer Aschehoug, Best Western, Telenor, Storebrand, Jernbaneverket (nå Bane NOR), Owens Corning Pipe & Tank og Flowtite, i tillegg til frivillige organisasjoner.
+- [Om Klopp AS på medlemssystem.no](https://medlemssystem.no/om-klopp-as.html): Fakta om selskapet (org.nr., adresse, NITO-medlem, partnere) sett fra produktsiden.
 - [Kontakt](https://klopp.no/kontakt.html): Telefon, e-post og kontaktskjema.
 - [Personvernerklæring](https://klopp.no/personvern.html): Hvordan Klopp AS behandler personopplysninger.
