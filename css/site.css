@@ -240,6 +240,7 @@ a { color: var(--accent-text); }
   color: #ffffff;
 }
 .navbar-link-highlight:hover { background: #b81f31; color: #ffffff; }
+.navbar-link .icon { margin-left: 0.2em; font-size: 0.85em; }
 
 @media (max-width: 640px) {
   .navbar-actions { gap: var(--space-3); }
