@@ -164,33 +164,7 @@
                 :root:not([data-theme="light"]) .masthead-media::after { background: rgba(0, 0, 0, 0.45); }
             }
             .masthead-content { order: 0; }
-            .about-stats {
-                display: grid;
-                grid-template-columns: repeat(4, minmax(0, 1fr));
-                gap: var(--space-5);
-                margin-top: var(--space-6);
-            }
-            @media (max-width: 900px) { .about-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-            .about-stat {
-                background: var(--color-bg-elevated);
-                border: 1px solid var(--color-border);
-                border-radius: var(--radius-md);
-                padding: var(--space-5) var(--space-4);
-                text-align: center;
-            }
-            .about-stat-value {
-                display: block;
-                font-size: clamp(1.5rem, 1.5vw + 1rem, 2rem);
-                font-weight: 600;
-                letter-spacing: -0.01em;
-                color: var(--color-text);
-            }
-            .about-stat-label {
-                display: block;
-                margin-top: var(--space-1);
-                font-size: 13px;
-                color: var(--color-text-secondary);
-            }
+            .fact-table .fact-group th { width: auto; padding-top: var(--space-6); color: var(--color-text); font-size: 17px; border-bottom: 2px solid var(--color-border); }
             :root {
                 --lilac-bg: #f7eef5;
                 --lilac-border: rgba(187, 112, 169, 0.35);
@@ -541,28 +515,28 @@
                     <div class="intro-body">
                         <table class="fact-table">
                             <tbody>
+                                <tr class="fact-group"><th colspan="2">Generelt</th></tr>
                                 <tr><th>Organisasjonsnummer</th><td>996 385 272 MVA</td></tr>
                                 <tr><th>Etablert</th><td>2011</td></tr>
                                 <tr><th>Adresse</th><td>Farmannsveien 48, 3125 Tønsberg</td></tr>
                                 <tr><th>Bransje</th><td>Dataprogrammering (NACE 62.100)</td></tr>
                                 <tr><th>Telefon</th><td><a href="tel:+4733312800">33 31 28 00</a></td></tr>
                                 <tr><th>E-post</th><td><a href="mailto:post@klopp.no">post@klopp.no</a></td></tr>
-                                                                <tr><th>Partnere</th><td>
+                                <tr><th>Medlem av</th><td><a href="https://www.nito.no/" target="_blank" rel="noopener"><img src="assets/img/partners/nito_logo.png" alt="NITO" class="partner-logo-fact" width="81" height="30" /></a></td></tr>
+                                <tr class="fact-group"><th colspan="2">Partnere</th></tr>
+                                <tr><th>Utviklingspartner</th><td>
                                     <div class="partner-logos-fact">
                                         <a href="https://vipps.no/" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="assets/img/partners/vipps_logo_tight.webp"><img src="assets/img/partners/vipps_logo_tight.png" alt="" width="374" height="95" /></picture><span>Vipps</span></a>
                                         <a href="https://www.mastercard.no/" target="_blank" rel="noopener"><img src="assets/img/partners/mastercard_symbol.svg" alt="" width="999" height="618" /><span>Mastercard</span></a>
                                     </div>
                                 </td></tr>
-                                <tr><th>Medlem av</th><td><a href="https://www.nito.no/" target="_blank" rel="noopener"><img src="assets/img/partners/nito_logo.png" alt="NITO" class="partner-logo-fact" width="81" height="30" /></a></td></tr>
+                                <tr class="fact-group"><th colspan="2">Økonomi</th></tr>
+                                <tr><th>Gjeld (2025)</th><td>Kr. 0</td></tr>
+                                <tr><th>Experian-rating</th><td>Gull (926/1000)</td></tr>
+                                <tr><th>Dun &amp; Bradstreet-rating</th><td>AAA</td></tr>
                             </tbody>
                         </table>
                     </div>
-                </div>
-                <div class="about-stats">
-                    <div class="about-stat"><span class="about-stat-value">2011</span><span class="about-stat-label">Etableringsår</span></div>
-                    <div class="about-stat"><span class="about-stat-value">Kr. 0</span><span class="about-stat-label">Gjeld (2025)</span></div>
-                    <div class="about-stat"><span class="about-stat-value">926/1000</span><span class="about-stat-label">Experian-rating, Gull</span></div>
-                    <div class="about-stat"><span class="about-stat-value">AAA</span><span class="about-stat-label">Dun &amp; Bradstreet-rating</span></div>
                 </div>
             </div>
         </section>
