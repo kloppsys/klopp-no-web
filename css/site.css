@@ -1251,9 +1251,10 @@ hr.divider { display: none; }
   color: rgba(255, 255, 255, 0.55);
   text-align: center;
   padding: var(--space-4) var(--space-5);
-  font-size: 11px;
+  font-size: 12px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+.copyright a { display: inline-block; padding: 4px 2px; min-height: 24px; }
 .copyright .container { padding-left: 0; padding-right: 0; }
 .copyright-link { display: inline-block; margin-top: var(--space-2); color: rgba(255, 255, 255, 0.92); }
 .copyright-link:hover { color: #ffffff; }

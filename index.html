@@ -209,7 +209,8 @@
             .faq-klopp h3 { font-size: 19px; font-weight: 600; margin: var(--space-5) 0 var(--space-2); color: var(--color-text); }
             .faq-klopp h3:first-child { margin-top: 0; }
             .faq-klopp p { font-size: 16px; color: var(--color-text-secondary); margin: 0 0 var(--space-4); max-width: 68ch; }
-            .fact-table .fact-group th { width: auto; padding-top: var(--space-6); color: var(--color-text); font-size: 17px; border-bottom: 2px solid var(--color-border); }
+            .fact-table .fact-group td { border-bottom: 2px solid var(--color-border); }
+            .fact-table .fact-group th {  padding-top: var(--space-6); color: var(--color-text); font-size: 17px; border-bottom: 2px solid var(--color-border); }
             :root {
                 --lilac-bg: #f7eef5;
                 --lilac-border: rgba(187, 112, 169, 0.35);
@@ -333,7 +334,7 @@
             }
             .partner-logo-fact { max-height: 36px; width: auto; display: block; }
             .partner-logos-fact { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-5); }
-            .partner-logos-fact a { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--color-text); font-weight: 600; font-size: 14px; text-decoration: none; white-space: nowrap; transition: opacity var(--duration-base) var(--ease-out); }
+            .partner-logos-fact a { display: inline-flex; min-height: 28px; align-items: center; gap: var(--space-2); color: var(--color-text); font-weight: 600; font-size: 14px; text-decoration: none; white-space: nowrap; transition: opacity var(--duration-base) var(--ease-out); }
             .partner-logos-fact a:hover { opacity: 0.7; }
             .partner-logos-fact img { height: 20px; width: auto; display: block; }
             .partner-logos-fact a:nth-child(2) img { height: 26px; }
@@ -525,10 +526,10 @@
                             <p class="teaser-card-desc">Registrer og rapporter likepersonsarbeid digitalt.</p>
                             <ul class="teaser-card-bullets">
                                 <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Mobil, nettbrett og PC</li>
-                                <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Vipps innlogging</li>
+                                <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Vipps-innlogging</li>
                                 <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Rollestyring for hele organisasjonen</li>
                             </ul>
-                            <p class="teaser-card-note">Utviklet i samarbeid med Norsk Revmatikerforbund, Brystkreftforeningen og NORILCO.</p>
+                            <p class="teaser-card-note">Utviklet i samarbeid med Norsk Revmatikerforbund, Brystkreftforeningen og Norilco.</p>
                             <div class="teaser-card-buttons">
                                 <a class="teaser-card-btn teaser-card-btn-primary" href="https://likepersonslogg.com/" target="_blank" rel="noopener">Besøk likepersonslogg.com <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
                                 <a class="teaser-card-btn teaser-card-btn-secondary" href="https://online.pubhtml5.com/ztui/oupx/" target="_blank" rel="noopener">Se brosjyre <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
@@ -568,7 +569,7 @@
                     <div class="intro-body">
                         <table class="fact-table">
                             <tbody>
-                                <tr class="fact-group"><th colspan="2">Generelt</th></tr>
+                                <tr class="fact-group"><th scope="rowgroup">Generelt</th><td></td></tr>
                                 <tr><th>Organisasjonsnummer</th><td>996 385 272 MVA</td></tr>
                                 <tr><th>Etablert</th><td>2011</td></tr>
                                 <tr><th>Adresse</th><td>Farmannsveien 48, 3125 Tønsberg</td></tr>
@@ -576,14 +577,14 @@
                                 <tr><th>Telefon</th><td><a href="tel:+4733312800">33 31 28 00</a></td></tr>
                                 <tr><th>E-post</th><td><a href="mailto:post@klopp.no">post@klopp.no</a></td></tr>
                                 <tr><th>Medlem av</th><td><a href="https://www.nito.no/" target="_blank" rel="noopener"><img src="assets/img/partners/nito_logo.png" alt="NITO" class="partner-logo-fact" width="81" height="30" /></a></td></tr>
-                                <tr class="fact-group"><th colspan="2">Partnere</th></tr>
+                                <tr class="fact-group"><th scope="rowgroup">Partnere</th><td></td></tr>
                                 <tr><th>Utviklingspartner</th><td>
                                     <div class="partner-logos-fact">
                                         <a href="https://vipps.no/" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="assets/img/partners/vipps_logo_tight.webp"><img src="assets/img/partners/vipps_logo_tight.png" alt="" width="374" height="95" /></picture><span>Vipps</span></a>
                                         <a href="https://www.mastercard.no/" target="_blank" rel="noopener"><img src="assets/img/partners/mastercard_symbol.svg" alt="" width="999" height="618" /><span>Mastercard</span></a>
                                     </div>
                                 </td></tr>
-                                <tr class="fact-group"><th colspan="2">Økonomi</th></tr>
+                                <tr class="fact-group"><th scope="rowgroup">Økonomi</th><td></td></tr>
                                 <tr><th>Gjeld (2025)</th><td>Kr. 0</td></tr>
                                 <tr><th>Experian-rating</th><td>Gull (926/1000)</td></tr>
                                 <tr><th>Dun &amp; Bradstreet-rating</th><td>AAA</td></tr>
@@ -645,7 +646,7 @@
 
         <div class="consent-banner" id="klopp-consent-banner" hidden>
             <div class="consent-banner-inner">
-                <span class="consent-banner-text">Vi bruker informasjonskapsler (cookies), inkludert Google Analytics for statistikk. Nettvesentlige cookies er alltid på, statistikkcookies kun etter samtykke. <a href="personvern.html">Les mer</a>.</span>
+                <span class="consent-banner-text">Vi bruker informasjonskapsler (cookies), inkludert Google Analytics for statistikk. Nødvendige cookies er alltid på, statistikkcookies kun etter samtykke. <a href="personvern.html">Les mer</a>.</span>
                 <span class="consent-banner-actions">
                     <button type="button" id="klopp-consent-refuse" class="consent-btn-refuse">Avslå</button>
                     <button type="button" id="klopp-consent-accept" class="consent-btn-accept">Godta</button>
