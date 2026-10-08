@@ -311,26 +311,11 @@
                 .fact-table { font-size: 14px; }
             }
             .partner-logo-fact { max-height: 36px; width: auto; display: block; }
-            .partner-cards {
-                display: flex;
-                flex-wrap: wrap;
-                gap: var(--space-4);
-                margin-top: var(--space-6);
-            }
-            .partner-card {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                background: var(--color-bg-elevated);
-                border: 1px solid var(--color-border);
-                border-radius: var(--radius-md);
-                padding: var(--space-4);
-                text-decoration: none;
-                color: inherit;
-                transition: transform var(--duration-base) var(--ease-out);
-            }
-            .partner-card:hover { transform: translateY(-3px); }
-            .partner-card img { max-height: 40px; width: auto; display: block; }
+            .partner-logos-fact { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-5); }
+            .partner-logos-fact a { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--color-text); font-weight: 600; font-size: 14px; text-decoration: none; white-space: nowrap; transition: opacity var(--duration-base) var(--ease-out); }
+            .partner-logos-fact a:hover { opacity: 0.7; }
+            .partner-logos-fact img { height: 20px; width: auto; display: block; }
+            .partner-logos-fact a:nth-child(2) img { height: 26px; }
             .navbar-brand-logo { height: 40px; width: auto; display: block; }
             .footer-brand-logo { height: 40px; width: auto; }
             .footer-grid-compact {
@@ -419,13 +404,6 @@
                             <img src="assets/img/klopp-front.jpg" srcset="assets/img/klopp-front-800.jpg 800w, assets/img/klopp-front-1200.jpg 1200w, assets/img/klopp-front.jpg 1920w" sizes="(max-width: 1160px) 100vw, 1112px" alt="Klopp AS sitt kontor, med en illustrasjon på veggen som viser veien fra «Din idé» til «Ferdig utviklet system»" width="1920" height="1080" fetchpriority="high" />
                         </picture>
                     </div>
-                </div>
-
-                <div class="about-stats">
-                    <div class="about-stat"><span class="about-stat-value">2011</span><span class="about-stat-label">Etableringsår</span></div>
-                    <div class="about-stat"><span class="about-stat-value">Kr. 0</span><span class="about-stat-label">Gjeld (2025)</span></div>
-                    <div class="about-stat"><span class="about-stat-value">926/1000</span><span class="about-stat-label">Experian-rating, Gull</span></div>
-                    <div class="about-stat"><span class="about-stat-value">AAA</span><span class="about-stat-label">Dun &amp; Bradstreet-rating</span></div>
                 </div>
             </div>
         </header>
@@ -569,32 +547,22 @@
                                 <tr><th>Bransje</th><td>Dataprogrammering (NACE 62.100)</td></tr>
                                 <tr><th>Telefon</th><td><a href="tel:+4733312800">33 31 28 00</a></td></tr>
                                 <tr><th>E-post</th><td><a href="mailto:post@klopp.no">post@klopp.no</a></td></tr>
+                                                                <tr><th>Partnere</th><td>
+                                    <div class="partner-logos-fact">
+                                        <a href="https://vipps.no/" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="assets/img/partners/vipps_logo_tight.webp"><img src="assets/img/partners/vipps_logo_tight.png" alt="" width="374" height="95" /></picture><span>Vipps</span></a>
+                                        <a href="https://www.mastercard.no/" target="_blank" rel="noopener"><img src="assets/img/partners/mastercard_symbol.svg" alt="" width="999" height="618" /><span>Mastercard</span></a>
+                                    </div>
+                                </td></tr>
                                 <tr><th>Medlem av</th><td><a href="https://www.nito.no/" target="_blank" rel="noopener"><img src="assets/img/partners/nito_logo.png" alt="NITO" class="partner-logo-fact" width="81" height="30" /></a></td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="page-section page-section-tight">
-            <div class="container">
-                <div class="intro-grid">
-                    <h2 class="intro-heading">Partnere</h2>
-                    <div class="intro-body">
-                        <p>Utviklingspartner med Vipps og Mastercard.</p>
-                        <div class="partner-cards">
-                            <a class="partner-card" href="https://vipps.no/" target="_blank" rel="noopener">
-                                <picture>
-                                    <source type="image/webp" srcset="assets/img/partners/vipps_logo.webp">
-                                    <img src="assets/img/partners/vipps_logo.png" alt="Vipps" width="512" height="207" />
-                                </picture>
-                            </a>
-                            <a class="partner-card" href="https://www.mastercard.no/" target="_blank" rel="noopener">
-                                <img src="assets/img/partners/mastercard_logo_wordmark_dark.svg" alt="Mastercard" width="999" height="776" />
-                            </a>
-                        </div>
-                    </div>
+                <div class="about-stats">
+                    <div class="about-stat"><span class="about-stat-value">2011</span><span class="about-stat-label">Etableringsår</span></div>
+                    <div class="about-stat"><span class="about-stat-value">Kr. 0</span><span class="about-stat-label">Gjeld (2025)</span></div>
+                    <div class="about-stat"><span class="about-stat-value">926/1000</span><span class="about-stat-label">Experian-rating, Gull</span></div>
+                    <div class="about-stat"><span class="about-stat-value">AAA</span><span class="about-stat-label">Dun &amp; Bradstreet-rating</span></div>
                 </div>
             </div>
         </section>

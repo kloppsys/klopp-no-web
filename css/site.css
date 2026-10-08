@@ -312,7 +312,7 @@ a { color: var(--accent-text); }
 .masthead {
   position: relative;
   background: var(--color-bg);
-  padding: calc(var(--nav-height) + var(--space-7)) 0 var(--space-8);
+  padding: calc(var(--nav-height) + var(--space-7)) 0 0;
 }
 .masthead-card {
   display: grid;
