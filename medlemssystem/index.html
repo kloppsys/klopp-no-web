@@ -49,6 +49,46 @@
             ]
         }
         </script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Hva er forskjellen på Regweb og Medlem123?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Regweb og Medlem123 er det samme underliggende medlemssystemet. Forskjellen er hvem som drifter det: med Regweb administrerer foreningen medlemsregisteret selv, mens Klopp AS gjør det på foreningens vegne med Medlem123. Klopp AS håndterer da kun henvendelser som gjelder medlemmene, for eksempel kontingent og betalingsstatus."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Hvem er behandlingsansvarlig for medlemsdataene?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Foreningen som bruker tjenesten er behandlingsansvarlig for sine egne medlemsdata. Klopp AS er databehandler, jf. GDPR artikkel 28."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Hvor lagres dataene i Regweb og Medlem123?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Alle data lagres på norske servere. All utvikling, drift og support skjer i Norge."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Hva er XReg?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "XReg er en frittstående verktøykasse som kobler seg til foreningens eksisterende medlemssystem via API, blant annet brukt som Regwebs egen «Din side»-portal."
+                    }
+                }
+            ]
+        }
+        </script>
         <style>
             .legal-page {
                 max-width: 760px;
@@ -64,6 +104,7 @@
                 font-size: 14px;
                 margin: var(--space-2) 0 var(--space-8);
             }
+            .legal-page h3.faq-q { font-size: 17px; margin: var(--space-5) 0 var(--space-2); }
             .legal-page h2 {
                 font-size: 20px;
                 margin-top: var(--space-8);
@@ -119,6 +160,15 @@
             <p><a href="https://xreg.no/" target="_blank" rel="noopener">XReg</a> er en frittstående verktøykasse som kobler seg til foreningens eksisterende medlemssystem via API, blant annet brukt som Regwebs egen «Din side»-portal.</p>
             <h2>Personvern: Klopp AS er databehandler</h2>
             <p>Klopp AS er databehandler, ikke behandlingsansvarlig, for medlemsdata. Foreningen som bruker tjenesten er behandlingsansvarlig, jf. GDPR artikkel 28. Se <a href="/personvern.html">personvernerklæringen</a>.</p>
+            <h2>Ofte stilte spørsmål</h2>
+            <h3 class="faq-q">Hva er forskjellen på Regweb og Medlem123?</h3>
+            <p>Regweb og Medlem123 er det samme underliggende medlemssystemet. Forskjellen er hvem som drifter det: med Regweb administrerer foreningen medlemsregisteret selv, mens Klopp AS gjør det på foreningens vegne med Medlem123. Klopp AS håndterer da kun henvendelser som gjelder medlemmene, for eksempel kontingent og betalingsstatus.</p>
+            <h3 class="faq-q">Hvem er behandlingsansvarlig for medlemsdataene?</h3>
+            <p>Foreningen som bruker tjenesten er behandlingsansvarlig for sine egne medlemsdata. Klopp AS er databehandler, jf. GDPR artikkel 28.</p>
+            <h3 class="faq-q">Hvor lagres dataene i Regweb og Medlem123?</h3>
+            <p>Alle data lagres på norske servere. All utvikling, drift og support skjer i Norge.</p>
+            <h3 class="faq-q">Hva er XReg?</h3>
+            <p>XReg er en frittstående verktøykasse som kobler seg til foreningens eksisterende medlemssystem via API, blant annet brukt som Regwebs egen «Din side»-portal.</p>
             <div class="legal-box">Priser og kampanjer finner du på <a href="https://medlemssystem.no/" target="_blank" rel="noopener">medlemssystem.no</a>. Se også <a href="/likepersonslogg/">Likepersonslogg</a>. Spørsmål? <a href="/kontakt.html">Ta kontakt</a> eller ring <a href="tel:+4733312800">33 31 28 00</a>.</div>
         </main>
 

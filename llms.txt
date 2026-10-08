@@ -25,7 +25,7 @@ Klopp AS bygger og drifter systemene, men er databehandler — ikke behandlingsa
 ## Om selskapet
 
 - [Om oss](https://klopp.no/#tillit): Kunder inkluderer Aschehoug, Best Western, Telenor, Storebrand, Jernbaneverket (nå Bane NOR), Owens Corning Pipe & Tank og Flowtite, i tillegg til frivillige organisasjoner.
-- [AI-agenter og skreddersydd utvikling](https://klopp.no/ai-agenter/): Webapplikasjoner, AI-agenter og systemintegrasjoner for bedrifter og offentlig sektor.
+- [AI-agenter og skreddersydd utvikling](https://klopp.no/ai-agenter/): Webapplikasjoner, AI-agenter og systemintegrasjoner for bedrifter og offentlig sektor, med et eksempel på en AI-agent som avlaster en forening (henvendelser om kontingent og faktura, oppslag via API, unntak til saksbehandler).
 - [Medlemssystem for foreninger](https://klopp.no/medlemssystem/): Regweb og Medlem123, forskjellen mellom dem, XReg og databehandlerrollen.
 - [Likepersonslogg](https://klopp.no/likepersonslogg/): Skybasert verktøy for registrering og rapportering av likepersonsarbeid, utviklet og driftet av Klopp AS.
 - [Om Klopp AS på medlemssystem.no](https://medlemssystem.no/om-klopp-as.html): Fakta om selskapet (org.nr., adresse, NITO-medlem, partnere) sett fra produktsiden.

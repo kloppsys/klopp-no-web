@@ -49,6 +49,54 @@
             ]
         }
         </script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Hva gjør en AI-agent i praksis?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "I et eksempel for en forening leser agenten en henvendelse om kontingent eller faktura, slår opp medlemmet i medlemssystemet via API og svarer selv når svaret finnes, for eksempel betalingsstatus og forfall. Alt som krever skjønn, som endret kontingent eller unntak, går til en saksbehandler med ferdig utkast. Agenten endrer ikke kontingent og sletter ikke medlemmer."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Hva leverer Klopp AS av AI-agenter?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Klopp AS bygger AI-agenter som automatiserer arbeidsflyt og fjerner manuelt, repeterende arbeid, som en del av skreddersydde webapplikasjoner og systemintegrasjoner for bedrifter og offentlig sektor."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Bygger Klopp AS ferdige løsninger eller skreddersydde?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Skreddersydde. Produktene bygges fra bunnen av for den enkelte virksomhet, ikke fra ferdiglagde maler, og følges fra idé og arkitektur til drift og videreutvikling."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Hvem har Klopp AS levert utvikling til?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Blant andre Aschehoug, Best Western, Telenor, Storebrand, Jernbaneverket (nå Bane NOR) og Owens Corning Pipe & Tank, i tillegg til frivillige organisasjoner."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Hvor drives og lagres løsningene?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "All utvikling, drift og support skjer internt hos Klopp AS, og alle data lagres på norske servere."
+                    }
+                }
+            ]
+        }
+        </script>
         <style>
             .legal-page {
                 max-width: 760px;
@@ -64,6 +112,17 @@
                 font-size: 14px;
                 margin: var(--space-2) 0 var(--space-8);
             }
+            .legal-page h3.faq-q { font-size: 17px; margin: var(--space-5) 0 var(--space-2); }
+            .ex-note { font-size: 14px; color: var(--color-text-secondary); }
+            .ex-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); margin: var(--space-5) 0; }
+            @media (max-width: 640px) { .ex-grid { grid-template-columns: minmax(0, 1fr); } }
+            .ex-card { background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5); }
+            .ex-card h3 { font-size: 16px; margin: 0 0 var(--space-2); }
+            .ex-card ul { margin: 0; font-size: 15px; }
+            .ex-table { width: 100%; border-collapse: collapse; font-size: 15px; margin: var(--space-4) 0; }
+            .ex-table th, .ex-table td { text-align: left; vertical-align: top; padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--color-border); }
+            .ex-table th { width: 30%; color: var(--color-text-secondary); font-weight: 600; }
+            @media (max-width: 480px) { .ex-table th, .ex-table td { padding: var(--space-2); overflow-wrap: anywhere; } }
             .legal-page h2 {
                 font-size: 20px;
                 margin-top: var(--space-8);
@@ -115,9 +174,61 @@
             <p>Skreddersydde digitale produkter, bygget fra bunnen av, ikke ferdiglagde maler. Vi følger prosjektet fra idé og arkitektur til drift og videreutvikling.</p>
             <h2>Integrasjoner og datalag</h2>
             <p>Integrasjoner mot eksisterende systemer, og solide datalag som binder alt sammen. Vi har et tett utviklingssamarbeid med Vipps og Mastercard.</p>
+            <h2>Eksempel: AI-agent for en norsk forening</h2>
+            <p class="ex-note">Eksempel, ikke en navngitt kunde. Tallene er satt opp for å vise flyten og er ikke en måling fra et levert Klopp-prosjekt.</p>
+            <p>En bransjeforening med om lag 4&nbsp;000 medlemmer får 40–60 e-poster og skjema i uken om kontingent, faktura og innmelding. De samme spørsmålene går igjen, og en saksbehandler bruker mesteparten av mandagen på å slå opp i medlemssystemet og svare.</p>
+            <h3 class="faq-q">Hva agenten gjør</h3>
+            <ol>
+                <li>Leser henvendelsen og kjenner igjen typen: kontingent, faktura, innmelding eller noe annet.</li>
+                <li>Slår opp medlemmet i foreningens medlemssystem, for eksempel Regweb, via API. Ikke i en fri kopi av registeret.</li>
+                <li>Svarer selv når svaret finnes: betalingsstatus, forfall, lenke til faktura eller til innmeldingsskjema.</li>
+                <li>Sender resten til en saksbehandler med ferdig utkast, medlemsnummer og hva som er sjekket.</li>
+            </ol>
+            <div class="ex-grid">
+                <section class="ex-card">
+                    <h3>Agenten kan</h3>
+                    <ul>
+                        <li>Svare på faste spørsmål fra godkjente kilder</li>
+                        <li>Hente status medlemmet allerede har rett til å se</li>
+                        <li>Fylle ut sak og merke det som må vurderes</li>
+                    </ul>
+                </section>
+                <section class="ex-card">
+                    <h3>Agenten gjør ikke</h3>
+                    <ul>
+                        <li>Endre kontingent eller slette et medlem</li>
+                        <li>Gi juridiske råd eller vedta unntak</li>
+                        <li>Svare når den er usikker. Da går saken til et menneske</li>
+                    </ul>
+                </section>
+            </div>
+            <h3 class="faq-q">En henvendelse, to utfall</h3>
+            <table class="ex-table">
+                <tbody>
+                    <tr><th>Inn</th><td>«Jeg betalte i går, men får purring.»</td></tr>
+                    <tr><th>Oppslag</th><td>Medlem 1842, faktura 2026-14, status betalt i dag kl. 09.12.</td></tr>
+                    <tr><th>Svar</th><td>Agenten bekrefter betalingen, viser forfall og sier at purringen kan ses bort fra.</td></tr>
+                    <tr><th>Unntak</th><td>«Kan jeg få halvert kontingent i år?» går til saksbehandler. Agenten foreslår svar, men sender ikke.</td></tr>
+                </tbody>
+            </table>
+            <h3 class="faq-q">Hva foreningen sitter igjen med</h3>
+            <p>I eksempelet tar agenten de faste oppslagene, og saksbehandleren tar unntakene. Medlemmet får svar samme dag, også etter stengetid, og registeret er fortsatt foreningens. Klopp AS bygger og drifter agenten, og er databehandler for det som leses ut av medlemssystemet. Foreningen er behandlingsansvarlig.</p>
+            <p>Samme mønster kan brukes mot et saksystem, en kursliste eller et lager. Agenten kobles til systemet dere allerede har, og erstatter det ikke.</p>
+
             <h2>Norsk utvikling, drift og support</h2>
             <p>All utvikling, drift og support skjer internt hos Klopp AS, og alle data lagres på norske servere. Vi har levert til blant andre Aschehoug, Best Western, Telenor, Storebrand, Jernbaneverket (nå Bane NOR) og Owens Corning Pipe &amp; Tank.</p>
-            <div class="legal-box">Har dere en idé eller et problem dere vil løse? <a href="/kontakt.html">Ta kontakt</a> eller ring <a href="tel:+4733312800">33 31 28 00</a>.</div>
+            <h2>Ofte stilte spørsmål</h2>
+            <h3 class="faq-q">Hva gjør en AI-agent i praksis?</h3>
+            <p>I et eksempel for en forening leser agenten en henvendelse om kontingent eller faktura, slår opp medlemmet i medlemssystemet via API og svarer selv når svaret finnes, for eksempel betalingsstatus og forfall. Alt som krever skjønn, som endret kontingent eller unntak, går til en saksbehandler med ferdig utkast. Agenten endrer ikke kontingent og sletter ikke medlemmer.</p>
+            <h3 class="faq-q">Hva leverer Klopp AS av AI-agenter?</h3>
+            <p>Klopp AS bygger AI-agenter som automatiserer arbeidsflyt og fjerner manuelt, repeterende arbeid, som en del av skreddersydde webapplikasjoner og systemintegrasjoner for bedrifter og offentlig sektor.</p>
+            <h3 class="faq-q">Bygger Klopp AS ferdige løsninger eller skreddersydde?</h3>
+            <p>Skreddersydde. Produktene bygges fra bunnen av for den enkelte virksomhet, ikke fra ferdiglagde maler, og følges fra idé og arkitektur til drift og videreutvikling.</p>
+            <h3 class="faq-q">Hvem har Klopp AS levert utvikling til?</h3>
+            <p>Blant andre Aschehoug, Best Western, Telenor, Storebrand, Jernbaneverket (nå Bane NOR) og Owens Corning Pipe &amp; Tank, i tillegg til frivillige organisasjoner.</p>
+            <h3 class="faq-q">Hvor drives og lagres løsningene?</h3>
+            <p>All utvikling, drift og support skjer internt hos Klopp AS, og alle data lagres på norske servere.</p>
+            <div class="legal-box">Se også våre produkter: <a href="/medlemssystem/">Regweb og Medlem123</a> og <a href="/likepersonslogg/">Likepersonslogg</a>. Har dere en idé eller et problem dere vil løse? <a href="/kontakt.html">Ta kontakt</a> eller ring <a href="tel:+4733312800">33 31 28 00</a>.</div>
         </main>
 
         <footer class="site-footer">
