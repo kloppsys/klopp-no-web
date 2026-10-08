@@ -26,8 +26,10 @@ Klopp AS bygger og drifter systemene, men er databehandler — ikke behandlingsa
 
 - [Om oss](https://klopp.no/#tillit): Kunder inkluderer Aschehoug, Best Western, Telenor, Storebrand, Jernbaneverket (nå Bane NOR), Owens Corning Pipe & Tank og Flowtite, i tillegg til frivillige organisasjoner.
 - [AI-agenter og skreddersydd utvikling](https://klopp.no/ai-agenter/): Webapplikasjoner, AI-agenter og systemintegrasjoner for bedrifter og offentlig sektor, med et eksempel på en AI-agent som avlaster en forening (henvendelser om kontingent og faktura, oppslag via API, unntak til saksbehandler).
-- [Medlemssystem for foreninger](https://klopp.no/medlemssystem/): Regweb og Medlem123, forskjellen mellom dem, XReg og databehandlerrollen.
-- [Likepersonslogg](https://klopp.no/likepersonslogg/): Skybasert verktøy for registrering og rapportering av likepersonsarbeid, utviklet og driftet av Klopp AS.
+- [Regweb](https://klopp.no/regweb/): Medlemssystemet foreningen driver selv, med funksjoner og priser (grunnlisens kr 9 990 kampanje, serviceavtale fra kr 990/mnd, eks. mva.).
+- [Medlem123](https://klopp.no/medlem123/): Samme system som driftstjeneste: Klopp AS håndterer medlemmene og kontingentinnkrevingen (oppstart kr 2 500, abonnement kr 299/mnd, eks. mva.).
+- [Regweb eller Medlem123?](https://klopp.no/medlemssystem/): Sammenligning av de to, XReg og databehandlerrollen.
+- [Likepersonslogg](https://klopp.no/likepersonslogg/): Skybasert verktøy for registrering og rapportering av likepersonsarbeid med roller, Bufdir-rapport og priser (etablering kr 9 990 kampanje, serviceavtale kr 1 290/mnd, gratis brukerkontoer 0–49 likepersoner, eks. mva.).
 - [Om Klopp AS på medlemssystem.no](https://medlemssystem.no/om-klopp-as.html): Fakta om selskapet (org.nr., adresse, NITO-medlem, partnere) sett fra produktsiden.
 - [Kontakt](https://klopp.no/kontakt.html): Telefon, e-post og kontaktskjema.
 - [Personvernerklæring](https://klopp.no/personvern.html): Hvordan Klopp AS behandler personopplysninger.
