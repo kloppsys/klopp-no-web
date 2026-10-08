@@ -223,6 +223,9 @@ a { color: var(--accent-text); }
   color: var(--color-text);
   text-decoration: none;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 .navbar-link:hover { color: var(--accent-text); }
 .navbar-link[aria-current="page"] {
@@ -238,7 +241,10 @@ a { color: var(--accent-text); }
   border-radius: var(--radius-full);
   background: var(--accent-red);
   color: #ffffff;
+  position: relative;
+  min-height: 36px;
 }
+.navbar-link-highlight::after { content: ""; position: absolute; inset: -4px -2px; }
 .navbar-link-highlight:hover { background: #b81f31; color: #ffffff; }
 .navbar-link .icon { margin-left: 0.2em; font-size: 0.85em; }
 
@@ -249,7 +255,7 @@ a { color: var(--accent-text); }
    display: contents lifts the links/toggle into the container's flex flow so they can be ordered;
    the ::after spacer (flex-basis 100%) forces the line break between the two rows. */
 @media (max-width: 560px) {
-  :root { --nav-height: 104px; }
+  :root { --nav-height: 118px; }
   .navbar { padding: var(--space-2) 0; }
   .navbar .container { row-gap: var(--space-2); column-gap: var(--space-2); }
   .navbar-actions { display: contents; }
@@ -436,7 +442,7 @@ a { color: var(--accent-text); }
   gap: var(--space-6);
   margin-top: var(--space-8);
 }
-@media (max-width: 767px) { .teaser-grid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .teaser-grid { grid-template-columns: 1fr; } }
 .faq-list {
   margin-top: var(--space-7);
   background: var(--color-bg);

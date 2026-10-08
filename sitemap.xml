@@ -2,26 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://klopp.no/</loc>
-        <lastmod>2026-09-30</lastmod>
+        <lastmod>2026-10-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://klopp.no/kontakt.html</loc>
-        <lastmod>2026-09-30</lastmod>
+        <lastmod>2026-10-08</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://klopp.no/personvern.html</loc>
-        <lastmod>2026-09-30</lastmod>
+        <lastmod>2026-10-08</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://klopp.no/sikkerhet.html</loc>
-        <lastmod>2026-09-30</lastmod>
+        <lastmod>2026-10-08</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.2</priority>
+    </url>
+    <url>
+        <loc>https://klopp.no/ai-agenter/</loc>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://klopp.no/medlemssystem/</loc>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://klopp.no/likepersonslogg/</loc>
+        <lastmod>2026-10-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 </urlset>
