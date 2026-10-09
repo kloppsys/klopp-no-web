@@ -59,14 +59,6 @@
             "mainEntity": [
                 {
                     "@type": "Question",
-                    "name": "Hva koster Regweb?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Grunnlisensen er et engangsgebyr på kr 9 990 (kampanjepris, ordinært kr 24 990). Serviceavtalen er kr 990 i måneden for 0–499 medlemmer, kr 1 490 i måneden for 500–3 000 medlemmer, og kr 1 490 i måneden pluss kr 2 per medlem i året over 3 000 medlemmer. Alle priser eks. mva., sist kontrollert 8. oktober 2026."
-                    }
-                },
-                {
-                    "@type": "Question",
                     "name": "Hvem drifter Regweb?",
                     "acceptedAnswer": {
                         "@type": "Answer",
@@ -78,7 +70,7 @@
                     "name": "Kan nye medlemmer melde seg inn og betale med Vipps og bankkort?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Ja. Nettinnmelding med Vipps og bankkort er en del av tilbudet, slik at nye medlemmer kan melde seg inn og betale uten manuell registrering. Kontakt oss for detaljer om vilkår."
+                        "text": "Ja, med nettinnmelding kan nye medlemmer melde seg inn og betale med Vipps og bankkort uten manuell registrering. Normalpris for etablering av Vipps og kortbetaling er kr 2 500. I kampanjeperioden er dette inkludert i tilbudet. Serviceavgift til Vipps og transaksjonsgebyr tilkommer. Alle priser eks. mva."
                     }
                 },
                 {
@@ -118,6 +110,8 @@
             .legal-page h3.faq-q { font-size: 17px; margin: var(--space-5) 0 var(--space-2); }
             .legal-page h2 { scroll-margin-top: calc(var(--nav-height) + var(--space-4)); }
             .ex-note { font-size: 14px; color: var(--color-text-secondary); }
+            .ex-footnote { font-size: 14px; color: var(--color-text-secondary); margin: var(--space-2) 0 var(--space-4); }
+            .price-was { color: var(--color-text-secondary); text-decoration: line-through; text-decoration-thickness: 1.5px; margin-right: var(--space-1); }
             .prod-hero-img { display: block; width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--color-border); margin: var(--space-5) 0; }
             .ex-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); margin: var(--space-5) 0; }
             @media (max-width: 640px) { .ex-grid { grid-template-columns: minmax(0, 1fr); } }
@@ -189,30 +183,66 @@
             <h2>Dette får dere</h2>
             <div class="ex-grid">
                 <section class="ex-card"><h3>Nettinnmelding</h3><p>Nye medlemmer melder seg inn og betaler med Vipps og bankkort. Kun informasjon om nytt medlem sendes til medlemsansvarlig.</p></section>
-                <section class="ex-card"><h3>Betalingsmetoder</h3><p>Bankkort, Vipps, eFaktura, Avtalegiro og SMS.</p></section>
+                <section class="ex-card"><h3>Betalingsmetoder</h3><p>Bankkort, Vipps, eFaktura, Avtalegiro og SMS. Avtalegiro, eFaktura og SMS har egne priser, <a href="/kontakt.html">be om detaljer</a>.</p></section>
                 <section class="ex-card"><h3>Egen innlogging for distriktsavdelinger</h3><p>Hver distriktsavdeling får «sitt» medlemssystem i miniatyr, tilpasset hva den skal se.</p></section>
                 <section class="ex-card"><h3>Din side med Vipps-innlogging</h3><p>Medlemmene oppdaterer selv personalia og logger inn med Vipps, uten eget passord.</p></section>
                 <section class="ex-card"><h3>Faktura og purring på e-post</h3><p>Ubegrenset utsendelse av e-postfaktura og purring er inkludert i serviceavtalen.</p></section>
                 <section class="ex-card"><h3>Ingen regnskapserfaring trengs</h3><p>Hent ut revisorrapporter og lister selv, og send til regnskapsfører.</p></section>
-                <section class="ex-card"><h3>Moduler ved behov</h3><p>AI-modul (AI-assistent), chat-modul, bladmodul, dokumentmodul og flere kan bestilles.</p></section>
+                <section class="ex-card"><h3>Moduler ved behov</h3><p>Din side, AI-modul (AI-assistent), chat-modul, bladmodul, dokumentmodul og flere kan bestilles. Hver modul har egen pris, <a href="/kontakt.html">be om detaljer</a>.</p></section>
                 <section class="ex-card"><h3>Full API</h3><p>Koble Regweb sammen med andre systemer dere allerede bruker.</p></section>
                 <section class="ex-card"><h3>Norsk support og servere</h3><p>Egen kontaktperson som kjenner dere, og servere i Norge.</p></section>
                 <section class="ex-card"><h3>Opplæring inkludert</h3><p>Kom-i-gang-opplæringen følger med grunnprisen.</p></section>
             </div>
             <h2>Pris</h2>
-            <table class="ex-table"><thead><tr><th scope="col">Hva</th><th scope="col">Pris</th></tr></thead><tbody><tr><th scope="row">Grunnlisens, engangsgebyr</th><td>Kr 9 990 <span class="ex-note">(kampanje, ordinært kr 24 990)</span></td></tr><tr><th scope="row">Serviceavtale, 0–499 medlemmer</th><td>Kr 990 per måned</td></tr><tr><th scope="row">Serviceavtale, 500–3 000 medlemmer</th><td>Kr 1 490 per måned</td></tr><tr><th scope="row">Serviceavtale, over 3 000 medlemmer</th><td>Kr 1 490 per måned + kr 2 per medlem per år</td></tr></tbody></table>
+            <table class="ex-table"><thead><tr><th scope="col">Hva</th><th scope="col">Pris</th></tr></thead><tbody><tr><th scope="row">Grunnlisens, engangsgebyr</th><td><span class="sr-only">Ordinær pris </span><s class="price-was">Kr 24 990</s> <span class="sr-only">, kampanjepris </span><strong>Kr 9 990</strong> <span class="ex-note">(kampanje)</span></td></tr><tr><th scope="row">Nettinnmelding med Vipps og kort, etablering</th><td><span class="sr-only">Normalpris </span><s class="price-was">Kr 2 500</s> <span class="sr-only">, kampanjepris </span><strong>Kr 0</strong> <span class="ex-note">(kampanje)</span></td></tr><tr><th scope="row">Serviceavtale, 0–499 medlemmer</th><td>Kr 990 per måned</td></tr><tr><th scope="row">Serviceavtale, 500–3 000 medlemmer</th><td>Kr 1 490 per måned</td></tr><tr><th scope="row">Serviceavtale, over 3 000 medlemmer</th><td>Kr 1 490 per måned + kr 2 per medlem per år</td></tr><tr><th scope="row">Avtalegiro, eFaktura og SMS</th><td>Egne priser, <a href="/kontakt.html">be om detaljer</a></td></tr><tr><th scope="row">Moduler: Din side, dokumentmodul, AI-modul, bladmodul, chat-modul m.fl.</th><td>Egne priser per modul, <a href="/kontakt.html">be om detaljer</a></td></tr></tbody></table>
             <p class="ex-note">Alle priser eks. mva. Sist kontrollert 8. oktober 2026 mot <a href="https://medlemssystem.no/" target="_blank" rel="noopener">medlemssystem.no<span class="sr-only"> (åpner i ny fane)</span></a>. Kampanjepriser kan endres.</p>
-            <p class="ex-note">Nettinnmelding med Vipps og bankkort er en del av tilbudet. Serviceavtalen inkluderer 2 måneder support og beredskapsavtale, og faktureres forskuddsvis per år.</p>
+            <h3 class="faq-q">Eksempel: Forening med 400 medlemmer</h3>
+            <p><em>Prisene gjelder for foreninger i kategorien 0–499 medlemmer.</em></p>
+            <table class="ex-table"><thead><tr><th scope="col">Hva</th><th scope="col">Pris</th></tr></thead><tbody><tr><th scope="row">Etablering, engangsgebyr</th><td><strong>Kr 9 990</strong><br><em class="ex-note">Kampanjepris! Inkluderer grunnlisens, Vipps og kortbetaling</em></td></tr><tr><th scope="row">Serviceavtale, per måned</th><td><strong>Kr 990</strong><br><em class="ex-note">Faktureres forskuddsvis per år: kr 11 880</em></td></tr><tr><th scope="row">Første år samlet *</th><td><strong>Kr 21 870</strong></td></tr><tr><th scope="row">År 2 og fremover (per år) *</th><td><strong>Kr 11 880</strong></td></tr></tbody></table>
+            <p class="ex-footnote"><em>* Serviceavgift til Vipps, transaksjonsgebyrer fra kortutstedere og eventuelle tilleggsmoduler (f.eks. eFaktura/SMS) kommer i tillegg til de faste totalene.</em></p>
+            <p><strong>Viktig å vite om regnestykket:</strong></p>
+            <ul>
+                <li><strong>Du sparer kr&nbsp;17&nbsp;500 det første året:</strong> Uten kampanjen ville etableringen kostet kr&nbsp;27&nbsp;490 (grunnlisens kr&nbsp;24&nbsp;990 og nettinnmelding kr&nbsp;2&nbsp;500), som ville gitt en totalsum på kr&nbsp;39&nbsp;370 for det første året.</li>
+                <li><strong>Lave og forutsigbare kostnader fra år to:</strong> Fra og med det andre året betaler foreningen kun kr&nbsp;11&nbsp;880 per år. Dette utgjør i snitt kun <strong>kr&nbsp;29,70 per medlem per år</strong>.</li>
+                <li><strong>Tredjepartsavgifter:</strong> Serviceavgift til Vipps og ordinære transaksjonsgebyrer kommer i tillegg.</li>
+                <li><strong>Egne priser:</strong> Avtalegiro, eFaktura, SMS og moduler (for eksempel Din side, dokumentmodul, AI-modul, bladmodul og chat-modul) er ikke med i regnestykket.</li>
+                <li><strong>Moms:</strong> Alle oppgitte priser er eksklusive merverdiavgift.</li>
+            </ul>
+            <h3 class="faq-q">Eksempel: Forening med 2&nbsp;100 medlemmer</h3>
+            <p><em>Prisene gjelder for foreninger i kategorien 500–3&nbsp;000 medlemmer.</em></p>
+            <table class="ex-table"><thead><tr><th scope="col">Hva</th><th scope="col">Pris</th></tr></thead><tbody><tr><th scope="row">Etablering, engangsgebyr</th><td><strong>Kr 9 990</strong><br><em class="ex-note">Kampanjepris! Inkluderer grunnlisens, Vipps og kortbetaling</em></td></tr><tr><th scope="row">Serviceavtale, per måned</th><td><strong>Kr 1 490</strong><br><em class="ex-note">Faktureres forskuddsvis per år: kr 17 880</em></td></tr><tr><th scope="row">Første år samlet *</th><td><strong>Kr 27 870</strong></td></tr><tr><th scope="row">År 2 og fremover (per år) *</th><td><strong>Kr 17 880</strong></td></tr></tbody></table>
+            <p class="ex-footnote"><em>* Serviceavgift til Vipps, transaksjonsgebyrer fra kortutstedere og eventuelle tilleggsmoduler (f.eks. eFaktura/SMS) kommer i tillegg til de faste totalene.</em></p>
+            <p><strong>Viktig å vite om regnestykket:</strong></p>
+            <ul>
+                <li><strong>Du sparer kr&nbsp;17&nbsp;500 det første året:</strong> Uten kampanjen ville etableringen kostet kr&nbsp;27&nbsp;490 (grunnlisens kr&nbsp;24&nbsp;990 og nettinnmelding kr&nbsp;2&nbsp;500), som ville gitt en totalsum på kr&nbsp;45&nbsp;370 for det første året.</li>
+                <li><strong>Lave og forutsigbare kostnader fra år to:</strong> Fra og med det andre året betaler foreningen kun kr&nbsp;17&nbsp;880 per år. Dette utgjør i snitt kun <strong>kr&nbsp;8,51 per medlem per år</strong>.</li>
+                <li><strong>Tredjepartsavgifter:</strong> Serviceavgift til Vipps og ordinære transaksjonsgebyrer kommer i tillegg.</li>
+                <li><strong>Egne priser:</strong> Avtalegiro, eFaktura, SMS og moduler (for eksempel Din side, dokumentmodul, AI-modul, bladmodul og chat-modul) er ikke med i regnestykket.</li>
+                <li><strong>Moms:</strong> Alle oppgitte priser er eksklusive merverdiavgift.</li>
+            </ul>
+            <h3 class="faq-q">Eksempel: Forening med 6&nbsp;100 medlemmer</h3>
+            <p><em>Prisene gjelder for foreninger i kategorien over 3&nbsp;000 medlemmer.</em></p>
+            <table class="ex-table"><thead><tr><th scope="col">Hva</th><th scope="col">Pris</th></tr></thead><tbody><tr><th scope="row">Etablering, engangsgebyr</th><td><strong>Kr 9 990</strong><br><em class="ex-note">Kampanjepris! Inkluderer grunnlisens, Vipps og kortbetaling</em></td></tr><tr><th scope="row">Serviceavtale, per måned</th><td><strong>Kr 1 490</strong><br><em class="ex-note">Kr&nbsp;17&nbsp;880 per år, pluss kr&nbsp;2 per medlem per år (6&nbsp;100 medlemmer = kr&nbsp;12&nbsp;200)</em></td></tr><tr><th scope="row">Serviceavtale, per år</th><td><strong>Kr 30 080</strong><br><em class="ex-note">Faktureres forskuddsvis per år</em></td></tr><tr><th scope="row">Første år samlet *</th><td><strong>Kr 40 070</strong></td></tr><tr><th scope="row">År 2 og fremover (per år) *</th><td><strong>Kr 30 080</strong></td></tr></tbody></table>
+            <p class="ex-footnote"><em>* Serviceavgift til Vipps, transaksjonsgebyrer fra kortutstedere og eventuelle tilleggsmoduler (f.eks. eFaktura/SMS) kommer i tillegg til de faste totalene.</em></p>
+            <p><strong>Viktig å vite om regnestykket:</strong></p>
+            <ul>
+                <li><strong>Du sparer kr&nbsp;17&nbsp;500 det første året:</strong> Uten kampanjen ville etableringen kostet kr&nbsp;27&nbsp;490 (grunnlisens kr&nbsp;24&nbsp;990 og nettinnmelding kr&nbsp;2&nbsp;500), som ville gitt en totalsum på kr&nbsp;57&nbsp;570 for det første året.</li>
+                <li><strong>Lave og forutsigbare kostnader fra år to:</strong> Fra og med det andre året betaler foreningen kun kr&nbsp;30&nbsp;080 per år. Dette utgjør i snitt kun <strong>kr&nbsp;4,93 per medlem per år</strong>.</li>
+                <li><strong>Tredjepartsavgifter:</strong> Serviceavgift til Vipps og ordinære transaksjonsgebyrer kommer i tillegg.</li>
+                <li><strong>Egne priser:</strong> Avtalegiro, eFaktura, SMS og moduler (for eksempel Din side, dokumentmodul, AI-modul, bladmodul og chat-modul) er ikke med i regnestykket.</li>
+                <li><strong>Moms:</strong> Alle oppgitte priser er eksklusive merverdiavgift.</li>
+            </ul>
+            <p class="ex-note">Normalpris for etablering av Vipps og kortbetaling i nettinnmelding er kr 2 500. I kampanjeperioden er dette inkludert i tilbudet. Serviceavgift til Vipps og transaksjonsgebyr tilkommer.</p>
+            <p class="ex-note">Avtalegiro, eFaktura og SMS har egne priser. Det samme gjelder modulene, for eksempel Din side, dokumentmodul, AI-modul, bladmodul og chat-modul. <a href="/kontakt.html">Kontakt oss</a> for detaljer. Prisene i eksemplene over inkluderer ikke disse.</p>
+            <p class="ex-note">Serviceavtalen inkluderer 2 måneder support og beredskapsavtale, og faktureres forskuddsvis per år.</p>
             <h2>Regweb eller Medlem123?</h2>
             <p>Med Regweb driver foreningen medlemsregisteret selv. Med <a href="/medlem123/">Medlem123</a> tar Klopp AS det daglige arbeidet med kontingent og medlemsservice, på samme system. Se <a href="/medlemssystem/">sammenligningen</a>.</p>
             <div class="prod-actions"><a class="teaser-card-btn teaser-card-btn-primary" href="https://regweb.no/" target="_blank" rel="noopener">Besøk regweb.no <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg><span class="sr-only"> (åpner i ny fane)</span></a><a class="teaser-card-btn teaser-card-btn-secondary" href="/kontakt.html">Be om tilbud <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a></div>
             <h2>Ofte stilte spørsmål</h2>
-            <h3 class="faq-q">Hva koster Regweb?</h3>
-            <p>Grunnlisensen er et engangsgebyr på kr 9 990 (kampanjepris, ordinært kr 24 990). Serviceavtalen er kr 990 i måneden for 0–499 medlemmer, kr 1 490 i måneden for 500–3 000 medlemmer, og kr 1 490 i måneden pluss kr 2 per medlem i året over 3 000 medlemmer. Alle priser eks. mva., sist kontrollert 8. oktober 2026.</p>
             <h3 class="faq-q">Hvem drifter Regweb?</h3>
             <p>Foreningen administrerer medlemsregisteret selv. Klopp AS utvikler og drifter selve systemet på servere i Norge og gir support. Ønsker foreningen at Klopp AS også tar det daglige arbeidet med medlemmene, er <a href="/medlem123/">Medlem123</a> samme system som driftstjeneste.</p>
             <h3 class="faq-q">Kan nye medlemmer melde seg inn og betale med Vipps og bankkort?</h3>
-            <p>Ja. Nettinnmelding med Vipps og bankkort er en del av tilbudet, slik at nye medlemmer kan melde seg inn og betale uten manuell registrering. Kontakt oss for detaljer om vilkår.</p>
+            <p>Ja, med nettinnmelding kan nye medlemmer melde seg inn og betale med Vipps og bankkort uten manuell registrering. Normalpris for etablering av Vipps og kortbetaling er kr 2 500. I kampanjeperioden er dette inkludert i tilbudet. Serviceavgift til Vipps og transaksjonsgebyr tilkommer. Alle priser eks. mva.</p>
             <h3 class="faq-q">Trenger vi regnskapserfaring for å bruke Regweb?</h3>
             <p>Nei. Revisorrapporter og lister hentes enkelt ut og kan sendes videre til regnskapsfører.</p>
             <h3 class="faq-q">Kan Regweb kobles mot andre systemer?</h3>
