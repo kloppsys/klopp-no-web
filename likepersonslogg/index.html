@@ -116,6 +116,11 @@
                 margin: var(--space-2) 0 var(--space-8);
             }
             .legal-page h3.faq-q { font-size: 17px; margin: var(--space-5) 0 var(--space-2); }
+            .shot-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); margin: var(--space-5) 0; align-items: start; }
+            @media (max-width: 640px) { .shot-grid { grid-template-columns: minmax(0, 1fr); } }
+            .shot-grid figure { margin: 0; }
+            .shot-grid img { display: block; width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--color-border); }
+            .shot-grid figcaption { font-size: 14px; color: var(--color-text-secondary); margin-top: var(--space-2); }
             .legal-page h2 { scroll-margin-top: calc(var(--nav-height) + var(--space-4)); }
             .ex-note { font-size: 14px; color: var(--color-text-secondary); }
             .prod-hero-img { display: block; width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--color-border); margin: var(--space-5) 0; }
@@ -201,6 +206,17 @@
             </div>
             <h2>Roller i Likepersonslogg</h2>
             <table class="ex-table"><tbody><tr><th scope="row">Foreningsadmin</th><td>Kan sette opp alt i organisasjonen, med full oversikt over all aktivitet som er logget sentralt.</td></tr><tr><th scope="row">Likepersonsleder admin (fylkesveileder)</th><td>Samme visning som foreningsadmin, men avgrenset til utvalgte avdelinger og uten tilgang til innstillinger. Kan behandle likepersoner og likepersonsledere i underavdelinger.</td></tr><tr><th scope="row">Likepersonsleder</th><td>Kan behandle likepersoner i underavdelinger.</td></tr><tr><th scope="row">Likeperson</th><td>Kan logge sin egen aktivitet.</td></tr></tbody></table>
+            <h2>Slik ser det ut</h2>
+            <div class="shot-grid">
+                <figure>
+                    <picture><source type="image/webp" srcset="/assets/img/products/likepersonslogg-sentralt.webp" /><img src="/assets/img/products/likepersonslogg-sentralt.jpg" alt="Foreningsadmin sin aktivitetsoversikt i Likepersonslogg, med datofilter" width="900" height="487" loading="lazy" /></picture>
+                    <figcaption>Sentralt: foreningsadmin ser all aktivitet og filtrerer på periode og likeperson.</figcaption>
+                </figure>
+                <figure>
+                    <picture><source type="image/webp" srcset="/assets/img/products/likepersonslogg-likepersoner.webp" /><img src="/assets/img/products/likepersonslogg-likepersoner.jpg" alt="Likeperson sin liste over egne aktiviteter i Likepersonslogg" width="900" height="617" loading="lazy" /></picture>
+                    <figcaption>Likeperson: hver likeperson logger og ser sine egne aktiviteter.</figcaption>
+                </figure>
+            </div>
             <h2>Pris</h2>
             <table class="ex-table"><thead><tr><th scope="col">Hva</th><th scope="col">Pris</th></tr></thead><tbody><tr><th scope="row">Etablering, engangsgebyr</th><td>Kr 9 990 <span class="ex-note">(kampanje, ordinært kr 19 990)</span>, betales én gang per organisasjon</td></tr><tr><th scope="row">Serviceavtale</th><td>Kr 1 290 per måned</td></tr><tr><th scope="row">Brukerkonto, 0–49 likepersoner</th><td>Gratis</td></tr><tr><th scope="row">Brukerkonto, 50 eller flere</th><td>Kr 10 per konto per år</td></tr></tbody></table>
             <p class="ex-note">Alle priser eks. mva. Sist kontrollert 8. oktober 2026 mot <a href="https://medlemssystem.no/" target="_blank" rel="noopener">medlemssystem.no<span class="sr-only"> (åpner i ny fane)</span></a>. Kampanjepriser kan endres.</p>

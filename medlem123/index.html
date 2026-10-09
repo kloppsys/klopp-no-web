@@ -108,6 +108,11 @@
                 margin: var(--space-2) 0 var(--space-8);
             }
             .legal-page h3.faq-q { font-size: 17px; margin: var(--space-5) 0 var(--space-2); }
+            .shot-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); margin: var(--space-5) 0; align-items: start; }
+            @media (max-width: 640px) { .shot-grid { grid-template-columns: minmax(0, 1fr); } }
+            .shot-grid figure { margin: 0; }
+            .shot-grid img { display: block; width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--color-border); }
+            .shot-grid figcaption { font-size: 14px; color: var(--color-text-secondary); margin-top: var(--space-2); }
             .legal-page h2 { scroll-margin-top: calc(var(--nav-height) + var(--space-4)); }
             .ex-note { font-size: 14px; color: var(--color-text-secondary); }
             .prod-hero-img { display: block; width: 100%; height: auto; border-radius: var(--radius-md); border: 1px solid var(--color-border); margin: var(--space-5) 0; }
@@ -189,6 +194,17 @@
                 <section class="ex-card"><h3>SMS og nyhetsbrev</h3><p>Kan bestilles. Vi sender på vegne av foreningen.</p></section>
                 <section class="ex-card"><h3>Revisorliste og økonomirapporter</h3><p>Inkludert.</p></section>
                 <section class="ex-card"><h3>100 % norsk hjelp</h3><p>Norsk support og servere i Norge.</p></section>
+            </div>
+            <h2>Slik ser det ut</h2>
+            <div class="shot-grid">
+                <figure>
+                    <picture><source type="image/webp" srcset="/assets/img/products/medlem123-nettinnmelding.webp" /><img src="/assets/img/products/medlem123-nettinnmelding.jpg" alt="Nettinnmeldingsskjema hos Medlem123" width="900" height="954" loading="lazy" /></picture>
+                    <figcaption>Nettinnmelding: skjemaet tilpasses foreningen, med betaling via Vipps eller faktura.</figcaption>
+                </figure>
+                <figure>
+                    <picture><source type="image/webp" srcset="/assets/img/products/medlem123-dinside.webp" /><img src="/assets/img/products/medlem123-dinside.jpg" alt="Din side hos Medlem123" width="900" height="862" loading="lazy" /></picture>
+                    <figcaption>Din side: medlemmene oppdaterer selv personalia og kan bytte passord.</figcaption>
+                </figure>
             </div>
             <h2>Pris</h2>
             <table class="ex-table"><thead><tr><th scope="col">Hva</th><th scope="col">Pris</th></tr></thead><tbody><tr><th scope="row">Oppstart, engangsgebyr</th><td>Kr 2 500 <span class="ex-note">(system, import og opplæring)</span></td></tr><tr><th scope="row">Abonnement</th><td>Kr 299 per måned <span class="ex-note">(inkluderer nettinnmelding på foreningens nettside, med Vipps eller kortbetaling)</span></td></tr><tr><th scope="row">Medlemssystem</th><td>Kr 2 per medlem per måned</td></tr><tr><th scope="row">Kontingentinnkreving</th><td>Kr 10 per faktura + betalingsservicegebyr</td></tr><tr><th scope="row">Purring</th><td>Kr 10 per stykk + betalingsservicegebyr</td></tr><tr><th scope="row">Din side (valgfritt)</th><td>Kr 99 per måned</td></tr></tbody></table>
