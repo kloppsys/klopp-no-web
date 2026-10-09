@@ -230,6 +230,8 @@
             .audience-actions .teaser-card-btn { width: auto; }
             .audience-compare { margin: var(--space-4) 0 0; font-size: 14px; }
             @media (max-width: 480px) { .audience-card { padding: var(--space-5); } .audience-actions .teaser-card-btn { width: 100%; } }
+            .text-link { color: var(--accent-text); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+            .text-link:hover { color: var(--color-text); }
             .faq-klopp h3 { font-size: 19px; font-weight: 600; margin: var(--space-5) 0 var(--space-2); color: var(--color-text); }
             .faq-klopp h3:first-child { margin-top: 0; }
             .faq-klopp p { font-size: 16px; color: var(--color-text-secondary); margin: 0 0 var(--space-4); max-width: 68ch; }
@@ -458,9 +460,9 @@
                         <h2 class="audience-title">Jeg representerer en forening</h2>
                         <p class="audience-desc">Medlemssystem og medlemsdrift med Regweb og Medlem123, og Likepersonslogg for registrering og rapportering av likepersonsarbeid.</p>
                         <ul class="teaser-card-bullets audience-bullets">
-                            <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Regweb: foreningen drifter medlemsregisteret selv</li>
-                            <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Medlem123: Klopp AS tar medlemshenvendelsene</li>
-                            <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Likepersonslogg: rapportering til Bufdir og andre tilskuddsgivere</li>
+                            <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> <span><a class="text-link" href="/regweb/">Regweb</a>: foreningen drifter medlemsregisteret selv</span></li>
+                            <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> <span><a class="text-link" href="/medlem123/">Medlem123</a>: Klopp AS tar medlemshenvendelsene</span></li>
+                            <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> <span><a class="text-link" href="/likepersonslogg/">Likepersonslogg</a>: rapportering til Bufdir og andre tilskuddsgivere</span></li>
                         </ul>
                         <div class="audience-actions">
                             <a class="teaser-card-btn teaser-card-btn-primary" href="/regweb/">Regweb <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
@@ -538,7 +540,7 @@
                             <li>Owens Corning Pipe &amp; Tank</li>
                             <li>Flowtite</li>
                         </ul>
-                        <p class="lead-statement">Samtidig er vi valgt av frivillige organisasjoner som Norsk Revmatikerforbund, Brystkreftforeningen og Norilco til å bygge og drifte kritiske medlems- og likepersonsløsninger.</p>
+                        <p class="lead-statement">Samtidig er vi valgt av frivillige organisasjoner som Norsk Revmatikerforbund, Brystkreftforeningen og Norilco til å bygge og drifte kritiske <a class="text-link" href="/medlemssystem/">medlemsløsninger</a> og <a class="text-link" href="/likepersonslogg/">likepersonsløsninger</a>.</p>
                     </div>
                 </div>
                 <div class="photo-frame" style="margin-top: var(--space-7);">
