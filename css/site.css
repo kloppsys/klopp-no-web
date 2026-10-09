@@ -379,6 +379,15 @@ a { color: var(--accent-text); }
   max-width: 62ch;
   line-height: 1.6;
 }
+.masthead-subheading .hero-link {
+  color: var(--accent-teal-text);
+  font-weight: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.masthead-subheading .hero-link:hover { color: var(--navy); }
+
 
 /* Primary CTA — Microsoft Blue #0078D4, 8px radius, sampled from the "Kjøp Microsoft 365" button */
 .btn {
