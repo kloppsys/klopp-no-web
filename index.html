@@ -301,23 +301,6 @@
             .capability-icon svg { width: 18px; height: 18px; }
             .capability-card h3 { font-size: 17px; margin: 0 0 4px; letter-spacing: -0.01em; overflow-wrap: break-word; }
             .capability-card p { color: var(--color-text-secondary); line-height: 1.55; margin: 0; font-size: 14px; }
-            .client-list {
-                display: flex;
-                flex-wrap: wrap;
-                gap: var(--space-3);
-                margin-top: var(--space-5);
-                margin-bottom: var(--space-4);
-                padding: 0;
-                list-style: none;
-            }
-            .client-list li {
-                background: var(--color-bg);
-                border: 1px solid var(--color-border);
-                border-radius: var(--radius-full);
-                padding: var(--space-2) var(--space-4);
-                font-weight: 600;
-                font-size: 15px;
-            }
             .rating-row {
                 display: flex;
                 flex-wrap: wrap;
@@ -453,7 +436,6 @@
             .logobar img { display: block; max-height: 40px; max-width: 100%; width: auto; filter: grayscale(1) brightness(0.55) contrast(1.1) opacity(0.75); transition: filter var(--duration-base) var(--ease-out); }
             .logobar li:hover img { filter: none; }
             :root[data-theme="dark"] .logobar img { background: #ffffff; padding: 8px 14px; border-radius: 8px; box-sizing: content-box; filter: grayscale(1) brightness(0.55) opacity(0.85); }
-            .logobar-note { margin: var(--space-6) auto 0; max-width: 62ch; font-size: 14px; color: var(--color-text-secondary); }
             .page-section-enterprise { background: var(--navy); color: rgba(255, 255, 255, 0.85); }
             .page-section-enterprise .intro-heading, .page-section-enterprise .intro-body .lead-statement, .page-section-enterprise .lead-statement, .page-section-enterprise h3, .page-section-enterprise .intro-body p.lead-statement { color: #ffffff; }
             .page-section-enterprise p { color: rgba(255, 255, 255, 0.8); }
@@ -462,6 +444,8 @@
             .page-section-enterprise .capability-icon { background: rgba(255, 255, 255, 0.12); color: var(--accent-blue-bright); }
             .page-section-enterprise .chevron-link { color: #ffffff; }
             .contact-band-body a { color: #ffffff; font-weight: 600; }
+            #tillit { padding-top: var(--space-9); padding-bottom: var(--space-9); }
+            @media (max-width: 767px) { #tillit { padding-top: var(--space-8); padding-bottom: var(--space-8); } }
         </style>
     </head>
     <body>
@@ -542,7 +526,7 @@
                 <div class="solid-grid">
                     <div class="solid-card">
                         <p class="solid-value">0&nbsp;kr</p>
-                        <p class="solid-label">i gjeld (2025)</p>
+                        <p class="solid-label">i gjeld (2026)</p>
                     </div>
                     <div class="solid-card">
                         <p class="solid-value solid-value-aaa">AAA</p>
@@ -572,7 +556,6 @@
                     <li><img src="assets/img/logos/kunder/bane-nor.svg" alt="Bane NOR (tidligere Jernbaneverket)" style="height:24px" loading="lazy" /></li>
                     <li><img src="assets/img/logos/kunder/owens-corning.svg" alt="Owens Corning" style="height:40px" loading="lazy" /></li>
                 </ul>
-                <p class="logobar-note">Også betrodd av store frivillige organisasjoner som Norsk Revmatikerforbund, Brystkreftforeningen og Norilco.</p>
             </div>
         </section>
 
@@ -746,7 +729,7 @@
         <section class="contact-band" id="kontakt">
             <div class="container">
                 <h2 class="contact-band-heading">Skal vi ta en prat?</h2>
-                <p class="contact-band-body">Enten dere er en landsomfattende organisasjon som trenger bedre medlemskontroll, eller en bedrift som vil kutte kostnader med AI-automatisering: la oss ta en uforpliktende kaffeprat i Tønsberg eller på Teams. Ring oss direkte på <a href="tel:+4733312800">33 31 28 00</a>.</p>
+                <p class="contact-band-body">Enten dere er en landsomfattende organisasjon som trenger bedre medlemskontroll, eller en bedrift som vil kutte kostnader med AI-automatisering – la oss ta en uforpliktende kaffeprat i Tønsberg eller på Teams. Ring oss direkte på <a href="tel:+4733312800">33 31 28 00</a>.</p>
                 <a class="btn btn-red" href="kontakt.html">Kontakt oss <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
                 <p class="contact-band-direct">Eller ring <a href="tel:+4733312800">33 31 28 00</a> <span class="contact-band-sep">·</span> <a href="mailto:post@klopp.no">post@klopp.no</a></p>
             </div>
