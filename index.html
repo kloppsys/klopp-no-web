@@ -414,6 +414,54 @@
                 font-size: 14px;
                 font-weight: 600;
             }
+
+            /* Runde: to veier inn, soliditetsbånd, enterprise-seksjon, røde/navy knapper */
+            .btn-navy { background: var(--navy); color: #ffffff; }
+            .btn-navy:hover { background: #1c2b40; }
+            :root[data-theme="dark"] .btn-navy { background: #ffffff; color: var(--navy); }
+            .btn-red { background: var(--accent-red); color: #ffffff; }
+            .btn-red:hover { background: #b8212f; }
+            .masthead-cta .btn { padding: var(--space-3) var(--space-5); }
+            .audience-card-dark { background: var(--navy); border-color: var(--navy); color: rgba(255, 255, 255, 0.85); }
+            .audience-card-dark .audience-eyebrow { color: var(--accent-blue-bright); }
+            .audience-card-dark .audience-title, .audience-card-dark .teaser-card-bullets li { color: #ffffff; }
+            .audience-card-dark .audience-desc { color: rgba(255, 255, 255, 0.78); }
+            .audience-card-dark .teaser-card-btn-secondary { color: #ffffff; border-color: rgba(255, 255, 255, 0.5); }
+            .audience-card-dark .teaser-card-btn-secondary:hover { border-color: #ffffff; color: #ffffff; }
+            .audience-card-dark .capability-icon { background: rgba(255, 255, 255, 0.12); color: var(--accent-blue-bright); }
+            .solid-section { padding: var(--space-9) 0 var(--space-8); text-align: center; }
+            .solid-title { font-size: clamp(1.375rem, 1.5vw + 1rem, 2rem); letter-spacing: -0.01em; line-height: 1.25; max-width: 34ch; margin: 0 auto; }
+            .solid-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-5); margin-top: var(--space-7); }
+            @media (max-width: 900px) { .solid-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+            @media (max-width: 480px) { .solid-grid { grid-template-columns: minmax(0, 1fr); } }
+            .solid-card { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-2); min-height: 190px; padding: var(--space-5); border-radius: var(--radius-md); background: var(--color-bg); border: 1px solid var(--color-border); box-shadow: 0 1px 2px var(--shadow-color), 0 14px 30px -18px var(--shadow-color); }
+            .solid-value { margin: 0; font-size: clamp(2rem, 2vw + 1.25rem, 2.75rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; color: var(--color-text); }
+            .solid-value-aaa { color: #5b2a86; }
+            .solid-value-gold { color: #a87a00; }
+            :root[data-theme="dark"] .solid-value-aaa { color: #c9a4ee; }
+            :root[data-theme="dark"] .solid-value-gold { color: #f0c24d; }
+            @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .solid-value-aaa { color: #c9a4ee; } :root:not([data-theme="light"]) .solid-value-gold { color: #f0c24d; } }
+            .solid-label { margin: 0; font-size: 15px; color: var(--color-text-secondary); }
+            .solid-source { display: block; height: 24px; width: auto; max-width: 150px; margin-top: var(--space-2); }
+            :root[data-theme="dark"] .solid-source { background: #ffffff; padding: 4px 8px; border-radius: 6px; box-sizing: content-box; }
+            .logobar-section { padding: var(--space-8) 0 var(--space-9); text-align: center; }
+            .logobar-title { font-size: clamp(1.25rem, 1vw + 1rem, 1.625rem); letter-spacing: -0.01em; max-width: 36ch; margin: 0 auto; }
+            .logobar { list-style: none; margin: var(--space-7) 0 0; padding: 0; display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: var(--space-6); }
+            @media (max-width: 900px) { .logobar { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-6) var(--space-5); justify-items: center; } }
+            @media (max-width: 560px) { .logobar { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+            .logobar li { display: flex; align-items: center; justify-content: center; min-height: 48px; }
+            .logobar img { display: block; max-height: 40px; max-width: 100%; width: auto; filter: grayscale(1) brightness(0.55) contrast(1.1) opacity(0.75); transition: filter var(--duration-base) var(--ease-out); }
+            .logobar li:hover img { filter: none; }
+            :root[data-theme="dark"] .logobar img { background: #ffffff; padding: 8px 14px; border-radius: 8px; box-sizing: content-box; filter: grayscale(1) brightness(0.55) opacity(0.85); }
+            .logobar-note { margin: var(--space-6) auto 0; max-width: 62ch; font-size: 14px; color: var(--color-text-secondary); }
+            .page-section-enterprise { background: var(--navy); color: rgba(255, 255, 255, 0.85); }
+            .page-section-enterprise .intro-heading, .page-section-enterprise .intro-body .lead-statement, .page-section-enterprise .lead-statement, .page-section-enterprise h3, .page-section-enterprise .intro-body p.lead-statement { color: #ffffff; }
+            .page-section-enterprise p { color: rgba(255, 255, 255, 0.8); }
+            .page-section-enterprise .capability-card { background: var(--navy-elevated); border-color: rgba(255, 255, 255, 0.14); }
+            .page-section-enterprise .capability-card p { color: rgba(255, 255, 255, 0.78); }
+            .page-section-enterprise .capability-icon { background: rgba(255, 255, 255, 0.12); color: var(--accent-blue-bright); }
+            .page-section-enterprise .chevron-link { color: #ffffff; }
+            .contact-band-body a { color: #ffffff; font-weight: 600; }
         </style>
     </head>
     <body>
@@ -442,8 +490,8 @@
                         <h1 class="masthead-heading">Utvikling av digitale produkter – web, app og AI-agenter</h1>
                         <p class="masthead-subheading">Klopp AS er et norsk IT-selskap i Tønsberg. Vi står bak <a class="hero-link" href="/regweb/">Regweb</a>, <a class="hero-link" href="/medlem123/">Medlem123</a>, <a class="hero-link" href="/likepersonslogg/">Likepersonslogg</a> og <a class="hero-link" href="https://xreg.no/" target="_blank" rel="noopener">XReg<span class="sr-only"> (åpner i ny fane)</span></a>, og leverer i tillegg skreddersydde webapplikasjoner, <a class="hero-link" href="/ai-agenter/">AI-agenter</a> og systemintegrasjoner til bedrifter og offentlig sektor. All utvikling, drift og support skjer internt — ingen del er satt bort.</p>
                         <div class="masthead-cta">
-                            <a class="btn" href="#produkter">Se produktene våre <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M8 3.5a.75.75 0 0 1 .75.75v6.69l2.47-2.47a.75.75 0 1 1 1.06 1.06l-3.75 3.75a.75.75 0 0 1-1.06 0L3.72 9.53a.75.75 0 1 1 1.06-1.06l2.47 2.47V4.25A.75.75 0 0 1 8 3.5Z"/></svg></a>
-                            <a class="chevron-link" href="kontakt.html">Kontakt oss <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
+                            <a class="btn btn-navy" href="#produkter">Se våre medlemssystemer <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M8 3.5a.75.75 0 0 1 .75.75v6.69l2.47-2.47a.75.75 0 1 1 1.06 1.06l-3.75 3.75a.75.75 0 0 1-1.06 0L3.72 9.53a.75.75 0 1 1 1.06-1.06l2.47 2.47V4.25A.75.75 0 0 1 8 3.5Z"/></svg></a>
+                            <a class="btn btn-red" href="kontakt.html?tjeneste=Utvikling+av+digitalt+produkt">Diskuter et AI-/utviklingsprosjekt <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
                         </div>
                     </div>
                     <div class="masthead-media">
@@ -471,7 +519,7 @@
                         </div>
                         <p class="audience-compare"><a class="chevron-link" href="/medlemssystem/">Regweb eller Medlem123? Se sammenligning av funksjoner og priser <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a></p>
                     </div>
-                    <div class="audience-card">
+                    <div class="audience-card audience-card-dark">
                         <div class="audience-head"><span class="capability-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M5.7 3.3a.75.75 0 0 1 0 1.06L2.06 8l3.64 3.64a.75.75 0 1 1-1.06 1.06l-4.17-4.17a.75.75 0 0 1 0-1.06l4.17-4.17a.75.75 0 0 1 1.06 0zm4.6 0a.75.75 0 0 1 1.06 0l4.17 4.17a.75.75 0 0 1 0 1.06l-4.17 4.17a.75.75 0 1 1-1.06-1.06L13.94 8 10.3 4.36a.75.75 0 0 1 0-1.06z"/></svg></span><span class="audience-eyebrow">For bedrifter og offentlig sektor</span></div>
                         <h2 class="audience-title">Jeg trenger utvikling eller AI</h2>
                         <p class="audience-desc">Skreddersydde webapplikasjoner, AI-agenter og systemintegrasjoner, fra idé og arkitektur til drift.</p>
@@ -488,8 +536,47 @@
                 </div>
             </div>
         </header>
+        <section class="solid-section" aria-labelledby="solid-title">
+            <div class="container">
+                <h2 class="solid-title" id="solid-title">0&nbsp;kr i gjeld. Din trygge, langsiktige IT-partner siden 2011.</h2>
+                <div class="solid-grid">
+                    <div class="solid-card">
+                        <p class="solid-value">0&nbsp;kr</p>
+                        <p class="solid-label">i gjeld (2025)</p>
+                    </div>
+                    <div class="solid-card">
+                        <p class="solid-value solid-value-aaa">AAA</p>
+                        <p class="solid-label">Høyeste kredittverdighet</p>
+                        <img class="solid-source" src="assets/img/logos/kunder/dun-bradstreet.svg" alt="Dun &amp; Bradstreet" width="160" height="24" loading="lazy" />
+                    </div>
+                    <div class="solid-card">
+                        <p class="solid-value solid-value-gold">Gull</p>
+                        <p class="solid-label">Experian-rating (926/1000)</p>
+                        <img class="solid-source" src="assets/img/logos/kunder/experian.svg" alt="Experian" width="110" height="24" loading="lazy" />
+                    </div>
+                    <div class="solid-card">
+                        <p class="solid-value">15&nbsp;år</p>
+                        <p class="solid-label">Trygg partner (etablert 2011)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="logobar-section" aria-labelledby="logobar-title">
+            <div class="container">
+                <h2 class="logobar-title" id="logobar-title">Betrodd av ledende aktører i norsk næringsliv og frivillighet</h2>
+                <ul class="logobar">
+                    <li><img src="assets/img/logos/kunder/aschehoug.svg" alt="Aschehoug" style="height:32px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/kunder/telenor.svg" alt="Telenor" style="height:38px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/kunder/storebrand.svg" alt="Storebrand" style="width:150px;height:auto" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/kunder/best-western.svg" alt="Best Western Hotels &amp; Resorts" style="height:32px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/kunder/bane-nor.svg" alt="Bane NOR (tidligere Jernbaneverket)" style="height:24px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/kunder/owens-corning.svg" alt="Owens Corning" style="height:40px" loading="lazy" /></li>
+                </ul>
+                <p class="logobar-note">Også betrodd av store frivillige organisasjoner som Norsk Revmatikerforbund, Brystkreftforeningen og Norilco.</p>
+            </div>
+        </section>
 
-        <section class="page-section">
+        <section class="page-section page-section-enterprise">
             <div class="container">
                 <div class="intro-grid">
                     <h2 class="intro-heading">Hva vi bygger</h2>
@@ -504,14 +591,14 @@
                         <span class="capability-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="1" width="6" height="6" rx="1.3"/><rect x="9" y="1" width="6" height="6" rx="1.3"/><rect x="1" y="9" width="6" height="6" rx="1.3"/><rect x="9" y="9" width="6" height="6" rx="1.3"/></svg></span>
                         <div>
                             <h3>Webapplikasjoner og apper</h3>
-                            <p>Skreddersydde digitale produkter, bygget fra bunnen av — ikke ferdiglagde maler.</p>
+                            <p>Programvare tilpasset deres forretningsmodell. Vi bygger skreddersydde systemer som luker ut flaskehalser, automatiserer kjedelige rutiner og snakker sømløst med systemene dere allerede bruker. Ingen ferdigmaler, kun effektivitet.</p>
                         </div>
                     </div>
                     <div class="capability-card">
                         <span class="capability-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1c.4 2.6 1.2 4.2 2.6 5.1C11.7 6.7 13 7 14.5 7.3 13 7.6 11.7 7.9 10.6 8.6 9.2 9.5 8.4 11.1 8 13.7 7.6 11.1 6.8 9.5 5.4 8.6 4.3 7.9 3 7.6 1.5 7.3 3 7 4.3 6.7 5.4 6.1 6.8 5.2 7.6 3.6 8 1Z"/></svg></span>
                         <div>
                             <h3>AI-agenter og automatisering</h3>
-                            <p>AI-agenter som automatiserer arbeidsflyt og fjerner manuelt, repeterende arbeid.</p>
+                            <p>Frigjør arbeidstimer med intelligente AI-agenter. Vi utvikler skreddersydde AI-løsninger som tar over manuelt, repeterende taste- og analysearbeid, så de ansatte kan fokusere på verdiskaping mens teknologien tar rutinesakene.</p>
                         </div>
                     </div>
                     <div class="capability-card">
@@ -530,16 +617,6 @@
                 <div class="intro-grid">
                     <h2 class="intro-heading">Tillit fra store og små</h2>
                     <div class="intro-body">
-                        <p>Vi har levert utviklingsprosjekter for virksomheter som:</p>
-                        <ul class="client-list">
-                            <li>Aschehoug</li>
-                            <li>Best Western</li>
-                            <li>Telenor</li>
-                            <li>Storebrand</li>
-                            <li>Jernbaneverket (nå Bane NOR)</li>
-                            <li>Owens Corning Pipe &amp; Tank</li>
-                            <li>Flowtite</li>
-                        </ul>
                         <p class="lead-statement">Samtidig er vi valgt av frivillige organisasjoner som Norsk Revmatikerforbund, Brystkreftforeningen og Norilco til å bygge og drifte kritiske <a class="text-link" href="/medlemssystem/">medlemsløsninger</a> og <a class="text-link" href="/likepersonslogg/">likepersonsløsninger</a>.</p>
                     </div>
                 </div>
@@ -560,7 +637,7 @@
                 </div>
                 <div class="teaser-grid">
                     <div class="teaser-card teaser-card--orange">
-                        <div class="teaser-card-image"><picture><source srcset="assets/img/products/regweb-visual-480.webp 480w, assets/img/products/regweb-visual.webp 800w" sizes="(max-width: 767px) 100vw, 380px" type="image/webp" /><img src="assets/img/products/regweb-visual.jpg" alt="Skjermbilde av Regweb medlemssystem" width="800" height="450" loading="lazy" /></picture></div>
+                        <div class="teaser-card-image"><picture><source srcset="assets/img/products/regweb-visual-480.webp 480w, assets/img/products/regweb-visual.webp 800w" sizes="(max-width: 767px) 100vw, 380px" type="image/webp" /><img src="assets/img/products/regweb-visual.jpg" alt="Regweb medlemssystem: dashbord med innbetalinger og betaling med Vipps, Visa og Mastercard" width="800" height="450" loading="lazy" /></picture></div>
                         <div class="teaser-card-body">
                             <span class="teaser-card-badge">Dere driver selv</span>
                             <h3 class="teaser-card-title">Regweb</h3>
@@ -597,7 +674,7 @@
                         </div>
                     </div>
                     <div class="teaser-card teaser-card--purple">
-                        <div class="teaser-card-image"><picture><source srcset="assets/img/products/medlem123-visual-480.webp 480w, assets/img/products/medlem123-visual.webp 800w" sizes="(max-width: 767px) 100vw, 380px" type="image/webp" /><img src="assets/img/products/medlem123-visual.jpg" alt="Fullservice medlemsadministrasjon fra Klopp AS" style="object-position: center top;" width="800" height="564" loading="lazy" /></picture></div>
+                        <div class="teaser-card-image"><picture><source srcset="assets/img/products/medlem123-visual-480.webp 480w, assets/img/products/medlem123-visual.webp 800w" sizes="(max-width: 767px) 100vw, 380px" type="image/webp" /><img src="assets/img/products/medlem123-visual.jpg" alt="Medlem123: innmeldingsskjema med betaling via Vipps, Visa og Mastercard, og medlem registrert som betalt" width="800" height="450" loading="lazy" /></picture></div>
                         <div class="teaser-card-body">
                             <span class="teaser-card-badge">Vi drifter for dere</span>
                             <h3 class="teaser-card-title">Medlem123</h3>
@@ -641,10 +718,6 @@
                                         <a href="https://www.mastercard.no/" target="_blank" rel="noopener"><img src="assets/img/partners/mastercard_symbol.svg" alt="Mastercard" width="999" height="618" /><span aria-hidden="true">Mastercard</span><span class="sr-only"> (åpner i ny fane)</span></a>
                                     </div>
                                 </td></tr>
-                                <tr class="fact-group"><th scope="rowgroup">Økonomi</th><td></td></tr>
-                                <tr><th>Gjeld (2025)</th><td>Kr. 0</td></tr>
-                                <tr><th>Experian-rating</th><td>Gull (926/1000)</td></tr>
-                                <tr><th>Dun &amp; Bradstreet-rating</th><td>AAA</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -673,8 +746,8 @@
         <section class="contact-band" id="kontakt">
             <div class="container">
                 <h2 class="contact-band-heading">Skal vi ta en prat?</h2>
-                <p class="contact-band-body">Ta kontakt for en uforpliktende prat om produktene våre, eller et nytt utviklingsprosjekt.</p>
-                <a class="btn" href="kontakt.html">Kontakt oss <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.5 2.75A.75.75 0 0 1 7.25 2H13a.75.75 0 0 1 .75.75v5.75a.75.75 0 0 1-1.5 0V4.56L4.28 12.53a.75.75 0 0 1-1.06-1.06L11.19 3.5H7.25a.75.75 0 0 1-.75-.75Z"/><path d="M2.75 4.5A.75.75 0 0 1 3.5 3.75h3a.75.75 0 0 1 0 1.5h-2.25v7h7V10a.75.75 0 0 1 1.5 0v3a.75.75 0 0 1-.75.75h-8.5a.75.75 0 0 1-.75-.75v-8.5Z"/></svg></a>
+                <p class="contact-band-body">Enten dere er en landsomfattende organisasjon som trenger bedre medlemskontroll, eller en bedrift som vil kutte kostnader med AI-automatisering: la oss ta en uforpliktende kaffeprat i Tønsberg eller på Teams. Ring oss direkte på <a href="tel:+4733312800">33 31 28 00</a>.</p>
+                <a class="btn btn-red" href="kontakt.html">Kontakt oss <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
                 <p class="contact-band-direct">Eller ring <a href="tel:+4733312800">33 31 28 00</a> <span class="contact-band-sep">·</span> <a href="mailto:post@klopp.no">post@klopp.no</a></p>
             </div>
         </section>
