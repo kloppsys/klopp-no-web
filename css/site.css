@@ -1294,3 +1294,13 @@ hr.divider { display: none; }
 
 /* Footer phone/e-mail links sit on their own lines — give them a >=24px tap target (WCAG 2.5.8). */
 .footer-grid a { min-height: 24px; }
+
+/* Eksterne tekstlenker: diskret pil ut av boks (skjult for skjermlesere, som har sr-only-teksten) */
+p a[target="_blank"]:not(:has(img)):not(.chevron-link):not(.teaser-card-btn):not(.btn):not(.service-card-link)::after,
+.hero-link[target="_blank"]::after, .text-link[target="_blank"]::after {
+  content: " \2197" / "";
+  display: inline-block;
+  margin-left: 0.15em;
+  font-size: 0.8em;
+  text-decoration: none;
+}
