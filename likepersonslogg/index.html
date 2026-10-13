@@ -161,6 +161,34 @@
                 margin: var(--space-5) 0;
                 font-size: 15px;
             }
+            .lp-hero-mockup { display: block; width: 100%; height: auto; margin: var(--space-5) 0 var(--space-4); }
+            .lp-partners { text-align: center; margin: 0 0 var(--space-6); padding: var(--space-4) 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+            .lp-partners-label { margin: 0 0 var(--space-3); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--color-text-secondary); }
+            .lp-partners-logos { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: var(--space-4) var(--space-7); }
+            .lp-partners-logos li { margin: 0; }
+            .lp-partners-logos img { display: block; height: 28px; width: auto; opacity: .75; }
+            :root[data-theme="dark"] .lp-partners-logos img { filter: invert(1); opacity: .85; }
+            :root:not([data-theme="light"]) .lp-partners-logos img { filter: invert(1); opacity: .85; }
+            :root[data-theme="light"] .lp-partners-logos img { filter: none; opacity: .75; }
+            @media (max-width: 480px) { .lp-partners-logos img { height: 22px; } .lp-partners-logos { gap: var(--space-3) var(--space-5); } }
+            .role-tree { list-style: none; margin: var(--space-5) 0; padding: 0; }
+            .role-tree li { display: flex; gap: var(--space-4); align-items: flex-start; position: relative; margin: 0 0 var(--space-3); padding: var(--space-4) var(--space-5); background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+            .role-tree .role-l2 { margin-left: var(--space-6); }
+            .role-tree .role-l3 { margin-left: calc(var(--space-6) * 2); }
+            .role-tree .role-l4 { margin-left: calc(var(--space-6) * 3); }
+            .role-tree .role-l2::before, .role-tree .role-l3::before, .role-tree .role-l4::before { content: ""; position: absolute; left: calc(var(--space-5) * -1); top: -13px; width: calc(var(--space-5) - 4px); height: 38px; border-left: 2px solid var(--color-border); border-bottom: 2px solid var(--color-border); border-bottom-left-radius: 8px; }
+            .role-tree .role-icon { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 12px; background: var(--color-bg); border: 1px solid var(--color-border); color: var(--accent-text, var(--color-text)); }
+            .role-tree .role-l1 .role-icon { color: #a87a00; }
+            :root[data-theme="dark"] .role-tree .role-l1 .role-icon { color: #f0c24d; }
+            :root:not([data-theme="light"]) .role-tree .role-l1 .role-icon { color: #f0c24d; }
+            .role-tree h3 { margin: 0 0 var(--space-1); font-size: 17px; }
+            .role-tree p { margin: 0; font-size: 15px; }
+            @media (max-width: 600px) { .role-tree .role-l2 { margin-left: var(--space-4); } .role-tree .role-l3 { margin-left: calc(var(--space-4) * 2); } .role-tree .role-l4 { margin-left: calc(var(--space-4) * 3); } .role-tree li { padding: var(--space-3) var(--space-4); } .role-tree .role-l2::before, .role-tree .role-l3::before, .role-tree .role-l4::before { left: -10px; width: 8px; } }
+            .browser-frame { border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; background: var(--color-bg-elevated); box-shadow: 0 1px 2px var(--shadow-color, rgba(0,0,0,.06)), 0 18px 36px -22px var(--shadow-color, rgba(0,0,0,.35)); }
+            .browser-frame img { display: block; width: 100%; height: auto; }
+            .browser-bar { display: flex; align-items: center; gap: 6px; padding: 9px 12px; border-bottom: 1px solid var(--color-border); background: var(--color-bg); }
+            .browser-bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--color-border); display: block; }
+            .browser-bar span { margin-left: var(--space-3); font-size: 12px; color: var(--color-text-secondary); background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: 999px; padding: 2px 14px; }
             .navbar-brand-logo { height: 40px; width: auto; display: block; }
             .footer-brand-logo { height: 40px; width: auto; }
             .footer-grid-compact {
@@ -190,7 +218,15 @@
         <main class="legal-page" id="main">
             <h1>Likepersonslogg: registrering og rapportering av likepersonsarbeid</h1>
             <p>Likepersonslogg er et skybasert verktøy for å registrere og rapportere likepersonsarbeid i norske foreninger. Klopp AS har utviklet løsningen i samarbeid med Norsk Revmatikerforbund, Brystkreftforeningen og Norilco, og drifter den selv. Likepersonene logger aktivitet selv med Vipps-innlogging på mobil, nettbrett eller datamaskin, og foreningen henter ut samlerapport til Bufdir og andre tilskuddsgivere. Data ligger på servere i Norge.</p>
-            <picture><source type="image/webp" srcset="/assets/img/products/likepersonslogg-visual-480.webp 480w, /assets/img/products/likepersonslogg-visual.webp 800w" sizes="(max-width: 760px) 100vw, 760px"><img class="prod-hero-img" src="/assets/img/products/likepersonslogg-visual.jpg" alt="Skjermbilde av Likepersonslogg" width="800" height="450" fetchpriority="high" /></picture>
+            <picture><source type="image/webp" srcset="/assets/img/products/likepersonslogg-mockup-760.webp 760w, /assets/img/products/likepersonslogg-mockup.webp 1380w" sizes="(max-width: 760px) 100vw, 760px"><img class="lp-hero-mockup" src="/assets/img/products/likepersonslogg-mockup.png" alt="Likepersonslogg på bærbar PC og smarttelefon: rapport over aktiviteter til Bufdir og skjema for å registrere en aktivitet (eksempeldata)" width="1380" height="860" fetchpriority="high" /></picture>
+            <div class="lp-partners">
+                <p class="lp-partners-label">Utviklet i samarbeid med og brukt av</p>
+                <ul class="lp-partners-logos">
+                    <li><img src="/assets/img/logos/partnere/revmatiker.png" alt="Norsk Revmatikerforbund" width="634" height="96" loading="lazy" /></li>
+                    <li><img src="/assets/img/logos/partnere/brystkreftforeningen.png" alt="Brystkreftforeningen" width="274" height="96" loading="lazy" /></li>
+                    <li><img src="/assets/img/logos/partnere/norilco.png" alt="Norilco" width="368" height="96" loading="lazy" /></li>
+                </ul>
+            </div>
             <h2>Dette får dere</h2>
             <div class="ex-grid">
                 <section class="ex-card"><h3>Vipps-innlogging for alle</h3><p>Likepersonene logger inn med Vipps.</p></section>
@@ -205,15 +241,20 @@
                 <section class="ex-card"><h3>Ingen grense på antall oppdrag</h3><p>Likepersonene registrerer så mange oppdrag de vil.</p></section>
             </div>
             <h2>Roller i Likepersonslogg</h2>
-            <table class="ex-table"><tbody><tr><th scope="row">Foreningsadmin</th><td>Kan sette opp alt i organisasjonen, med full oversikt over all aktivitet som er logget sentralt.</td></tr><tr><th scope="row">Likepersonsleder admin (fylkesveileder)</th><td>Samme visning som foreningsadmin, men avgrenset til utvalgte avdelinger og uten tilgang til innstillinger. Kan behandle likepersoner og likepersonsledere i underavdelinger.</td></tr><tr><th scope="row">Likepersonsleder</th><td>Kan behandle likepersoner i underavdelinger.</td></tr><tr><th scope="row">Likeperson</th><td>Kan logge sin egen aktivitet.</td></tr></tbody></table>
+            <ol class="role-tree" aria-label="Rollene i Likepersonslogg, fra høyeste til laveste nivå">
+                <li class="role-l1"><span class="role-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z"/><path d="M5 19h14"/></svg></span><div><h3>Foreningsadmin</h3><p>Kan sette opp alt i organisasjonen, med full oversikt over all aktivitet som er logget sentralt.</p></div></li>
+                <li class="role-l2"><span class="role-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg></span><div><h3>Likepersonsleder admin (fylkesveileder)</h3><p>Samme visning som foreningsadmin, men avgrenset til utvalgte avdelinger og uten tilgang til innstillinger. Kan behandle likepersoner og likepersonsledere i underavdelinger.</p></div></li>
+                <li class="role-l3"><span class="role-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c.5-3.5 3-5.5 6-5.5s5.5 2 6 5.5"/><circle cx="17" cy="9" r="2.4"/><path d="M16.5 14.6c2.6.2 4.2 1.9 4.5 4.4"/></svg></span><div><h3>Likepersonsleder</h3><p>Kan behandle likepersoner i underavdelinger.</p></div></li>
+                <li class="role-l4"><span class="role-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-4 3.4-6 7-6s6.4 2 7 6"/></svg></span><div><h3>Likeperson</h3><p>Kan logge sin egen aktivitet.</p></div></li>
+            </ol>
             <h2>Slik ser det ut</h2>
             <div class="shot-grid">
                 <figure>
-                    <picture><source type="image/webp" srcset="/assets/img/products/likepersonslogg-sentralt.webp" /><img src="/assets/img/products/likepersonslogg-sentralt.jpg" alt="Foreningsadmin sin aktivitetsoversikt i Likepersonslogg, med datofilter" width="900" height="487" loading="lazy" /></picture>
+                    <div class="browser-frame"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>likepersonslogg.com</span></div><picture><source type="image/webp" srcset="/assets/img/products/likepersonslogg-sentralt.webp" /><img src="/assets/img/products/likepersonslogg-sentralt.jpg" alt="Foreningsadmin sin aktivitetsoversikt i Likepersonslogg, med datofilter" width="900" height="487" loading="lazy" /></picture></div>
                     <figcaption>Sentralt: foreningsadmin ser all aktivitet og filtrerer på periode og likeperson.</figcaption>
                 </figure>
                 <figure>
-                    <picture><source type="image/webp" srcset="/assets/img/products/likepersonslogg-likepersoner.webp" /><img src="/assets/img/products/likepersonslogg-likepersoner.jpg" alt="Likeperson sin liste over egne aktiviteter i Likepersonslogg" width="900" height="617" loading="lazy" /></picture>
+                    <div class="browser-frame"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>likepersonslogg.com</span></div><picture><source type="image/webp" srcset="/assets/img/products/likepersonslogg-likepersoner.webp" /><img src="/assets/img/products/likepersonslogg-likepersoner.jpg" alt="Likeperson sin liste over egne aktiviteter i Likepersonslogg" width="900" height="617" loading="lazy" /></picture></div>
                     <figcaption>Likeperson: hver likeperson logger og ser sine egne aktiviteter.</figcaption>
                 </figure>
             </div>
