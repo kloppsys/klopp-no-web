@@ -481,9 +481,9 @@
             .logobar.logobar-org img.logobar-emblem { max-height: 64px; }
             @media (max-width: 900px) { .logobar-org { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
             @media (max-width: 480px) { .logobar-org { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 16px; } }
-            .logobar-org li.logobar-more { gap: 10px; padding: 8px 16px; border: 1.5px dashed #c9cdd2; border-radius: var(--radius-md); font-size: 13px; color: #8a8f96; }
+            .logobar li.logobar-more { flex-shrink: 0; white-space: nowrap; gap: 10px; padding: 8px 16px; border: 1.5px dashed #c9cdd2; border-radius: var(--radius-md); font-size: 13px; color: #8a8f96; }
             .logobar-more-plus { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid #c9cdd2; font-size: 15px; line-height: 1; color: #8a8f96; }
-            :root[data-theme="dark"] .logobar-org li.logobar-more { border-color: #5a5f66; color: #a8a8a8; }
+            :root[data-theme="dark"] .logobar li.logobar-more { border-color: #5a5f66; color: #a8a8a8; }
             :root[data-theme="dark"] .logobar-more-plus { border-color: #5a5f66; color: #a8a8a8; }
             .logobar img { max-height: none; }
             .logobar li:hover img { filter: none; }
@@ -604,12 +604,13 @@
                 <h3 class="logobar-group">Utvikling</h3>
                 <ul class="logobar">
                     <li><img src="assets/img/logos/kunder/aschehoug.svg" alt="Aschehoug" style="height:32px" loading="lazy" /></li>
-                    <li><img src="assets/img/logos/kunder/telenor.svg" alt="Telenor" style="height:38px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/kunder/telenor.svg" alt="Telenor" style="height:30px" loading="lazy" /></li>
                     <li><img src="assets/img/logos/kunder/storebrand.svg" alt="Storebrand" style="width:150px;height:auto" loading="lazy" /></li>
                     <li><img src="assets/img/logos/kunder/best-western.svg" alt="Best Western Hotels &amp; Resorts" style="height:32px" loading="lazy" /></li>
                     <li><img src="assets/img/logos/kunder/bane-nor.svg" alt="Bane NOR (tidligere Jernbaneverket)" style="height:24px" loading="lazy" /></li>
                     <li><img src="assets/img/logos/kunder/owens-corning.svg" alt="Owens Corning" style="height:40px" loading="lazy" /></li>
                                     <li><img src="assets/img/logos/kunder/flowtite.png" alt="Flowtite" style="height:36px" loading="lazy" /></li>
+                    <li class="logobar-more" aria-label="Og flere"><span class="logobar-more-plus" aria-hidden="true">+</span><span>Og flere</span></li>
                 </ul>
                 <h3 class="logobar-group">Medlemsløsninger og likepersonsløsninger</h3>
                 <ul class="logobar logobar-org">
