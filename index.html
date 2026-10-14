@@ -478,12 +478,12 @@
             .logobar-group + .logobar { margin-top: 44px; }
             .logobar-org { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); justify-items: center; align-items: center; gap: 35px 24px; }
             .logobar-org li { width: 100%; }
-            .logobar.logobar-org img { max-height: 40px; }
+            .logobar.logobar-org img { max-height: 40px; object-fit: contain; }
             .logobar.logobar-org img.logobar-emblem { max-height: 64px; }
             @media (max-width: 900px) { .logobar-org { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
             @media (max-width: 480px) { .logobar-org { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 16px; } }
-            .logobar li.logobar-more, .logobar-org li.logobar-more { flex-shrink: 0; white-space: nowrap; gap: 10px; box-sizing: border-box; width: auto; height: 48px; padding: 0 20px; border: 1.5px dashed #c9cdd2; border-radius: var(--radius-md); font-size: 13px; color: #8a8f96; }
-            .logobar-more-plus { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid #c9cdd2; font-size: 15px; line-height: 1; color: #8a8f96; }
+            .logobar li.logobar-more, .logobar-org li.logobar-more { flex-shrink: 0; white-space: nowrap; gap: 10px; box-sizing: border-box; width: auto; height: 48px; padding: 0 20px; border: 1.5px dashed #c9cdd2; border-radius: var(--radius-md); font-size: 13px; color: #6b6b6b; }
+            .logobar-more-plus { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid #c9cdd2; font-size: 15px; line-height: 1; color: #6b6b6b; }
             :root[data-theme="dark"] .logobar li.logobar-more { border-color: #5a5f66; color: #a8a8a8; }
             :root[data-theme="dark"] .logobar-more-plus { border-color: #5a5f66; color: #a8a8a8; }
             .logobar img.logobar-soft { filter: grayscale(1) brightness(0.55) contrast(1.1) opacity(0.55); }
