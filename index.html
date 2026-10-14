@@ -217,10 +217,13 @@
                på 1440×900). Under 900 px ligger bildet øverst som et 1:1-utsnitt. */
             .masthead-card { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 0; }
             .masthead-media { position: relative; }
-            .masthead-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+            /* Utsnitt: 67 % på desktop viser mannen i marineblått, damen i grått og mannen til høyre; 58 % på
+               mobil (1:1) er utsnittet Richard valgte 2026-10-14. */
+            .masthead-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 67% 40%; }
             @media (max-width: 900px) {
                 .masthead-card { grid-template-columns: minmax(0, 1fr); }
                 .masthead-media { min-height: 0; height: clamp(300px, 92vw, 440px); order: -1; }
+                .masthead-media img { object-position: 58% 40%; }
             }
             /* The photo itself is a bright white-walled office — fine in light mode, but jarring
                dropped straight into a dark page. A flat dark tint (not a gradient, since the whole
