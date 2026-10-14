@@ -472,6 +472,12 @@
             @media (max-width: 560px) { .logobar { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
             .logobar li { display: flex; align-items: center; justify-content: center; min-height: 48px; }
             .logobar img { display: block; max-height: 40px; max-width: 100%; width: auto; filter: grayscale(1) brightness(0.55) contrast(1.1) opacity(0.75); transition: filter var(--duration-base) var(--ease-out); }
+            .logobar-group { margin: var(--space-7) 0 0; text-align: left; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #6b6b6b; }
+            :root[data-theme="dark"] .logobar-group { color: #a8a8a8; }
+            .logobar-group + .logobar { margin-top: 20px; }
+            .logobar-org { flex-wrap: wrap; justify-content: flex-start; gap: var(--space-5) 60px; }
+            @media (max-width: 900px) { .logobar-org { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: var(--space-5) var(--space-6); } }
+            .logobar img { max-height: none; }
             .logobar li:hover img { filter: none; }
             :root[data-theme="dark"] .logobar img { background: #ffffff; padding: 8px 14px; border-radius: 8px; box-sizing: content-box; filter: grayscale(1) brightness(0.55) opacity(0.85); }
             .page-section-enterprise { background: var(--navy); color: rgba(255, 255, 255, 0.85); }
@@ -586,6 +592,7 @@
         <section class="logobar-section" aria-labelledby="logobar-title">
             <div class="container">
                 <h2 class="logobar-title" id="logobar-title">Betrodd av ledende aktører i norsk næringsliv og frivillighet</h2>
+                <h3 class="logobar-group">Utvikling</h3>
                 <ul class="logobar">
                     <li><img src="assets/img/logos/kunder/aschehoug.svg" alt="Aschehoug" style="height:32px" loading="lazy" /></li>
                     <li><img src="assets/img/logos/kunder/telenor.svg" alt="Telenor" style="height:38px" loading="lazy" /></li>
@@ -593,6 +600,29 @@
                     <li><img src="assets/img/logos/kunder/best-western.svg" alt="Best Western Hotels &amp; Resorts" style="height:32px" loading="lazy" /></li>
                     <li><img src="assets/img/logos/kunder/bane-nor.svg" alt="Bane NOR (tidligere Jernbaneverket)" style="height:24px" loading="lazy" /></li>
                     <li><img src="assets/img/logos/kunder/owens-corning.svg" alt="Owens Corning" style="height:40px" loading="lazy" /></li>
+                                    <li><img src="assets/img/logos/kunder/flowtite.png" alt="Flowtite" style="height:36px" loading="lazy" /></li>
+                </ul>
+                <h3 class="logobar-group">Medlemsløsninger og likepersonsløsninger</h3>
+                <ul class="logobar logobar-org">
+                    <li><img src="assets/img/logos/partnere/revmatiker.png" alt="Norsk Revmatikerforbund" style="height:32px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/brystkreftforeningen.png" alt="Brystkreftforeningen" style="height:64px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/norilco.png" alt="Norilco" style="height:32px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/ryggforeningen.png" alt="Ryggforeningen" style="height:30px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/nfs.png" alt="Norsk Farmasøytisk Selskap" style="height:44px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/pef.svg" alt="Psoriasis- og eksemforbundet" style="height:38px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/tourette.png" alt="Norsk Tourette Forening" style="height:30px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/rusfri-oppvekst.png" alt="Rusfri Oppvekst" style="height:48px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/norges-massasjeforbund.png" alt="Norges Massasjeforbund" style="height:52px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/fod.svg" alt="Foreningen for omplassering av dyr" style="height:40px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/rh-foreningen.svg" alt="Ryggmargsbrokk- og hydrocephalusforeningen" style="height:44px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/edru.svg" alt="Edru Livsstil (DNT)" style="height:34px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/nkp.png" alt="Norges Kommunistiske Parti" style="height:52px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/ffm.png" alt="Foreningen for Muskelsyke" style="height:52px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/lnt.png" alt="Landsforeningen for Nyrepasienter og Transplanterte" style="height:30px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/fh-norge.png" alt="FH Norge" style="height:30px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/spafo.png" alt="Spafo Norge" style="height:40px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/hindu-kultursenter.png" alt="Norges Hindu Kultur senter" style="height:36px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/autismeforeningen.png" alt="Autismeforeningen i Norge" style="height:44px" loading="lazy" /></li>
                 </ul>
             </div>
         </section>
