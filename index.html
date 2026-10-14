@@ -475,8 +475,16 @@
             .logobar-group { margin: var(--space-7) 0 0; text-align: left; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #6b6b6b; }
             :root[data-theme="dark"] .logobar-group { color: #a8a8a8; }
             .logobar-group + .logobar { margin-top: 20px; }
-            .logobar-org { flex-wrap: wrap; justify-content: flex-start; gap: var(--space-5) 60px; }
-            @media (max-width: 900px) { .logobar-org { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: var(--space-5) var(--space-6); } }
+            .logobar-org { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); justify-items: center; align-items: center; gap: 35px 24px; }
+            .logobar-org li { width: 100%; }
+            .logobar.logobar-org img { max-height: 40px; }
+            .logobar.logobar-org img.logobar-emblem { max-height: 64px; }
+            @media (max-width: 900px) { .logobar-org { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+            @media (max-width: 480px) { .logobar-org { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 16px; } }
+            .logobar-org li.logobar-more { gap: 10px; padding: 8px 16px; border: 1.5px dashed #c9cdd2; border-radius: var(--radius-md); font-size: 13px; color: #8a8f96; }
+            .logobar-more-plus { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid #c9cdd2; font-size: 15px; line-height: 1; color: #8a8f96; }
+            :root[data-theme="dark"] .logobar-org li.logobar-more { border-color: #5a5f66; color: #a8a8a8; }
+            :root[data-theme="dark"] .logobar-more-plus { border-color: #5a5f66; color: #a8a8a8; }
             .logobar img { max-height: none; }
             .logobar li:hover img { filter: none; }
             :root[data-theme="dark"] .logobar img { background: #ffffff; padding: 8px 14px; border-radius: 8px; box-sizing: content-box; filter: grayscale(1) brightness(0.55) opacity(0.85); }
@@ -606,24 +614,25 @@
                 <h3 class="logobar-group">Medlemsløsninger og likepersonsløsninger</h3>
                 <ul class="logobar logobar-org">
                     <li><img src="assets/img/logos/partnere/revmatiker.png" alt="Norsk Revmatikerforbund" style="height:32px" loading="lazy" /></li>
-                    <li><img src="assets/img/logos/partnere/brystkreftforeningen.png" alt="Brystkreftforeningen" style="height:64px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/brystkreftforeningen.png" alt="Brystkreftforeningen" class="logobar-emblem" style="height:56px" loading="lazy" /></li>
                     <li><img src="assets/img/logos/partnere/norilco.png" alt="Norilco" style="height:32px" loading="lazy" /></li>
-                    <li><img src="assets/img/logos/partnere/ryggforeningen.png" alt="Ryggforeningen" style="height:30px" loading="lazy" /></li>
-                    <li><img src="assets/img/logos/partnere/nfs.png" alt="Norsk Farmasøytisk Selskap" style="height:44px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/ryggforeningen.png" alt="Ryggforeningen" style="height:40px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/nfs.png" alt="Norsk Farmasøytisk Selskap" style="height:40px" loading="lazy" /></li>
                     <li><img src="assets/img/logos/partnere/pef.svg" alt="Psoriasis- og eksemforbundet" style="height:38px" loading="lazy" /></li>
-                    <li><img src="assets/img/logos/partnere/tourette.png" alt="Norsk Tourette Forening" style="height:30px" loading="lazy" /></li>
-                    <li><img src="assets/img/logos/partnere/rusfri-oppvekst.png" alt="Rusfri Oppvekst" style="height:48px" loading="lazy" /></li>
-                    <li><img src="assets/img/logos/partnere/norges-massasjeforbund.png" alt="Norges Massasjeforbund" style="height:52px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/tourette.png" alt="Norsk Tourette Forening" style="height:40px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/rusfri-oppvekst.png" alt="Rusfri Oppvekst" class="logobar-emblem" style="height:48px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/norges-massasjeforbund.png" alt="Norges Massasjeforbund" class="logobar-emblem" style="height:64px" loading="lazy" /></li>
                     <li><img src="assets/img/logos/partnere/fod.svg" alt="Foreningen for omplassering av dyr" style="height:40px" loading="lazy" /></li>
-                    <li><img src="assets/img/logos/partnere/rh-foreningen.svg" alt="Ryggmargsbrokk- og hydrocephalusforeningen" style="height:44px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/rh-foreningen.svg" alt="Ryggmargsbrokk- og hydrocephalusforeningen" class="logobar-emblem" style="height:48px" loading="lazy" /></li>
                     <li><img src="assets/img/logos/partnere/edru.svg" alt="Edru Livsstil (DNT)" style="height:34px" loading="lazy" /></li>
-                    <li><img src="assets/img/logos/partnere/nkp.png" alt="Norges Kommunistiske Parti" style="height:52px" loading="lazy" /></li>
-                    <li><img src="assets/img/logos/partnere/ffm.png" alt="Foreningen for Muskelsyke" style="height:52px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/nkp.png" alt="Norges Kommunistiske Parti" class="logobar-emblem" style="height:60px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/ffm.png" alt="Foreningen for Muskelsyke" class="logobar-emblem" style="height:64px" loading="lazy" /></li>
                     <li><img src="assets/img/logos/partnere/lnt.png" alt="Landsforeningen for Nyrepasienter og Transplanterte" style="height:30px" loading="lazy" /></li>
-                    <li><img src="assets/img/logos/partnere/fh-norge.png" alt="FH Norge" style="height:30px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/partnere/fh-norge.png" alt="FH Norge" style="height:36px" loading="lazy" /></li>
                     <li><img src="assets/img/logos/partnere/spafo.png" alt="Spafo Norge" style="height:40px" loading="lazy" /></li>
                     <li><img src="assets/img/logos/partnere/hindu-kultursenter.png" alt="Norges Hindu Kultur senter" style="height:36px" loading="lazy" /></li>
                     <li><img src="assets/img/logos/partnere/autismeforeningen.png" alt="Autismeforeningen i Norge" style="height:44px" loading="lazy" /></li>
+                    <li class="logobar-more" aria-label="Og flere"><span class="logobar-more-plus" aria-hidden="true">+</span><span>Og flere</span></li>
                 </ul>
             </div>
         </section>
