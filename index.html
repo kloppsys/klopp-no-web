@@ -212,22 +212,15 @@
         }
         </script>
         <style>
-            /* Denne siden: full, uklippet bilde øverst i masthead-kortet, tekstblokken under */
-            .masthead-card {
-                grid-template-columns: 1fr;
-                min-height: 0;
-            }
-            .masthead-media {
-                position: relative;
-                min-height: 0;
-                order: -1;
-            }
-            .masthead-media img {
-                position: static;
-                display: block;
-                width: 100%;
-                height: auto;
-                object-fit: initial;
+            /* Denne siden: delt hero. Tekst og knapper til venstre, bildet til høyre, slik at overskrift,
+               knapper og bilde er synlige samtidig på en vanlig laptop (før lå overskriften under folden
+               på 1440×900). Under 900 px ligger bildet øverst som et 1:1-utsnitt. */
+            .masthead-card { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 0; }
+            .masthead-media { position: relative; }
+            .masthead-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+            @media (max-width: 900px) {
+                .masthead-card { grid-template-columns: minmax(0, 1fr); }
+                .masthead-media { min-height: 0; height: clamp(300px, 92vw, 440px); order: -1; }
             }
             /* The photo itself is a bright white-walled office — fine in light mode, but jarring
                dropped straight into a dark page. A flat dark tint (not a gradient, since the whole
@@ -535,8 +528,8 @@
                     </div>
                     <div class="masthead-media">
                         <picture>
-                            <source srcset="assets/img/klopp-forsidebilde-2027-800.webp 800w, assets/img/klopp-forsidebilde-2027-1200.webp 1200w, assets/img/klopp-forsidebilde-2027-1600.webp 1600w" sizes="(max-width: 1160px) 100vw, 1112px" type="image/webp" />
-                            <img src="assets/img/klopp-forsidebilde-2027-1200.jpg" srcset="assets/img/klopp-forsidebilde-2027-800.jpg 800w, assets/img/klopp-forsidebilde-2027-1200.jpg 1200w, assets/img/klopp-forsidebilde-2027-1600.jpg 1600w" sizes="(max-width: 1160px) 100vw, 1112px" alt="Fire kolleger rundt et bord i et lyst kontor, med Regweb medlemssystem åpent på en laptop og Klopp-logo på kaffekoppen" width="1600" height="900" fetchpriority="high" />
+                            <source srcset="assets/img/klopp-forsidebilde-2027-800.webp 800w, assets/img/klopp-forsidebilde-2027-1200.webp 1200w, assets/img/klopp-forsidebilde-2027-1600.webp 1600w, assets/img/klopp-forsidebilde-2027-2336.webp 2336w" sizes="(max-width: 900px) 164vw, 1190px" type="image/webp" />
+                            <img src="assets/img/klopp-forsidebilde-2027-1200.jpg" srcset="assets/img/klopp-forsidebilde-2027-800.jpg 800w, assets/img/klopp-forsidebilde-2027-1200.jpg 1200w, assets/img/klopp-forsidebilde-2027-1600.jpg 1600w, assets/img/klopp-forsidebilde-2027-2336.jpg 2336w" sizes="(max-width: 900px) 164vw, 1190px" alt="Fire kolleger rundt et bord i et lyst kontor, med Regweb medlemssystem åpent på en laptop og Klopp-logo på kaffekoppen" width="1600" height="900" fetchpriority="high" />
                         </picture>
                     </div>
                 </div>
