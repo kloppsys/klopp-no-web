@@ -244,6 +244,24 @@
             .teaser-card-more { margin: var(--space-3) 0 0; font-size: 14px; }
             .audience-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); margin-top: var(--space-5); }
             @media (max-width: 800px) { .audience-grid { grid-template-columns: minmax(0, 1fr); } }
+            /* r047: logostripe som buffer under heroet, tonet bånd med tre kort (zebra mot hvitt hero og hvit soliditet) */
+            .logo-strip { display: flex; align-items: center; gap: var(--space-7); margin-top: var(--space-6); padding: var(--space-5) 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+            .logo-strip-label { margin: 0; flex: 0 0 auto; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #6b6b6b; }
+            :root[data-theme="dark"] .logo-strip-label { color: #a8a8a8; }
+            .logo-strip .logobar { flex: 1 1 auto; margin: 0; }
+            .logo-strip .logobar img { max-height: 30px; }
+            @media (max-width: 900px) { .logo-strip { flex-direction: column; align-items: stretch; gap: var(--space-4); } }
+            .masthead { padding-bottom: var(--space-7); }
+            .audience-band { background: #eef3f8; padding: var(--space-8) 0 var(--space-9); }
+            :root[data-theme="dark"] .audience-band { background: var(--color-bg-elevated); }
+            @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .audience-band { background: var(--color-bg-elevated); } }
+            .audience-heading { text-align: center; font-size: clamp(1.375rem, 1.5vw + 1rem, 2rem); letter-spacing: -0.01em; line-height: 1.25; max-width: 34ch; margin: 0 auto; }
+            .audience-band .audience-grid { margin-top: var(--space-7); }
+            .audience-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            @media (max-width: 900px) { .audience-grid-3 { grid-template-columns: minmax(0, 1fr); } }
+            .audience-band .audience-card { background: var(--color-bg); }
+            .audience-card-business .capability-icon { background: var(--navy); color: #ffffff; }
+            :root[data-theme="dark"] .audience-card-business .capability-icon { background: var(--accent-blue); color: var(--navy); }
             .audience-card {
                 --card-accent: var(--accent-text);
                 display: flex; flex-direction: column;
@@ -537,31 +555,61 @@
                     </div>
                 </div>
 
-                <div class="audience-grid">
+                <div class="logo-strip">
+                    <p class="logo-strip-label">Betrodd av norsk næringsliv</p>
+                    <ul class="logobar logobar-strip" aria-label="Utviklingskunder">
+                    <li><img src="assets/img/logos/kunder/aschehoug.svg" alt="Aschehoug" style="height:32px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/kunder/telenor.svg" alt="Telenor" style="height:28px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/kunder/storebrand.svg" alt="Storebrand" style="width:150px;height:auto" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/kunder/best-western.svg" alt="Best Western Hotels &amp; Resorts" style="height:32px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/kunder/bane-nor.svg" alt="Bane NOR (tidligere Jernbaneverket)" style="height:24px" loading="lazy" /></li>
+                    <li><img src="assets/img/logos/kunder/owens-corning.svg" alt="Owens Corning" style="height:40px" loading="lazy" /></li>
+                                    <li><img src="assets/img/logos/kunder/flowtite.png" alt="Flowtite" style="height:36px" loading="lazy" /></li>
+                    <li class="logobar-more" aria-label="Og flere"><span class="logobar-more-plus" aria-hidden="true">+</span><span>Og flere</span></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <section class="audience-band" aria-labelledby="audience-heading">
+            <div class="container">
+                <h2 class="audience-heading" id="audience-heading">Hva kan vi hjelpe dere med?</h2>
+                <div class="audience-grid audience-grid-3">
                     <div class="audience-card">
                         <div class="audience-head"><span class="capability-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><circle cx="5.5" cy="5" r="2.5"/><path d="M1 13.5c0-2.5 2-4.2 4.5-4.2S10 11 10 13.5z"/><circle cx="11.5" cy="5.5" r="2"/><path d="M11 9.4c2.3-.2 4 1.3 4 3.6h-3.4c0-1.4-.2-2.6-.6-3.6z"/></svg></span><span class="audience-eyebrow">For foreninger</span></div>
-                        <h2 class="audience-title">Jeg representerer en forening</h2>
-                        <p class="audience-desc">Medlemssystem og medlemsdrift med Regweb og Medlem123, og Likepersonslogg for registrering og rapportering av likepersonsarbeid.</p>
+                        <h3 class="audience-title">Medlemssystem</h3>
+                        <p class="audience-desc">Regweb driver foreningen selv. Medlem123 er samme system, driftet av Klopp AS.</p>
                         <ul class="teaser-card-bullets audience-bullets">
                             <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> <span><a class="text-link" href="/regweb/">Regweb</a>: foreningen drifter medlemsregisteret selv</span></li>
                             <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> <span><a class="text-link" href="/medlem123/">Medlem123</a>: Klopp AS tar medlemshenvendelsene</span></li>
-                            <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> <span><a class="text-link" href="/likepersonslogg/">Likepersonslogg</a>: rapportering til Bufdir og andre tilskuddsgivere</span></li>
+                            <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> <span>Nettinnmelding med Vipps og bankkort</span></li>
                         </ul>
                         <div class="audience-actions">
                             <a class="teaser-card-btn teaser-card-btn-primary" href="/regweb/">Regweb <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
                             <a class="teaser-card-btn teaser-card-btn-primary" href="/medlem123/">Medlem123 <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
+                        </div>
+                        <p class="audience-compare"><a class="chevron-link" href="/medlemssystem/">Regweb eller Medlem123? Se sammenligning <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a></p>
+                    </div>
+                    <div class="audience-card">
+                        <div class="audience-head"><span class="capability-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><circle cx="5.5" cy="5" r="2.5"/><path d="M1 13.5c0-2.5 2-4.2 4.5-4.2S10 11 10 13.5z"/><circle cx="11.5" cy="5.5" r="2"/><path d="M11 9.4c2.3-.2 4 1.3 4 3.6h-3.4c0-1.4-.2-2.6-.6-3.6z"/></svg></span><span class="audience-eyebrow">For foreninger</span></div>
+                        <h3 class="audience-title">Likepersonslogg</h3>
+                        <p class="audience-desc">Registrering og rapportering av likepersonsarbeid i hele organisasjonen.</p>
+                        <ul class="teaser-card-bullets audience-bullets">
+                            <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> <span>Likepersonene logger selv, med Vipps-innlogging</span></li>
+                            <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> <span>Rapport til Bufdir og andre tilskuddsgivere</span></li>
+                            <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> <span>Utviklet med Norsk Revmatikerforbund, Brystkreftforeningen og Norilco</span></li>
+                        </ul>
+                        <div class="audience-actions">
                             <a class="teaser-card-btn teaser-card-btn-primary" href="/likepersonslogg/">Likepersonslogg <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
                         </div>
-                        <p class="audience-compare"><a class="chevron-link" href="/medlemssystem/">Regweb eller Medlem123? Se sammenligning av funksjoner og priser <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a></p>
                     </div>
-                    <div class="audience-card audience-card-dark">
+                    <div class="audience-card audience-card-business">
                         <div class="audience-head"><span class="capability-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M5.7 3.3a.75.75 0 0 1 0 1.06L2.06 8l3.64 3.64a.75.75 0 1 1-1.06 1.06l-4.17-4.17a.75.75 0 0 1 0-1.06l4.17-4.17a.75.75 0 0 1 1.06 0zm4.6 0a.75.75 0 0 1 1.06 0l4.17 4.17a.75.75 0 0 1 0 1.06l-4.17 4.17a.75.75 0 1 1-1.06-1.06L13.94 8 10.3 4.36a.75.75 0 0 1 0-1.06z"/></svg></span><span class="audience-eyebrow">For bedrifter og offentlig sektor</span></div>
-                        <h2 class="audience-title">Jeg trenger utvikling eller AI</h2>
+                        <h3 class="audience-title">Utvikling og AI-agenter</h3>
                         <p class="audience-desc">Skreddersydde webapplikasjoner, AI-agenter og systemintegrasjoner, fra idé og arkitektur til drift.</p>
                         <ul class="teaser-card-bullets audience-bullets">
-                            <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Webapplikasjoner og apper bygget fra bunnen av</li>
-                            <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> AI-agenter som fjerner manuelt, repeterende arbeid</li>
-                            <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Integrasjoner mot systemene dere allerede har</li>
+                            <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> <span>Webapplikasjoner og apper bygget fra bunnen av</span></li>
+                            <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> <span>AI-agenter som fjerner manuelt, repeterende arbeid</span></li>
+                            <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> <span>Integrasjoner mot systemene dere allerede har</span></li>
                         </ul>
                         <div class="audience-actions">
                             <a class="teaser-card-btn teaser-card-btn-primary" href="/ai-agenter/">Se AI og utvikling <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
@@ -570,7 +618,7 @@
                     </div>
                 </div>
             </div>
-        </header>
+        </section>
         <section class="solid-section" id="om-oss" aria-labelledby="solid-title">
             <div class="container">
                 <h2 class="solid-title" id="solid-title">Din trygge, langsiktige IT-partner siden 2011.</h2>
@@ -598,19 +646,7 @@
         </section>
         <section class="logobar-section" aria-labelledby="logobar-title">
             <div class="container">
-                <h2 class="logobar-title" id="logobar-title">Betrodd av ledende aktører i norsk næringsliv og frivillighet</h2>
-                <h3 class="logobar-group">Utvikling</h3>
-                <ul class="logobar">
-                    <li><img src="assets/img/logos/kunder/aschehoug.svg" alt="Aschehoug" style="height:32px" loading="lazy" /></li>
-                    <li><img src="assets/img/logos/kunder/telenor.svg" alt="Telenor" style="height:28px" loading="lazy" /></li>
-                    <li><img src="assets/img/logos/kunder/storebrand.svg" alt="Storebrand" style="width:150px;height:auto" loading="lazy" /></li>
-                    <li><img src="assets/img/logos/kunder/best-western.svg" alt="Best Western Hotels &amp; Resorts" style="height:32px" loading="lazy" /></li>
-                    <li><img src="assets/img/logos/kunder/bane-nor.svg" alt="Bane NOR (tidligere Jernbaneverket)" style="height:24px" loading="lazy" /></li>
-                    <li><img src="assets/img/logos/kunder/owens-corning.svg" alt="Owens Corning" style="height:40px" loading="lazy" /></li>
-                                    <li><img src="assets/img/logos/kunder/flowtite.png" alt="Flowtite" style="height:36px" loading="lazy" /></li>
-                    <li class="logobar-more" aria-label="Og flere"><span class="logobar-more-plus" aria-hidden="true">+</span><span>Og flere</span></li>
-                </ul>
-                <h3 class="logobar-group">Medlemsløsninger og likepersonsløsninger</h3>
+                <h2 class="logobar-title" id="logobar-title">Betrodd av norske foreninger og organisasjoner</h2>
                 <ul class="logobar logobar-org">
                     <li><img src="assets/img/logos/partnere/revmatiker.png" alt="Norsk Revmatikerforbund" style="height:32px" loading="lazy" /></li>
                     <li><img src="assets/img/logos/partnere/brystkreftforeningen.png" alt="Brystkreftforeningen" class="logobar-emblem" width="575" height="200" style="height:56px" loading="lazy" /></li>
