@@ -62,7 +62,7 @@
                     "name": "Hva gjør en AI-agent i praksis?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Agenten tolker en henvendelse, ordre eller fil, henter relevant informasjon fra bedriftens interne systemer og forbereder et utkast til svar eller handling. En ansatt godkjenner forslaget med ett klikk før oppgaven fullføres. I et eksempel for en forening slår agenten opp medlemmet i medlemssystemet og svarer selv på faste spørsmål, mens unntak går til en saksbehandler."
+                        "text": "Agenten tolker en henvendelse, ordre eller fil, henter relevant informasjon fra bedriftens interne systemer og forbereder et utkast til svar eller handling. En ansatt godkjenner forslaget før oppgaven fullføres. I et eksempel for en forening slår agenten opp medlemmet i medlemssystemet og svarer selv på faste spørsmål, mens unntak går til en saksbehandler."
                     }
                 },
                 {
@@ -138,6 +138,59 @@
                 .ex-table-cmp td::before { content: attr(data-label) ": "; font-weight: 600; color: var(--color-text-secondary); }
             }
             .prod-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin: var(--space-5) 0; }
+            /* r049: prosess, eksempel-bånd, to utfall, sikkerhetsbarrierer, trygghetsmerker */
+            .steps { list-style: none; padding: 0; margin: var(--space-5) 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-3); }
+            .step { position: relative; margin: 0; background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-4); display: flex; flex-direction: column; }
+            .step h3 { font-size: 15px; margin: var(--space-3) 0 var(--space-1); }
+            .step p { margin: 0; font-size: 14px; line-height: 1.5; }
+            .step-icon { display: inline-flex; width: 36px; height: 36px; border-radius: 10px; align-items: center; justify-content: center; background: rgba(0, 120, 212, 0.12); color: var(--accent-text-strong, var(--accent-text)); }
+            .step-icon svg { width: 18px; height: 18px; }
+            .step-icon-green, .case-status-green, .bubble-agent { background: #e8f5ee; color: #166a3f; }
+            .step + .step::before { content: ""; position: absolute; left: -9px; top: 50%; width: 7px; height: 7px; border-top: 2px solid var(--color-border); border-right: 2px solid var(--color-border); transform: translateY(-50%) rotate(45deg); }
+            .step-approve { display: inline-flex; align-items: center; gap: 6px; margin-top: var(--space-3); padding: 6px 12px; border-radius: 8px; background: #15803d; color: #ffffff; font-weight: 600; font-size: 14px; align-self: flex-start; }
+            .step-approve svg { width: 14px; height: 14px; }
+            @media (max-width: 900px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } .step + .step::before { display: none; } }
+            @media (max-width: 520px) { .steps { grid-template-columns: minmax(0, 1fr); } }
+            .star-band { background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; }
+            .legal-page .star-band h2 { margin-top: 0; font-size: clamp(1.375rem, 2vw, 1.75rem); letter-spacing: -0.01em; line-height: 1.25; }
+            .star-band .ex-card, .star-band .case-card { background: var(--color-bg); }
+            @media (max-width: 520px) { .star-band { padding: var(--space-5) var(--space-4); } }
+            .case-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); margin: var(--space-4) 0; }
+            @media (max-width: 640px) { .case-grid { grid-template-columns: minmax(0, 1fr); } }
+            .case-card { border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-3); }
+            .case-head { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #6b6b6b; }
+            .bubble { margin: 0; padding: var(--space-3) var(--space-4); border-radius: 14px; font-size: 15px; line-height: 1.5; max-width: 92%; }
+            .bubble-in { background: rgba(14, 23, 38, 0.06); border-bottom-left-radius: 4px; align-self: flex-start; }
+            .bubble-agent { border-bottom-right-radius: 4px; align-self: flex-end; color: var(--color-text); }
+            .bubble-draft { background: #fff4d6; color: var(--color-text); border: 1px dashed #c9a24a; border-bottom-right-radius: 4px; align-self: flex-end; }
+            .case-lookup { margin: 0; font-size: 13px; color: var(--color-text-secondary); }
+            .case-status { margin: auto 0 0; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 999px; align-self: flex-start; }
+            .case-status svg { width: 14px; height: 14px; }
+            .case-status-amber { background: #fff4d6; color: #7a4f00; }
+            .safe-card { border-color: #166a3f; background: #f2faf5; }
+            .safe-card h3 { color: #166a3f; display: flex; align-items: center; gap: 8px; }
+            .safe-card h3 svg { width: 16px; height: 16px; }
+            .legal-page .safe-list { list-style: none; padding-left: 0; }
+            .safe-list li { display: flex; gap: 8px; align-items: flex-start; }
+            .safe-list li .icon { flex: 0 0 auto; margin-top: 4px; color: #166a3f; }
+            .trust-badges { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); margin: var(--space-5) 0; }
+            @media (max-width: 700px) { .trust-badges { grid-template-columns: minmax(0, 1fr); } }
+            .trust-badge { border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-5); background: var(--color-bg-elevated); }
+            .trust-badge h3 { font-size: 16px; margin: var(--space-3) 0 var(--space-2); }
+            .trust-badge p { margin: 0; font-size: 14px; line-height: 1.55; }
+            .trust-icon { display: inline-flex; align-items: center; justify-content: center; height: 44px; min-width: 44px; padding: 0 10px; border-radius: 10px; background: var(--color-bg); border: 1px solid var(--color-border); color: var(--navy); }
+            .trust-icon svg { width: 22px; height: 22px; }
+            .trust-icon-logos { gap: 10px; }
+            .trust-icon-logos img { height: 16px; width: auto; display: block; }
+            .trust-icon-logos img.mc { height: 22px; }
+            :root[data-theme="dark"] .bubble-in { background: rgba(255, 255, 255, 0.08); }
+            :root[data-theme="dark"] .step-icon-green, :root[data-theme="dark"] .case-status-green, :root[data-theme="dark"] .bubble-agent { background: rgba(31, 128, 75, 0.28); color: #a8e6c4; }
+            :root[data-theme="dark"] .bubble-draft, :root[data-theme="dark"] .case-status-amber { background: rgba(201, 162, 74, 0.22); color: #f3d48a; }
+            :root[data-theme="dark"] .safe-card { background: rgba(31, 128, 75, 0.14); border-color: #3fa66f; }
+            :root[data-theme="dark"] .safe-card h3, :root[data-theme="dark"] .safe-list li .icon { color: #a8e6c4; }
+            :root[data-theme="dark"] .trust-icon { color: #ffffff; }
+            :root[data-theme="dark"] .trust-icon-logos { background: #ffffff; }
+            :root[data-theme="dark"] .case-head { color: #a8a8a8; }
             .prod-actions .teaser-card-btn { width: auto; }
             @media (max-width: 480px) { .prod-actions .teaser-card-btn { width: 100%; } }
             .legal-page h2 {
@@ -183,75 +236,89 @@
         </nav>
 
         <main class="legal-page" id="main">
-            <h1>Smartere arbeidsflyt med skreddersydd programvare og AI-agenter</h1>
-            <p>Vi utvikler digitale løsninger som fjerner manuelt, repeterende arbeid og binder bedriftens eksisterende systemer sammen. <strong>Klopp AS</strong> er et norsk IT-selskap i Tønsberg, og vi følger prosjektet hele veien, fra idé og arkitektur til ferdig utviklet system, løpende drift og support. Alt håndteres internt hos oss.</p>
+            <h1>La en AI-agent ta rutinesakene, mens de ansatte beholder kontrollen</h1>
+            <p>Vi bygger skreddersydde, lukkede AI-assistenter som slår opp i systemene dere allerede har, foreslår svar og lar en ansatt godkjenne før noe sendes. <strong>Klopp AS</strong> er et norsk IT-selskap i Tønsberg som også utvikler webapplikasjoner og systemintegrasjoner, fra idé og arkitektur til drift og support. Alt håndteres internt hos oss.</p>
+
+            <h2>Slik fungerer en AI-agent i praksis</h2>
+            <p>Agenten er en støttespiller for de ansatte, ikke en erstatning. Et menneske godkjenner før oppgaven fullføres.</p>
+            <ol class="steps">
+                <li class="step"><span class="step-icon"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1.5 3.5A1.5 1.5 0 0 1 3 2h10a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 13 14H3a1.5 1.5 0 0 1-1.5-1.5v-9Zm1.6-.1 4.9 3.7 4.9-3.7H3.1Zm9.9 1.3L8.4 8.5a.75.75 0 0 1-.8 0L3 4.7v7.8h10V4.7Z"/></svg></span><h3>1. Input</h3><p>En henvendelse kommer inn: «Jeg får purring, men har betalt.»</p></li>
+                <li class="step"><span class="step-icon"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M6.5 1a5.5 5.5 0 1 0 3.3 9.9l3.6 3.6a.75.75 0 1 0 1.1-1.1l-3.6-3.6A5.5 5.5 0 0 0 6.5 1Zm-4 5.5a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z"/></svg></span><h3>2. Analyse</h3><p>Agenten tolker innholdet og slår opp live i systemene deres via API, for eksempel Regweb.</p></li>
+                <li class="step"><span class="step-icon"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 1.5A1.5 1.5 0 0 0 2.5 3v10A1.5 1.5 0 0 0 4 14.5h8a1.5 1.5 0 0 0 1.5-1.5V5.6c0-.4-.16-.78-.44-1.06l-2.6-2.6A1.5 1.5 0 0 0 9.4 1.5H4ZM4 3h5v2.25c0 .41.34.75.75.75H12v7H4V3Zm1.25 5.5h5.5V10h-5.5V8.5Zm0 2.5h5.5v1.5h-5.5V11Z"/></svg></span><h3>3. Utkast</h3><p>Agenten skriver et forslag til svar eller handling, klart til gjennomgang.</p></li>
+                <li class="step"><span class="step-icon step-icon-green"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg></span><h3>4. Godkjenning</h3><p>En ansatt kontrollerer og godkjenner før noe sendes.</p><span class="step-approve" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Godkjenn</span></li>
+            </ol>
+
+            <section class="star-band" aria-labelledby="eksempel-tittel">
+                <h2 id="eksempel-tittel">Fra full innboks mandag morgen til svar samme dag</h2>
+                <p class="ex-note">Eksempel, ikke en navngitt kunde. Tallene viser flyten og er ikke en måling fra et levert Klopp-prosjekt.</p>
+                <p>En bransjeforening med om lag 4&nbsp;000 medlemmer får 40–60 e-poster og skjema i uken om kontingent, faktura og innmelding. De samme spørsmålene går igjen, og en saksbehandler bruker mesteparten av mandagen på å slå opp i medlemssystemet og svare.</p>
+                <h3 class="faq-q">Hva agenten gjør</h3>
+                <ol>
+                    <li>Leser henvendelsen og kjenner igjen typen: kontingent, faktura, innmelding eller noe annet.</li>
+                    <li>Slår opp medlemmet i foreningens medlemssystem, for eksempel Regweb, via API. Ikke i en fri kopi av registeret.</li>
+                    <li>Svarer selv når svaret finnes: betalingsstatus, forfall, lenke til faktura eller til innmeldingsskjema.</li>
+                    <li>Sender resten til en saksbehandler med utkast, medlemsnummer og hva som er sjekket.</li>
+                </ol>
+                <h3 class="faq-q">En henvendelse, to utfall</h3>
+                <div class="case-grid">
+                    <div class="case-card">
+                        <p class="case-head">Agenten svarer selv</p>
+                        <p class="bubble bubble-in">«Jeg betalte i går, men får purring.»</p>
+                        <p class="case-lookup">Oppslag via API: medlem 1842, faktura 2026-14, status betalt i dag kl. 09.12.</p>
+                        <p class="bubble bubble-agent">Agenten bekrefter betalingen, viser neste forfall og ber medlemmet se bort fra purringen.</p>
+                        <p class="case-status case-status-green"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> Svart automatisk</p>
+                    </div>
+                    <div class="case-card">
+                        <p class="case-head">Unntak til saksbehandler</p>
+                        <p class="bubble bubble-in">«Kan jeg få halvert kontingent i år?»</p>
+                        <p class="case-lookup">Dette er en vurdering, ikke et oppslag.</p>
+                        <p class="bubble bubble-draft">Agenten legger ved medlemsnummer, det som er sjekket, og et forslag til svar. Ingenting sendes.</p>
+                        <p class="case-status case-status-amber"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1Zm0 1.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11ZM7.25 4.5h1.5V9h-1.5V4.5Zm0 5.75h1.5v1.5h-1.5v-1.5Z"/></svg> Trenger menneskelig vurdering</p>
+                    </div>
+                </div>
+                <div class="ex-grid">
+                    <section class="ex-card">
+                        <h3>Agenten kan</h3>
+                        <ul>
+                            <li>Svare på faste spørsmål fra godkjente kilder</li>
+                            <li>Hente status medlemmet allerede har rett til å se</li>
+                            <li>Fylle ut sak og merke det som må vurderes</li>
+                        </ul>
+                    </section>
+                    <section class="ex-card safe-card">
+                        <h3><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1a3.5 3.5 0 0 0-3.5 3.5V6H4a1.5 1.5 0 0 0-1.5 1.5v6A1.5 1.5 0 0 0 4 15h8a1.5 1.5 0 0 0 1.5-1.5v-6A1.5 1.5 0 0 0 12 6h-.5V4.5A3.5 3.5 0 0 0 8 1Zm2 5H6V4.5a2 2 0 1 1 4 0V6Zm-6 1.5h8v6H4v-6Z"/></svg> Innebygde sikkerhetsbarrierer</h3>
+                        <ul class="safe-list">
+                            <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> <span>Endrer aldri kontingent og sletter aldri et medlem</span></li>
+                            <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> <span>Gir ikke juridiske råd og vedtar ikke unntak</span></li>
+                            <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> <span>Svarer ikke når den er usikker. Da går saken til et menneske</span></li>
+                            <li><svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg> <span>Slår opp live i medlemssystemet via API. Ingen fri kopi av registeret</span></li>
+                        </ul>
+                    </section>
+                </div>
+                <h3 class="faq-q">Hva foreningen sitter igjen med</h3>
+                <p>I eksempelet tar agenten de faste oppslagene, og saksbehandleren tar unntakene. Medlemmet får svar samme dag, også etter stengetid, og registeret er fortsatt foreningens. Klopp AS bygger og drifter agenten, og er databehandler for det som leses ut av medlemssystemet. Foreningen er behandlingsansvarlig.</p>
+                <p>Samme mønster kan brukes mot et sakssystem, en kursliste eller et lager. Agenten kobles til systemet dere allerede har, og erstatter det ikke.</p>
+            </section>
+
+            <h2>Trygghet, sikkerhet og integrasjoner</h2>
+            <div class="trust-badges">
+                <div class="trust-badge"><span class="trust-icon"><svg viewBox="0 0 22 16" aria-hidden="true"><rect width="22" height="16" rx="2" fill="#BA0C2F"/><rect x="6" width="4" height="16" fill="#ffffff"/><rect y="6" width="22" height="4" fill="#ffffff"/><rect x="7" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg></span><h3>Norske servere</h3><p>Alle data lagres på norske servere. All utvikling og support skjer i Norge, og vi opptrer som databehandler i tråd med GDPR.</p></div>
+                <div class="trust-badge"><span class="trust-icon"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1a3.5 3.5 0 0 0-3.5 3.5V6H4a1.5 1.5 0 0 0-1.5 1.5v6A1.5 1.5 0 0 0 4 15h8a1.5 1.5 0 0 0 1.5-1.5v-6A1.5 1.5 0 0 0 12 6h-.5V4.5A3.5 3.5 0 0 0 8 1Zm2 5H6V4.5a2 2 0 1 1 4 0V6Zm-6 1.5h8v6H4v-6Z"/></svg></span><h3>Lukkede miljøer</h3><p>AI-agentene jobber i lukkede, sikre miljøer. Forretningsdata deles aldri og brukes ikke til å trene eksterne modeller.</p></div>
+                <div class="trust-badge"><span class="trust-icon trust-icon-logos"><picture><source type="image/webp" srcset="/assets/img/partners/vipps_logo_tight.webp" /><img src="/assets/img/partners/vipps_logo_tight.png" alt="" width="374" height="95" /></picture><img class="mc" src="/assets/img/partners/mastercard_symbol.svg" alt="" width="999" height="618" /></span><h3>Betaling og integrasjoner</h3><p>Vi integrerer mot betaling (Vipps og Mastercard), regnskap, CRM og saksbehandling, og har et tett utviklingssamarbeid med Vipps og Mastercard.</p></div>
+            </div>
+
             <h2>Hva vi leverer</h2>
             <div class="ex-grid">
                 <section class="ex-card"><h3>AI-agenter og automatisering</h3><p>Digitale assistenter som tolker data, forbereder oppgaver og automatiserer rutinearbeid, slik at de ansatte kan frigjøre tid.</p></section>
                 <section class="ex-card"><h3>Webapplikasjoner og apper</h3><p>Skreddersydde verktøy bygget fra bunnen av for deres behov, for eksempel innen logistikk, prosjektstyring eller kurssystemer.</p></section>
                 <section class="ex-card"><h3>Systemintegrasjoner</h3><p>Solide datalag som kobler sammen systemene dere allerede bruker, slik at data flyter mellom dem.</p></section>
             </div>
-            <h2>Slik fungerer en AI-agent i praksis</h2>
-            <p>Våre AI-løsninger er en støttespiller for de ansatte, ikke en erstatning. Et menneske godkjenner (human-in-the-loop) før oppgaven fullføres.</p>
-            <ol>
-                <li><strong>Input.</strong> En henvendelse, ordre eller fil kommer inn i systemet.</li>
-                <li><strong>Analyse.</strong> Agenten tolker innholdet og henter relevant informasjon fra bedriftens interne systemer.</li>
-                <li><strong>Utkast.</strong> Agenten forbereder et ferdig forslag til svar eller handling.</li>
-                <li><strong>Godkjenning.</strong> En ansatt verifiserer og godkjenner forslaget med ett klikk før oppgaven fullføres.</li>
-            </ol>
-            <h2>Eksempel: AI-agent for en forening</h2>
-            <p class="ex-note">Eksempel, ikke en navngitt kunde. Tallene er satt opp for å vise flyten og er ikke en måling fra et levert Klopp-prosjekt.</p>
-            <p>En bransjeforening med om lag 4&nbsp;000 medlemmer får 40–60 e-poster og skjema i uken om kontingent, faktura og innmelding. De samme spørsmålene går igjen, og en saksbehandler bruker mesteparten av mandagen på å slå opp i medlemssystemet og svare.</p>
-            <h3 class="faq-q">Hva agenten gjør</h3>
-            <ol>
-                <li>Leser henvendelsen og kjenner igjen typen: kontingent, faktura, innmelding eller noe annet.</li>
-                <li>Slår opp medlemmet i foreningens medlemssystem, for eksempel Regweb, via API. Ikke i en fri kopi av registeret.</li>
-                <li>Svarer selv når svaret finnes: betalingsstatus, forfall, lenke til faktura eller til innmeldingsskjema.</li>
-                <li>Sender resten til en saksbehandler med ferdig utkast, medlemsnummer og hva som er sjekket.</li>
-            </ol>
-            <div class="ex-grid">
-                <section class="ex-card">
-                    <h3>Agenten kan</h3>
-                    <ul>
-                        <li>Svare på faste spørsmål fra godkjente kilder</li>
-                        <li>Hente status medlemmet allerede har rett til å se</li>
-                        <li>Fylle ut sak og merke det som må vurderes</li>
-                    </ul>
-                </section>
-                <section class="ex-card">
-                    <h3>Agenten gjør ikke</h3>
-                    <ul>
-                        <li>Endre kontingent eller slette et medlem</li>
-                        <li>Gi juridiske råd eller vedta unntak</li>
-                        <li>Svare når den er usikker. Da går saken til et menneske</li>
-                    </ul>
-                </section>
-            </div>
-            <h3 class="faq-q">En henvendelse, to utfall</h3>
-            <table class="ex-table">
-                <tbody>
-                    <tr><th>Inn</th><td>«Jeg betalte i går, men får purring.»</td></tr>
-                    <tr><th>Oppslag</th><td>Medlem 1842, faktura 2026-14, status betalt i dag kl. 09.12.</td></tr>
-                    <tr><th>Svar</th><td>Agenten bekrefter betalingen, viser forfall og sier at purringen kan ses bort fra.</td></tr>
-                    <tr><th>Unntak</th><td>«Kan jeg få halvert kontingent i år?» går til saksbehandler. Agenten foreslår svar, men sender ikke.</td></tr>
-                </tbody>
-            </table>
-            <h3 class="faq-q">Hva foreningen sitter igjen med</h3>
-            <p>I eksempelet tar agenten de faste oppslagene, og saksbehandleren tar unntakene. Medlemmet får svar samme dag, også etter stengetid, og registeret er fortsatt foreningens. Klopp AS bygger og drifter agenten, og er databehandler for det som leses ut av medlemssystemet. Foreningen er behandlingsansvarlig.</p>
-            <p>Samme mønster kan brukes mot et sakssystem, en kursliste eller et lager. Agenten kobles til systemet dere allerede har, og erstatter det ikke.</p>
-
-            <h2>Trygghet, sikkerhet og integrasjoner</h2>
-            <ul>
-                <li><strong>Norske servere.</strong> Alle data lagres på norske servere. All utvikling og support skjer i Norge, og vi opptrer som databehandler i tråd med GDPR.</li>
-                <li><strong>Isolerte data.</strong> AI-agentene jobber i lukkede, sikre miljøer. Forretningsdata deles aldri og brukes ikke til å trene eksterne modeller.</li>
-                <li><strong>Sømløse koblinger.</strong> Vi integrerer mot kjente løsninger for betaling (som Vipps og Mastercard), regnskap, CRM og saksbehandling. Vi har et tett utviklingssamarbeid med Vipps og Mastercard.</li>
-            </ul>
             <h2>Erfaring</h2>
             <p>Vi har lang erfaring med robuste systemer for både private virksomheter og offentlig sektor, og har levert til blant andre Aschehoug, Best Western, Telenor, Storebrand, Jernbaneverket (nå Bane NOR) og Owens Corning Pipe &amp; Tank.</p>
             <div class="prod-actions"><a class="teaser-card-btn teaser-card-btn-primary" href="/kontakt.html">Snakk med oss om et prosjekt <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a></div>
             <h2>Ofte stilte spørsmål</h2>
             <h3 class="faq-q">Hva gjør en AI-agent i praksis?</h3>
-            <p>Agenten tolker en henvendelse, ordre eller fil, henter relevant informasjon fra bedriftens interne systemer og forbereder et utkast til svar eller handling. En ansatt godkjenner forslaget med ett klikk før oppgaven fullføres. I et eksempel for en forening slår agenten opp medlemmet i medlemssystemet og svarer selv på faste spørsmål, mens unntak går til en saksbehandler.</p>
+            <p>Agenten tolker en henvendelse, ordre eller fil, henter relevant informasjon fra bedriftens interne systemer og forbereder et utkast til svar eller handling. En ansatt godkjenner forslaget før oppgaven fullføres. I et eksempel for en forening slår agenten opp medlemmet i medlemssystemet og svarer selv på faste spørsmål, mens unntak går til en saksbehandler.</p>
             <h3 class="faq-q">Hva leverer Klopp AS av AI-agenter?</h3>
             <p>Klopp AS bygger AI-agenter som automatiserer arbeidsflyt og fjerner manuelt, repeterende arbeid, som en del av skreddersydde webapplikasjoner og systemintegrasjoner for bedrifter og offentlig sektor.</p>
             <h3 class="faq-q">Bygger Klopp AS ferdige løsninger eller skreddersydde?</h3>
