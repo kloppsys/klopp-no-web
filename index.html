@@ -230,14 +230,14 @@
             /* Bildetekst som ekte HTML (søkbar, skjermleservennlig, skarp på alle skjermer), plassert UNDER kortet
                slik at bunnen av det mørke bildet flukter nøyaktig med bunnen av den lyse boksen til venstre.
                Desktop: i høyre kolonne (margin-left 50 %), sentrert under Richard. Mobil: sentrert under ham.
-               Farger: navnet i brødtekstfargen, tittelen i sidens teal-tekstfarge (#25757f, 5,3:1 på hvitt);
-               logoens egen blå (#3fc3d5) gir bare 2,1:1 som tekst, så den brukes på skilletegnet. */
+               Ordlyd etter Richards ønske: «Daglig leder (Richard)» i vanlig skrift, ikke versaler. Farger: «Daglig leder»
+               i sidens teal-tekstfarge (#25757f, 5,3:1 på hvitt), «(Richard)» i brødtekstfargen; logoens egen blå (#3fc3d5)
+               gir bare 2,1:1 som tekst og brukes ikke her. */
             /* Sentrert under Richard, ikke under kolonnen: midten hans ligger 54,5 % inn i desktop-vinduet og 52,4 % på
                mobil, så en venstre-padding på 2× avviket (4,5 % / 4,8 % av containeren) flytter senteret dit. */
-            .masthead-caption { margin: var(--space-3) 0 0 50%; padding-left: 4.5%; display: flex; justify-content: center; align-items: center; gap: var(--space-3); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1; white-space: nowrap; }
+            .masthead-caption { margin: var(--space-3) 0 0 50%; padding-left: 4.5%; display: flex; justify-content: center; align-items: center; gap: 0.35em; font-size: 14px; font-weight: 600; letter-spacing: 0.02em; line-height: 1; white-space: nowrap; }
             .masthead-caption-name { color: var(--color-text-secondary); }
             .masthead-caption-role { color: var(--accent-text-strong); }
-            .masthead-caption-sep { color: var(--accent-blue); }
             @media (max-width: 900px) {
                 .masthead-media { order: 0; }
                 .masthead-caption { margin: var(--space-3) 0 0; padding-left: 4.8%; }
@@ -570,7 +570,7 @@
                         </picture>
                     </div>
                 </div>
-                <p class="masthead-caption"><span class="masthead-caption-name">Richard Klopp</span><span class="masthead-caption-sep" aria-hidden="true">·</span><span class="masthead-caption-role">Daglig leder</span></p>
+                <p class="masthead-caption"><span class="masthead-caption-role">Daglig leder</span> <span class="masthead-caption-name">(Richard)</span></p>
 
                 <div class="logo-strip">
                     <p class="logo-strip-label">Betrodd av norsk næringsliv</p>
