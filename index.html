@@ -225,23 +225,18 @@
                 .masthead-media { min-height: 0; height: clamp(300px, 92vw, 440px); order: -1; }
                 .masthead-media img { object-position: 95% 40%; }
             }
-            /* Bildetekst som ren HTML i sidens eyebrow-typografi (ikke bakt inn i bildet). To varianter:
-               .caption-bar = felt under bildet i kortets bakgrunn, .caption-overlay = diskret marineblått felt nede
-               til venstre i bildet. */
-            .masthead-caption { margin: 0; display: flex; align-items: center; gap: var(--space-3); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1; white-space: nowrap; }
-            .masthead-caption-name { color: var(--color-text); }
+            /* Bildetekst som ekte HTML (søkbar, skjermleservennlig, skarp på alle skjermer), plassert UNDER kortet
+               slik at bunnen av det mørke bildet flukter nøyaktig med bunnen av den lyse boksen til venstre.
+               Desktop: starter ved bildets venstre kant (høyre kolonne = 50 %). Mobil: sentrert under bildet.
+               Farger: navnet i brødtekstfargen, tittelen i sidens teal-tekstfarge (#25757f, 5,3:1 på hvitt);
+               logoens egen blå (#3fc3d5) gir bare 2,1:1 som tekst, så den brukes på skilletegnet. */
+            .masthead-caption { margin: var(--space-3) 0 0 50%; display: flex; align-items: center; gap: var(--space-3); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1; white-space: nowrap; }
+            .masthead-caption-name { color: var(--color-text-secondary); }
             .masthead-caption-role { color: var(--accent-text-strong); }
             .masthead-caption-sep { color: var(--accent-blue); }
-            .masthead-media.caption-bar img { inset: 0 0 48px 0; height: calc(100% - 48px); }
-            .masthead-media.caption-bar::after { inset: 0 0 48px 0; }
-            .masthead-media.caption-bar .masthead-caption { position: absolute; left: 0; right: 0; bottom: 0; height: 48px; padding: 0 var(--space-5); background: var(--color-bg-elevated); border-top: 1px solid var(--color-border); z-index: 1; }
-            .masthead-media.caption-overlay .masthead-caption { position: absolute; left: var(--space-4); bottom: var(--space-4); padding: 10px 14px; border-radius: 6px; background: rgba(11, 34, 82, 0.82); backdrop-filter: blur(4px); font-size: 12px; z-index: 1; }
-            .masthead-media.caption-overlay .masthead-caption-name { color: #fff; }
-            .masthead-media.caption-overlay .masthead-caption-role { color: rgba(255, 255, 255, 0.82); }
-            .masthead-media.caption-overlay .masthead-caption-sep { color: rgba(255, 255, 255, 0.6); }
             @media (max-width: 900px) {
-                .masthead-media.caption-bar { height: calc(clamp(300px, 92vw, 440px) + 48px); }
-                .masthead-media.caption-bar .masthead-caption { padding: 0 var(--space-4); }
+                .masthead-media { order: 0; }
+                .masthead-caption { margin: var(--space-3) 0 0; justify-content: center; }
             }
             /* The wall in the photo is already dark navy, so dark mode only needs a light tint to sit
                evenly on the dark page (the previous bright office photo needed 0.45). */
@@ -564,14 +559,14 @@
                             <a class="btn btn-red" href="kontakt.html?tjeneste=Utvikling+av+digitalt+produkt">Diskuter et AI-/utviklingsprosjekt <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
                         </div>
                     </div>
-                    <div class="masthead-media caption-bar">
+                    <div class="masthead-media">
                         <picture>
                             <source srcset="assets/img/klopp-hero-richard-2026-800.webp 800w, assets/img/klopp-hero-richard-2026-1200.webp 1200w, assets/img/klopp-hero-richard-2026-1600.webp 1600w, assets/img/klopp-hero-richard-2026-2336.webp 2336w" sizes="(max-width: 900px) 164vw, 1190px" type="image/webp" />
                             <img src="assets/img/klopp-hero-richard-2026-1200.jpg" srcset="assets/img/klopp-hero-richard-2026-800.jpg 800w, assets/img/klopp-hero-richard-2026-1200.jpg 1200w, assets/img/klopp-hero-richard-2026-1600.jpg 1600w, assets/img/klopp-hero-richard-2026-2336.jpg 2336w" sizes="(max-width: 900px) 164vw, 1190px" alt="Richard Klopp, daglig leder i Klopp AS, står med armene i kors foran en marineblå vegg" width="1600" height="899" fetchpriority="high" />
                         </picture>
-                        <p class="masthead-caption"><span class="masthead-caption-name">Richard Klopp</span><span class="masthead-caption-sep" aria-hidden="true">·</span><span class="masthead-caption-role">Daglig leder</span></p>
                     </div>
                 </div>
+                <p class="masthead-caption"><span class="masthead-caption-name">Richard Klopp</span><span class="masthead-caption-sep" aria-hidden="true">·</span><span class="masthead-caption-role">Daglig leder</span></p>
 
                 <div class="logo-strip">
                     <p class="logo-strip-label">Betrodd av norsk næringsliv</p>
