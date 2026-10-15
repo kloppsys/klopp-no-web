@@ -212,33 +212,20 @@
         }
         </script>
         <style>
-            /* Denne siden: delt hero. Tekst og knapper til venstre, bildet til høyre, slik at overskrift,
-               knapper og bilde er synlige samtidig på en vanlig laptop (før lå overskriften under folden
-               på 1440×900). Under 900 px ligger bildet øverst som et 1:1-utsnitt. */
-            .masthead-card { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 0; }
-            .masthead-media { position: relative; }
-            /* Utsnitt: 67 % på desktop viser mannen i marineblått, damen i grått og mannen til høyre; 58 % på
-               mobil (1:1) er utsnittet Richard valgte 2026-10-14. */
-            .masthead-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 67% 40%; }
+            /* r056: bredt hero-bilde over hele flaten (kontorskrivebord med Regweb på laptopen), overskrift og tekst under.
+               Bildet er 2,58:1; på mobil beskjæres det til laptop og kopp (object-position). */
+            .masthead-wide { padding: var(--nav-height) 0 var(--space-7); }
+            .masthead-hero { position: relative; width: 100%; overflow: hidden; background: #d9d6d8; }
+            .masthead-hero img { display: block; width: 100%; height: auto; aspect-ratio: 3200 / 1242; object-fit: cover; object-position: 40% 50%; }
+            .masthead-hero::after { content: ""; position: absolute; inset: 0; background: transparent; pointer-events: none; transition: background var(--duration-base) var(--ease-out); }
+            :root[data-theme="dark"] .masthead-hero::after { background: rgba(0, 0, 0, 0.32); }
+            @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .masthead-hero::after { background: rgba(0, 0, 0, 0.32); } }
+            .masthead-below { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: var(--space-8); align-items: start; padding-top: var(--space-7); }
+            .masthead-below .masthead-heading { margin-top: var(--space-3); }
+            .masthead-below-text .masthead-subheading { margin-top: 0; }
             @media (max-width: 900px) {
-                .masthead-card { grid-template-columns: minmax(0, 1fr); }
-                .masthead-media { min-height: 0; height: clamp(300px, 92vw, 440px); order: -1; }
-                .masthead-media img { object-position: 58% 40%; }
-            }
-            /* The photo itself is a bright white-walled office — fine in light mode, but jarring
-               dropped straight into a dark page. A flat dark tint (not a gradient, since the whole
-               frame needs it evenly) keeps it readable as "the same page" once dark mode is on. */
-            .masthead-media::after {
-                content: "";
-                position: absolute;
-                inset: 0;
-                background: transparent;
-                pointer-events: none;
-                transition: background var(--duration-base) var(--ease-out);
-            }
-            :root[data-theme="dark"] .masthead-media::after { background: rgba(0, 0, 0, 0.45); }
-            @media (prefers-color-scheme: dark) {
-                :root:not([data-theme="light"]) .masthead-media::after { background: rgba(0, 0, 0, 0.45); }
+                .masthead-hero img { height: clamp(260px, 72vw, 380px); aspect-ratio: auto; object-position: 30% 50%; }
+                .masthead-below { grid-template-columns: minmax(0, 1fr); gap: var(--space-5); padding-top: var(--space-6); }
             }
             .masthead-content { order: 0; }
             .teaser-card-more { margin: var(--space-3) 0 0; font-size: 14px; }
@@ -251,7 +238,6 @@
             .logo-strip .logobar { flex: 1 1 auto; margin: 0; }
             .logo-strip .logobar img { max-height: 30px; }
             @media (max-width: 900px) { .logo-strip { flex-direction: column; align-items: stretch; gap: var(--space-4); } }
-            .masthead { padding-bottom: var(--space-7); }
             .audience-band { background: #eef3f8; padding: var(--space-8) 0 var(--space-9); }
             :root[data-theme="dark"] .audience-band { background: var(--color-bg-elevated); }
             @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .audience-band { background: var(--color-bg-elevated); } }
@@ -561,23 +547,25 @@
         </nav>
 
         <main id="main">
-        <header class="masthead">
+        <header class="masthead masthead-wide">
+            <div class="masthead-hero">
+                <picture>
+                    <source srcset="assets/img/klopp-hero-kontor-1200.webp 1200w, assets/img/klopp-hero-kontor-1600.webp 1600w, assets/img/klopp-hero-kontor-2400.webp 2400w, assets/img/klopp-hero-kontor-3200.webp 3200w" sizes="(max-width: 900px) 200vw, 100vw" type="image/webp" />
+                    <img src="assets/img/klopp-hero-kontor-1600.jpg" srcset="assets/img/klopp-hero-kontor-1200.jpg 1200w, assets/img/klopp-hero-kontor-1600.jpg 1600w, assets/img/klopp-hero-kontor-2400.jpg 2400w, assets/img/klopp-hero-kontor-3200.jpg 3200w" sizes="(max-width: 900px) 200vw, 100vw" alt="Skrivebord med bærbar PC som viser Regweb medlemssystem, en kopp med XReg-logoen og permer merket Likepersonslogg og Regweb" width="3200" height="1242" fetchpriority="high" />
+                </picture>
+            </div>
             <div class="container">
-                <div class="masthead-card">
-                    <div class="masthead-content">
+                <div class="masthead-below">
+                    <div class="masthead-below-title">
                         <span class="eyebrow-dot"><span class="dot"></span>Klopp AS · Etablert 2011</span>
                         <h1 class="masthead-heading">Utvikling av digitale produkter – web, app og AI-agenter</h1>
+                    </div>
+                    <div class="masthead-below-text">
                         <p class="masthead-subheading">Klopp AS er et norsk IT-selskap i Tønsberg. Vi står bak <a class="hero-link" href="/regweb/">Regweb</a>, <a class="hero-link" href="/medlem123/">Medlem123</a>, <a class="hero-link" href="/likepersonslogg/">Likepersonslogg</a> og <a class="hero-link" href="https://xreg.no/" target="_blank" rel="noopener">XReg<span class="sr-only"> (åpner i ny fane)</span></a>, og leverer i tillegg skreddersydde webapplikasjoner, <a class="hero-link" href="/ai-agenter/">AI-agenter</a> og systemintegrasjoner til bedrifter og offentlig sektor. All utvikling, drift og support skjer internt — ingen del er satt bort.</p>
                         <div class="masthead-cta">
                             <a class="btn btn-navy" href="#produkter">Se våre systemer og tjenester <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M8 3.5a.75.75 0 0 1 .75.75v6.69l2.47-2.47a.75.75 0 1 1 1.06 1.06l-3.75 3.75a.75.75 0 0 1-1.06 0L3.72 9.53a.75.75 0 1 1 1.06-1.06l2.47 2.47V4.25A.75.75 0 0 1 8 3.5Z"/></svg></a>
                             <a class="btn btn-red" href="kontakt.html?tjeneste=Utvikling+av+digitalt+produkt">Diskuter et AI-/utviklingsprosjekt <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a>
                         </div>
-                    </div>
-                    <div class="masthead-media">
-                        <picture>
-                            <source srcset="assets/img/klopp-forsidebilde-2027-800.webp 800w, assets/img/klopp-forsidebilde-2027-1200.webp 1200w, assets/img/klopp-forsidebilde-2027-1600.webp 1600w, assets/img/klopp-forsidebilde-2027-2336.webp 2336w" sizes="(max-width: 900px) 164vw, 1190px" type="image/webp" />
-                            <img src="assets/img/klopp-forsidebilde-2027-1200.jpg" srcset="assets/img/klopp-forsidebilde-2027-800.jpg 800w, assets/img/klopp-forsidebilde-2027-1200.jpg 1200w, assets/img/klopp-forsidebilde-2027-1600.jpg 1600w, assets/img/klopp-forsidebilde-2027-2336.jpg 2336w" sizes="(max-width: 900px) 164vw, 1190px" alt="Fire kolleger rundt et bord i et lyst kontor, med Regweb medlemssystem åpent på en laptop og Klopp-logo på kaffekoppen" width="1600" height="900" fetchpriority="high" />
-                        </picture>
                     </div>
                 </div>
 
