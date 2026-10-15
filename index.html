@@ -515,27 +515,23 @@
             #om-oss { scroll-margin-top: calc(var(--nav-height) + var(--space-3)); }
             #tillit { padding-top: var(--space-9); padding-bottom: var(--space-9); }
             @media (max-width: 767px) { #tillit { padding-top: var(--space-8); padding-bottom: var(--space-8); } }
-            /* «Hilsen fra daglig leder» (2026-10-15): tomannskolonne under Om oss, sitat + signatur + direkte e-post til venstre,
+            /* «Hilsen fra daglig leder» (2026-10-15): tomannskolonne under Om oss, sitat + direkte e-post til venstre,
                Richard (H34-portrett 4:5) til høyre med bildeteksten som ekte HTML i et felt under bildet. På mobil: tekst, bilde,
-               bildetekst. Signaturen finnes i blå (lys modus) og lys utgave (mørk modus), byttet med CSS. */
+               bildetekst. Første løfte som ledd, de fire neste som rolig liste med haker. */
             .leader-section { padding: 0 0 var(--space-8); background: var(--color-bg); }
             .leader-card { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: stretch; background: var(--color-bg-elevated); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--card-shadow); }
             .leader-content { padding: var(--space-8) var(--space-7); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
             .leader-content .eyebrow-dot { color: var(--accent-text-strong); }
             .leader-content .eyebrow-dot .dot { background: var(--accent-blue); }
             .leader-title { font-size: clamp(1.5rem, 2vw + 1rem, 2rem); font-weight: 500; color: var(--color-text); margin: var(--space-3) 0 0; }
-            .leader-quote { margin: var(--space-5) 0 0; padding: 0; border: 0; }
-            .leader-quote p { margin: 0; font-size: clamp(1.0625rem, 0.5vw + 0.9rem, 1.25rem); font-weight: 600; line-height: 1.45; color: var(--color-text); max-width: 40ch; }
-            .leader-quote p + p { margin-top: 0.55em; }
-            .leader-cite { margin-top: var(--space-3); font-size: 15px; font-style: normal; color: var(--color-text-secondary); }
-            .leader-signature { display: block; height: 52px; width: auto; margin: var(--space-4) 0 0; }
-            .leader-signature-dark { display: none; }
-            :root[data-theme="dark"] .leader-signature-light { display: none; }
-            :root[data-theme="dark"] .leader-signature-dark { display: block; }
-            @media (prefers-color-scheme: dark) {
-                :root:not([data-theme="light"]) .leader-signature-light { display: none; }
-                :root:not([data-theme="light"]) .leader-signature-dark { display: block; }
-            }
+            .leader-quote { margin: var(--space-5) 0 0; padding: 0; border: 0; width: 100%; max-width: 480px; }
+            .leader-lead { margin: 0; font-size: clamp(1.25rem, 0.9vw + 1rem, 1.5rem); font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; color: var(--color-text); max-width: 30ch; text-wrap: balance; }
+            .leader-promises { list-style: none; margin: var(--space-5) 0 0; padding: 0; }
+            .leader-promises li { display: flex; align-items: flex-start; gap: var(--space-3); padding: 14px 0; border-top: 1px solid var(--color-border); font-size: 1rem; font-weight: 500; line-height: 1.5; color: var(--color-text); }
+            .leader-promises li:last-child { border-bottom: 1px solid var(--color-border); }
+            .leader-promises svg { flex: 0 0 auto; width: 20px; height: 20px; margin-top: 2px; color: var(--accent-text-strong); }
+            .leader-cite { margin-top: var(--space-4); font-size: 15px; font-style: normal; color: var(--color-text-secondary); }
+            .leader-cite-name { font-weight: 600; color: var(--color-text); }
             .leader-actions { margin: var(--space-5) 0 0; font-size: 15px; }
             .leader-media { position: relative; display: flex; flex-direction: column; background: #0f1b33; }
             .leader-picture { display: block; position: relative; flex: 1 1 auto; min-height: 420px; }
@@ -684,15 +680,15 @@
                         <span class="eyebrow-dot"><span class="dot"></span>Hilsen fra daglig leder</span>
                         <h2 class="leader-title" id="leader-title">Menneskene bak systemene</h2>
                         <blockquote class="leader-quote">
-                            <p>«Vi gjør det vi sier vi skal gjøre. Vi holder det vi lover.</p>
-                            <p>Vi tar telefonen, hvis ikke ringer vi deg tilbake.</p>
-                            <p>Vi følger deg opp, også når oppdraget er utført.</p>
-                            <p>Vi gir deg de beste rådene vi kan gi – gratis.</p>
-                            <p>All utvikling og support skjer hos oss i Tønsberg – det gir kundene våre en ekstra trygghet.»</p>
-                            <footer class="leader-cite">— Richard Klopp, Daglig leder</footer>
+                            <p class="leader-lead">«Vi gjør det vi sier vi skal gjøre. Vi holder det vi lover.</p>
+                            <ul class="leader-promises">
+                                <li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Vi tar telefonen, hvis ikke ringer vi deg tilbake.</span></li>
+                                <li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Vi følger deg opp, også når oppdraget er utført.</span></li>
+                                <li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>Vi gir deg de beste rådene vi kan gi – gratis.</span></li>
+                                <li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.7-9.3a1 1 0 0 0-1.4-1.4L9 10.58 7.7 9.3a1 1 0 0 0-1.4 1.4l2 2a1 1 0 0 0 1.4 0l4-4Z" clip-rule="evenodd"/></svg><span>All utvikling og support skjer hos oss i Tønsberg – det gir kundene våre en ekstra trygghet.»</span></li>
+                            </ul>
+                            <footer class="leader-cite"><span class="leader-cite-name">Richard Klopp</span>, Daglig leder</footer>
                         </blockquote>
-                        <img class="leader-signature leader-signature-light" src="assets/img/signatur-richard-klopp.png" alt="Richard Klopps signatur" width="797" height="213" loading="lazy" />
-                        <img class="leader-signature leader-signature-dark" src="assets/img/signatur-richard-klopp-lys.png" alt="Richard Klopps signatur" width="797" height="213" loading="lazy" />
                         <p class="leader-actions"><a class="chevron-link" href="mailto:richard@klopp.no">Send en e-post til Richard <svg class="icon" viewBox="0 0 16 16" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06L10.19 8 6.22 4.03a.75.75 0 0 1 0-1.06Z"/></svg></a></p>
                     </div>
                     <div class="leader-media">
