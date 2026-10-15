@@ -217,10 +217,9 @@
                på 1440×900). Under 900 px ligger bildet øverst som et 1:1-utsnitt. */
             .masthead-card { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 0; }
             .masthead-media { position: relative; }
-            /* Hero 2026-10-15 (H27 + kodet bildetekst): Richard foran marineblå vegg, ved 56–93 % av bildebredden.
-               Desktop-vinduet (556×668) viser 47 % av bredden: object-position 92 % gir 241 px vegg venstre for armen
-               (ned fra 384 ved 84 %) og 96 px luft mellom skulderen og høyre kant, så han står midt i sitt eget felt.
-               Mobil (1:1, 54 % av bredden): 100 % gir 325 px venstre og 239 px høyre. */
+            /* Hero 2026-10-15 (H30 + kodet bildetekst): Richard foran marineblå vegg, zoomet ut til hoften og plassert
+               midt i vinduet. Desktop-vinduet (556×668) viser 47 % av bredden ved object-position 92 %: armene spenner
+               75 % av vinduet med lik luft på begge sider og hodet 16 % fra toppen. Mobil (1:1): 100 %. */
             .masthead-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 92% 40%; }
             @media (max-width: 900px) {
                 .masthead-card { grid-template-columns: minmax(0, 1fr); }
@@ -233,14 +232,14 @@
                Ordlyd etter Richards ønske: «Daglig leder (Richard)» i vanlig skrift, ikke versaler. Farger: «Daglig leder»
                i sidens teal-tekstfarge (#25757f, 5,3:1 på hvitt), «(Richard)» i brødtekstfargen; logoens egen blå (#3fc3d5)
                gir bare 2,1:1 som tekst og brukes ikke her. */
-            /* Sentrert under Richard, ikke under kolonnen: midten hans ligger 54,5 % inn i desktop-vinduet og 52,4 % på
-               mobil, så en venstre-padding på 2× avviket (4,5 % / 4,8 % av containeren) flytter senteret dit. */
-            .masthead-caption { margin: var(--space-3) 0 0 50%; padding-left: 4.5%; display: flex; justify-content: center; align-items: center; gap: 0.35em; font-size: 14px; font-weight: 600; letter-spacing: 0.02em; line-height: 1; white-space: nowrap; }
+            /* H30: Richard står midt i både desktop- og mobilvinduet (senter 2419 px i masteren mot vinduenes 2431/2416),
+               så bildeteksten sentreres rett under kolonnen. */
+            .masthead-caption { margin: var(--space-3) 0 0 50%; display: flex; justify-content: center; align-items: center; gap: 0.35em; font-size: 14px; font-weight: 600; letter-spacing: 0.02em; line-height: 1; white-space: nowrap; }
             .masthead-caption-name { color: var(--color-text-secondary); }
             .masthead-caption-role { color: var(--accent-text-strong); }
             @media (max-width: 900px) {
                 .masthead-media { order: 0; }
-                .masthead-caption { margin: var(--space-3) 0 0; padding-left: 4.8%; }
+                .masthead-caption { margin: var(--space-3) 0 0; }
             }
             /* The wall in the photo is already dark navy, so dark mode only needs a light tint to sit
                evenly on the dark page (the previous bright office photo needed 0.45). */
