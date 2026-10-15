@@ -217,9 +217,9 @@
                på 1440×900). Under 900 px ligger bildet øverst som et 1:1-utsnitt. */
             .masthead-card { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 0; }
             .masthead-media { position: relative; }
-            /* Hero 2026-10-15 (H30 + kodet bildetekst): Richard foran marineblå vegg, zoomet ut til hoften og plassert
+            /* Hero 2026-10-15 (H32 + kodet bildetekst): Richard foran marineblå vegg, zoomet ut til hoften og plassert
                midt i vinduet. Desktop-vinduet (556×668) viser 47 % av bredden ved object-position 92 %: armene spenner
-               75 % av vinduet med lik luft på begge sider og hodet 16 % fra toppen. Mobil (1:1): 100 %. */
+               69 % av vinduet med lik luft på begge sider og hodet 15 % fra toppen. Mobil (1:1): 100 %. */
             .masthead-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 92% 40%; }
             @media (max-width: 900px) {
                 .masthead-card { grid-template-columns: minmax(0, 1fr); }
@@ -232,7 +232,7 @@
                Ordlyd etter Richards ønske: «Daglig leder (Richard)» i vanlig skrift, ikke versaler. Farger: «Daglig leder»
                i sidens teal-tekstfarge (#25757f, 5,3:1 på hvitt), «(Richard)» i brødtekstfargen; logoens egen blå (#3fc3d5)
                gir bare 2,1:1 som tekst og brukes ikke her. */
-            /* H30: Richard står midt i både desktop- og mobilvinduet (senter 2419 px i masteren mot vinduenes 2431/2416),
+            /* H32: Richard står midt i både desktop- og mobilvinduet (senter 2419 px i masteren mot vinduenes 2431/2416),
                så bildeteksten sentreres rett under kolonnen. */
             .masthead-caption { margin: var(--space-3) 0 0 50%; display: flex; justify-content: center; align-items: center; gap: 0.35em; font-size: 14px; font-weight: 600; letter-spacing: 0.02em; line-height: 1; white-space: nowrap; }
             .masthead-caption-name { color: var(--color-text-secondary); }
